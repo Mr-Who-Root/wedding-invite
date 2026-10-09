@@ -55,9 +55,7 @@
     .opt .shot::after { box-shadow: inset 0 -40px 40px -30px rgba(0,0,0,.6); }
     .opt .txt { min-height: 0; padding: 16px 40px 20px 18px; }
   }
-  .opt:nth-child(1) { animation-delay: 1s; } .opt:nth-child(2) { animation-delay: 1.1s; } .opt:nth-child(3) { animation-delay: 1.2s; }
-  .opt:nth-child(4) { animation-delay: 1.3s; } .opt:nth-child(5) { animation-delay: 1.4s; } .opt:nth-child(6) { animation-delay: 1.5s; }
-  .opt:nth-child(7) { animation-delay: 1.6s; } .opt:nth-child(8) { animation-delay: 1.7s; } .opt:nth-child(9) { animation-delay: 1.8s; }
+  .opt { animation-delay: calc(1s + var(--i, 0) * .08s); }
   .new { position: absolute; top: 10px; left: 10px; z-index: 1; font: 900 9.5px 'Lato', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #2b1d08; background: var(--gold); padding: 5px 8px; border-radius: 999px; }
   footer { text-align: center; margin-top: 34px; font: italic 500 17px 'Cormorant Garamond', serif; color: var(--ivory-2); }
   @media (prefers-reduced-motion: reduce) { *, *::before { animation-duration: .01ms !important; animation-delay: 0s !important; } }
@@ -72,52 +70,103 @@
 </header>
 
 <nav class="grid" aria-label="Invitation designs">
-  <a class="opt" href="cinema/">
+  <a class="opt" style="--i:0" href="cinema/">
     <span class="shot" style="background-image:url(assets/img/previews/cinema.jpg)"></span>
     <span class="txt"><small>Option 1</small><b>Wedding Cinema</b><em>Velvet curtains, golden glow &amp; a scratch-to-reveal date</em></span>
     <span class="go" aria-hidden="true">→</span>
   </a>
-  <a class="opt" href="kasavu/">
+  <a class="opt" style="--i:1" href="kasavu/">
     <span class="shot" style="background-image:url(assets/img/previews/kasavu.jpg)"></span>
     <span class="txt"><small>Option 2</small><b>Kasavu</b><em>Kasavu silk, floral mandaps &amp; a lamp-lit close</em></span>
     <span class="go" aria-hidden="true">→</span>
   </a>
-  <a class="opt" href="malligai/">
+  <a class="opt" style="--i:2" href="malligai/">
     <span class="shot" style="background-image:url(assets/img/previews/malligai.jpg)"></span>
     <span class="txt"><small>Option 3</small><b>Malligai</b><em>Jasmine, kolam &amp; marigold garlands</em></span>
     <span class="go" aria-hidden="true">→</span>
   </a>
-  <a class="opt" href="mandapam/">
-    <span class="new">New</span>
+  <a class="opt" style="--i:3" href="mandapam/">
     <span class="shot" style="background-image:url(assets/img/previews/mandapam.jpg)"></span>
     <span class="txt"><small>Option 4</small><b>Mandapam</b><em>A royal mandapam with jasmine curtains &amp; brass lamps</em></span>
     <span class="go" aria-hidden="true">→</span>
   </a>
-  <a class="opt" href="envelope/">
-    <span class="new">New</span>
+  <a class="opt" style="--i:4" href="envelope/">
     <span class="shot" style="background-image:url(assets/img/previews/envelope.jpg)"></span>
     <span class="txt"><small>Option 5</small><b>Royal Envelope</b><em>Break the lotus seal to open your invitation</em></span>
     <span class="go" aria-hidden="true">→</span>
   </a>
-  <a class="opt" href="save-the-date/">
+  <a class="opt" style="--i:5" href="save-the-date/">
     <span class="shot" style="background-image:url(assets/img/previews/save-the-date.jpg)"></span>
     <span class="txt"><small>Option 6</small><b>Save the Date</b><em>Roses &amp; a scratch-to-reveal date</em></span>
     <span class="go" aria-hidden="true">→</span>
   </a>
-  <a class="opt" href="kalyanam/">
-    <span class="new">New</span>
+  <a class="opt" style="--i:6" href="kalyanam/">
     <span class="shot" style="background-image:url(assets/img/previews/kalyanam.jpg)"></span>
     <span class="txt"><small>Option 7</small><b>Kalyanam</b><em>Scroll to bring the bride &amp; groom together</em></span>
     <span class="go" aria-hidden="true">→</span>
   </a>
-  <a class="opt" href="pooram/">
-    <span class="shot" style="background-image:url(assets/img/previews/pooram.jpg)"></span>
-    <span class="txt"><small>Option 8</small><b>Pooram</b><em>Kudamattam umbrellas &amp; fireworks</em></span>
+  <a class="opt" style="--i:7" href="charadu/">
+    <span class="new">New</span>
+    <span class="shot" style="background-image:url(assets/img/previews/charadu.jpg)"></span>
+    <span class="txt"><small>Option 8</small><b>Mangalya Charadu</b><em>A golden thread that ties the three knots</em></span>
     <span class="go" aria-hidden="true">→</span>
   </a>
-  <a class="opt" href="pookalam/">
+  <a class="opt" style="--i:8" href="uruli/">
+    <span class="new">New</span>
+    <span class="shot" style="background-image:url(assets/img/previews/uruli.jpg)"></span>
+    <span class="txt"><small>Option 9</small><b>Uruli</b><em>Touch the water — ripples, petals &amp; floating diyas</em></span>
+    <span class="go" aria-hidden="true">→</span>
+  </a>
+  <a class="opt" style="--i:9" href="popup/">
+    <span class="new">New</span>
+    <span class="shot" style="background-image:url(assets/img/previews/popup.jpg)"></span>
+    <span class="txt"><small>Option 10</small><b>Pop-up Book</b><em>A paper book whose pages turn as you scroll</em></span>
+    <span class="go" aria-hidden="true">→</span>
+  </a>
+  <a class="opt" style="--i:10" href="mandap3d/">
+    <span class="new">New</span>
+    <span class="shot" style="background-image:url(assets/img/previews/mandap3d.jpg)"></span>
+    <span class="txt"><small>Option 11</small><b>3D Mandap</b><em>A real 3D mandap you can turn with your finger</em></span>
+    <span class="go" aria-hidden="true">→</span>
+  </a>
+  <a class="opt" style="--i:11" href="foil/">
+    <span class="new">New</span>
+    <span class="shot" style="background-image:url(assets/img/previews/foil.jpg)"></span>
+    <span class="txt"><small>Option 12</small><b>Gold Foil</b><em>Tilt your phone and the gold foil shimmers</em></span>
+    <span class="go" aria-hidden="true">→</span>
+  </a>
+  <a class="opt" style="--i:12" href="kolam/">
+    <span class="new">New</span>
+    <span class="shot" style="background-image:url(assets/img/previews/kolam.jpg)"></span>
+    <span class="txt"><small>Option 13</small><b>Kolam Trace</b><em>Trace the dots and a kolam blooms into our names</em></span>
+    <span class="go" aria-hidden="true">→</span>
+  </a>
+  <a class="opt" style="--i:13" href="nightsky/">
+    <span class="new">New</span>
+    <span class="shot" style="background-image:url(assets/img/previews/nightsky.jpg)"></span>
+    <span class="txt"><small>Option 14</small><b>Wedding Night Sky</b><em>The real stars over Thiruvananthapuram on our day</em></span>
+    <span class="go" aria-hidden="true">→</span>
+  </a>
+  <a class="opt" style="--i:14" href="paperboat/">
+    <span class="new">New</span>
+    <span class="shot" style="background-image:url(assets/img/previews/paperboat.jpg)"></span>
+    <span class="txt"><small>Option 15</small><b>Paper Boat</b><em>Float down the backwaters to the mandap</em></span>
+    <span class="go" aria-hidden="true">→</span>
+  </a>
+  <a class="opt" style="--i:15" href="letter/">
+    <span class="new">New</span>
+    <span class="shot" style="background-image:url(assets/img/previews/letter.jpg)"></span>
+    <span class="txt"><small>Option 16</small><b>Vintage Letter</b><em>A typewritten letter, stamped &amp; sealed</em></span>
+    <span class="go" aria-hidden="true">→</span>
+  </a>
+  <a class="opt" style="--i:16" href="pooram/">
+    <span class="shot" style="background-image:url(assets/img/previews/pooram.jpg)"></span>
+    <span class="txt"><small>Option 17</small><b>Pooram</b><em>Kudamattam umbrellas &amp; fireworks</em></span>
+    <span class="go" aria-hidden="true">→</span>
+  </a>
+  <a class="opt" style="--i:17" href="pookalam/">
     <span class="shot" style="background-image:url(assets/img/previews/pookalam.jpg)"></span>
-    <span class="txt"><small>Option 9</small><b>Pookalam</b><em>A flower carpet that blooms at your touch</em></span>
+    <span class="txt"><small>Option 18</small><b>Pookalam</b><em>A flower carpet that blooms at your touch</em></span>
     <span class="go" aria-hidden="true">→</span>
   </a>
 </nav>

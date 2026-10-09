@@ -1,0 +1,1468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anupama &amp; Ajay · Wedding Night Sky</title>
+<meta name="description" content="Wedding of S. Anupama & Ajay Ratheendran · Sunday, 22 November 2026 · Sooryaprabha Convention Centre, Thiruvananthapuram">
+<meta property="og:title" content="Anupama & Ajay · 22 November 2026">
+<meta property="og:description" content="The sky above Thiruvananthapuram on our wedding night · Muhurtham between 11:45 AM & 12:06 PM">
+<meta name="theme-color" content="#03040c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2306091f'/><path d='M50 14 56 44 86 50 56 56 50 86 44 56 14 50 44 44z' fill='%23e8c47a'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/common.css">
+<style>
+  :root {
+    --ink: #02030a; --night: #050817; --indigo: #0b1030;
+    --gold: #e3bf73; --gold-l: #f4dca2; --gold-xl: #fbecc6; --gold-d: #a67c33;
+    --ivory: #f6f0e2; --ivory-2: rgba(246,240,226,.84); --ivory-3: rgba(246,240,226,.64);
+    --line: rgba(227,191,115,.44); --line-2: rgba(227,191,115,.2);
+    --ui-bg: rgba(6,9,28,.58); --ui-fg: #f1dba5; --ui-line: rgba(227,191,115,.42);
+    --sat: env(safe-area-inset-top); --sab: env(safe-area-inset-bottom); --sal: env(safe-area-inset-left); --sar: env(safe-area-inset-right);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--ink); -webkit-text-size-adjust: 100%; }
+  html, body { overflow-x: hidden; }
+  @supports (overflow: clip) { html, body { overflow-x: clip; } }
+  html:has(body.locked) { overflow: hidden; }
+  body { background: var(--ink); color: var(--ivory); font: 500 19px/1.55 'Cormorant Garamond', Georgia, serif; -webkit-tap-highlight-color: transparent; min-height: 100vh; }
+  a { color: inherit; }
+  p, h1, h2, h3 { text-wrap: balance; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .kick { font: 500 11px/1.6 'Cinzel', serif; letter-spacing: .32em; text-transform: uppercase; color: var(--gold-l); padding-left: .32em; }
+  .gold { background: linear-gradient(180deg, #fff6dc 0%, #f1d38e 45%, #c9973f 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* ---------- the sky (fixed) ---------- */
+  #stage { position: fixed; left: 0; top: 0; width: 100%; height: 100vh; height: 100lvh; z-index: 0; pointer-events: none; background: #000; }
+  #stage canvas { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; }
+  #land { position: absolute; left: 0; top: 0; width: 100%; height: 0; will-change: transform; }
+  #land canvas { height: auto; }
+  main { position: relative; z-index: 2; }
+  .back-link { z-index: 95; }
+  body.locked .back-link { pointer-events: none; }
+  #clock { position: fixed; right: 12px; top: calc(12px + var(--sat)); z-index: 90; pointer-events: none;
+    font: 500 10.5px/1 'Cinzel', serif; letter-spacing: .16em; padding: 9px 12px 9px 13px; border-radius: 999px;
+    color: var(--ui-fg); background: rgba(8,10,30,.94); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid var(--ui-line); opacity: 0; transition: opacity .6s; white-space: nowrap; }
+  #clock span { opacity: .7; margin-right: .35em; }
+  body.opened #clock { opacity: 1; }
+  /* text fades out before it reaches the top badges */
+  body.opened::after { content: ''; position: fixed; left: 0; right: 0; top: 0; height: calc(66px + var(--sat)); z-index: 80; pointer-events: none;
+    background: linear-gradient(180deg, rgba(4,6,20,.96) 0%, rgba(4,6,20,.75) 55%, rgba(4,6,20,0) 100%); }
+  body.opened .back-link { opacity: 1; background: rgba(8,10,30,.94); }
+
+  /* ---------- hero / intro ---------- */
+  .hero { position: relative; height: 100vh; height: 100svh; min-height: 560px; text-align: center; }
+  body.locked .hero { cursor: pointer; touch-action: none; }
+  .htop { position: absolute; left: 0; right: 0; top: calc(60px + var(--sat)); padding: 0 18px; opacity: 0; transform: translateY(8px); transition: opacity 1.6s ease, transform 1.8s cubic-bezier(.2,.8,.2,1); }
+  .htop.show { opacity: 1; transform: none; }
+  .htop::before { content: ''; position: absolute; z-index: -1; left: 50%; top: 50%; width: min(150%, 760px); height: 230%; transform: translate(-50%, -50%); pointer-events: none;
+    background: radial-gradient(closest-side, rgba(3,4,14,.72), rgba(3,4,14,.45) 55%, rgba(3,4,14,0)); }
+  .coords { font: 500 10.5px/2 'Cinzel', serif; letter-spacing: .22em; color: var(--gold-l); padding-left: .22em; text-shadow: 0 1px 14px rgba(0,0,0,.8); }
+  .coords span { white-space: nowrap; }
+  .coords .dot { font-weight: 500; margin: 0 .3em 0 .08em; letter-spacing: 0; }
+  @media (max-width: 380px) { .coords { font-size: 10px; letter-spacing: .15em; padding-left: .15em; } }
+  .skyline { font: italic 500 18.5px/1.35 'Cormorant Garamond', serif; color: var(--ivory-2); margin: 6px auto 0; max-width: 21em; text-shadow: 0 1px 14px rgba(0,0,0,.85); }
+  .namebox { position: absolute; left: 50%; top: 31%; height: 31%; width: min(94vw, 1000px); transform: translateX(-50%); pointer-events: none; }
+  .hdate { position: absolute; left: 0; right: 0; top: 65%; padding: 0 16px 0 calc(16px + .3em); font: 500 12.5px/1.6 'Cinzel', serif; letter-spacing: .3em; color: var(--gold-l); text-shadow: 0 0 18px rgba(0,0,0,.9); }
+  .hdate .w { display: inline-block; white-space: nowrap; }
+  .hdate i { font-style: normal; display: inline-block; opacity: 0; transform: translateY(4px); transition: opacity .9s ease, transform 1.1s cubic-bezier(.2,.8,.2,1); }
+  .hdate i.on { opacity: 1; transform: none; }
+  .hdate .ls { margin-right: -.3em; }
+  .intro { position: absolute; left: 0; right: 0; bottom: calc(7.5% + var(--sab)); display: flex; justify-content: center; pointer-events: none; }
+  .cta, .openwrap { grid-area: 1 / 1; }
+  .intro-in { display: grid; place-items: center; }
+  .cta { pointer-events: auto; appearance: none; border: 0; background: none; color: var(--ivory); cursor: pointer; display: inline-flex; flex-direction: column; align-items: center; gap: 12px;
+    font: 500 12px/1 'Cinzel', serif; letter-spacing: .34em; text-transform: uppercase; padding: 10px 14px 10px calc(14px + .34em); opacity: 0; transform: translateY(10px); transition: opacity 1.2s ease, transform 1.4s cubic-bezier(.2,.8,.2,1); }
+  .cta.show { opacity: 1; transform: none; }
+  .cta.gone { opacity: 0 !important; transform: translateY(-6px) !important; pointer-events: none; transition-duration: .6s; }
+  .cta .orb { position: relative; width: 46px; height: 46px; display: grid; place-items: center; }
+  .cta .orb svg { width: 22px; height: 22px; filter: drop-shadow(0 0 6px rgba(255,226,160,.9)); }
+  .cta .orb::before, .cta .orb::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(244,220,162,.55); animation: halo 2.8s ease-out infinite; }
+  .cta .orb::after { animation-delay: 1.4s; }
+  @keyframes halo { 0% { transform: scale(.45); opacity: 0; } 25% { opacity: .9; } 100% { transform: scale(1.5); opacity: 0; } }
+  .openwrap { display: flex; flex-direction: column; align-items: center; gap: 10px; opacity: 0; transform: translateY(10px); visibility: hidden; transition: opacity 1s ease, transform 1.2s cubic-bezier(.2,.8,.2,1), visibility 0s linear 1.2s; }
+  .openwrap.show { opacity: 1; transform: none; visibility: visible; pointer-events: auto; transition-delay: 0s; }
+  .openwrap small { font: italic 500 15px/1 'Cormorant Garamond', serif; color: var(--ivory-3); }
+  body.opened .openwrap, body.opened .cta { opacity: 0 !important; visibility: hidden; pointer-events: none; transition: opacity .5s, visibility 0s linear .5s; }
+  .cue { position: absolute; left: 0; right: 0; bottom: calc(5% + var(--sab)); display: flex; flex-direction: column; align-items: center; gap: 8px; font: 500 10px/1.4 'Cinzel', serif; letter-spacing: .32em; padding-left: .32em; text-transform: uppercase; color: var(--ivory-3); opacity: 0; transition: opacity 1.2s ease .5s; pointer-events: none; }
+  body.opened .cue { opacity: 1; }
+  .cue i { display: block; width: 1px; height: 30px; background: linear-gradient(180deg, rgba(244,220,162,0), rgba(244,220,162,.9)); transform-origin: top; animation: drip 2.4s ease-in-out infinite; }
+  @keyframes drip { 0% { transform: scaleY(0); opacity: 0; } 30% { opacity: 1; } 70% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1) translateY(10px); opacity: 0; } }
+
+  /* ---------- buttons ---------- */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 12px 24px 12px calc(24px + .2em); border-radius: 999px; text-decoration: none; cursor: pointer;
+    font: 500 12px/1 'Cinzel', serif; letter-spacing: .2em; text-transform: uppercase; color: #1b1406; border: 0;
+    background: linear-gradient(180deg, #fbe6b0 0%, #e7c27a 48%, #c8963f 100%);
+    box-shadow: 0 0 0 1px rgba(255,240,200,.35) inset, 0 10px 30px -10px rgba(232,190,110,.55), 0 2px 6px rgba(0,0,0,.4); transition: transform .25s ease, box-shadow .25s ease; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 0 0 1px rgba(255,240,200,.5) inset, 0 14px 34px -10px rgba(232,190,110,.7), 0 2px 6px rgba(0,0,0,.4); }
+  .btn:active { transform: translateY(1px) scale(.99); }
+  .btn svg { width: 17px; height: 17px; flex: none; }
+  .btn.ghost { color: var(--gold-l); background: rgba(8,11,32,.55); box-shadow: 0 0 0 1px rgba(227,191,115,.55) inset; }
+  .btn.ghost:hover { box-shadow: 0 0 0 1px rgba(244,220,162,.85) inset, 0 10px 30px -14px rgba(232,190,110,.6); }
+  .btn:focus-visible, .cta:focus-visible { outline: 2px solid var(--gold-l); outline-offset: 3px; }
+
+  /* ---------- sections ---------- */
+  .sec { position: relative; padding: 76px 16px; padding-left: max(16px, var(--sal)); padding-right: max(16px, var(--sar)); text-align: center; }
+  .sec.first { padding-top: 40px; }
+  .head { max-width: 640px; margin: 0 auto 30px; }
+  .head h2 { font: italic 500 clamp(34px, 9vw, 46px)/1.08 'Cormorant Garamond', serif; margin-top: 8px; }
+  .head .sub { font: italic 500 18px/1.45 'Cormorant Garamond', serif; color: var(--ivory-3); margin-top: 10px; }
+  .orn { display: block; width: 132px; height: 20px; margin: 0 auto 12px; overflow: visible; }
+
+  .glass { position: relative; border-radius: 22px; padding: 40px 24px; margin: 0 auto;
+    background: linear-gradient(180deg, rgba(15,19,52,.72) 0%, rgba(6,8,28,.8) 100%);
+    border: 1px solid var(--line); box-shadow: 0 30px 70px -34px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,240,205,.07), inset 0 0 60px rgba(70,86,180,.06); }
+  .glass::before { content: ''; position: absolute; inset: 7px; border-radius: 16px; border: 1px solid var(--line-2); pointer-events: none; }
+  .glass .pin { position: absolute; left: 50%; top: -9px; width: 18px; height: 18px; margin-left: -9px; }
+  .glass .pin.b { top: auto; bottom: -9px; }
+
+  .inv { max-width: 560px; padding: 46px 26px 44px; }
+  .inv .host { font: 500 12px/1.7 'Cinzel', serif; letter-spacing: .26em; padding-left: .26em; text-transform: uppercase; color: var(--gold-l); }
+  .inv .msg { font: italic 500 20px/1.5 'Cormorant Garamond', serif; color: var(--ivory-2); margin: 16px auto 26px; max-width: 24em; }
+  .inv .nm { font: 600 clamp(31px, 8.4vw, 40px)/1.12 'Cormorant Garamond', serif; letter-spacing: .01em; }
+  .inv .par { font: 500 17px/1.45 'Cormorant Garamond', serif; color: var(--ivory-3); margin-top: 6px; }
+  .inv .with { font: italic 500 22px/1 'Cormorant Garamond', serif; color: var(--gold); margin: 18px 0 16px; }
+  .rule { width: 140px; height: 1px; margin: 26px auto 22px; background: linear-gradient(90deg, rgba(227,191,115,0), rgba(227,191,115,.8), rgba(227,191,115,0)); position: relative; }
+  .rule::after { content: ''; position: absolute; left: 50%; top: 50%; width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px; background: var(--gold-l); transform: rotate(45deg); box-shadow: 0 0 10px rgba(244,220,162,.8); }
+  .inv .when { font: 500 13px/1.6 'Cinzel', serif; letter-spacing: .24em; padding-left: .24em; color: var(--gold-l); }
+
+  .duo { display: grid; gap: 22px; max-width: 980px; margin: 0 auto; }
+  @media (min-width: 760px) { .duo { grid-template-columns: 1fr 1fr; } }
+  .fcard { padding: 40px 22px 36px; width: 100%; max-width: 470px; }
+  .fcard .role { margin-bottom: 12px; }
+  .fcard .nm { font: 600 clamp(29px, 7.6vw, 36px)/1.12 'Cormorant Garamond', serif; }
+  .fcard .par { font: italic 500 18px/1.45 'Cormorant Garamond', serif; color: var(--ivory-2); margin-top: 6px; }
+  .fcard .sep { width: 46px; height: 1px; background: var(--line); margin: 20px auto; }
+  .fcard address { font: 500 17px/1.6 'Cormorant Garamond', serif; font-style: normal; color: var(--ivory-3); }
+  .fcard address b { display: block; font: 600 12px/1.6 'Cinzel', serif; letter-spacing: .24em; padding-left: .24em; color: var(--gold-l); margin-bottom: 4px; }
+
+  .ecard { padding: 42px 22px 34px; width: 100%; max-width: 470px; }
+  .ecard .no { font: 500 11px/1 'Cinzel', serif; letter-spacing: .34em; padding-left: .34em; color: var(--gold); }
+  .ecard h3 { font: italic 600 clamp(36px, 9.6vw, 44px)/1.05 'Cormorant Garamond', serif; margin: 12px 0 10px; }
+  .ecard .t { font: 600 22px/1.3 'Cormorant Garamond', serif; color: var(--gold-l); }
+  .ecard .t small { display: block; font: italic 500 16px/1.2 'Cormorant Garamond', serif; color: var(--ivory-3); margin-bottom: 2px; }
+  .ecard .d { font: italic 500 18px/1.45 'Cormorant Garamond', serif; color: var(--ivory-2); margin: 14px auto 24px; max-width: 18em; }
+  .evline { font: italic 500 18px/1.5 'Cormorant Garamond', serif; color: var(--ivory-3); margin-top: 26px; }
+
+  /* countdown */
+  .cdcard { max-width: 560px; padding: 34px 14px 30px; }
+  .cdrow { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .cdrow > div { position: relative; padding: 4px 2px; }
+  .cdrow > div + div::before { content: ''; position: absolute; left: 0; top: 18%; bottom: 18%; width: 1px; background: linear-gradient(180deg, rgba(227,191,115,0), rgba(227,191,115,.5), rgba(227,191,115,0)); }
+  .cdrow b { display: block; font: 600 clamp(38px, 11vw, 58px)/1 'Cormorant Garamond', serif; font-variant-numeric: lining-nums tabular-nums;
+    background: linear-gradient(180deg, #fff6dc 0%, #f1d38e 45%, #c9973f 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .cdrow span { display: block; font: 500 9.5px/1 'Cinzel', serif; letter-spacing: .26em; padding-left: .26em; text-transform: uppercase; color: var(--ivory-3); margin-top: 12px; }
+  .cdline { font: italic 500 18px/1.5 'Cormorant Garamond', serif; color: var(--ivory-3); margin-top: 20px; }
+  .cd-done { display: none; }
+  [data-countdown].done ~ .cd-done { display: block; }
+
+  /* star chart + astrolabe frames */
+  .frame { position: relative; width: min(100%, 440px); margin: 0 auto; aspect-ratio: 1; }
+  .frame > svg.ring { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .frame .disc { position: absolute; left: 12.5%; top: 12.5%; width: 75%; height: 75%; border-radius: 50%; overflow: hidden; background: #050818; }
+  #chart { width: 100%; height: 100%; display: block; cursor: pointer; touch-action: manipulation; }
+  .chartcap { min-height: 3.4em; margin-top: 18px; }
+  .chartcap b { display: block; font: italic 600 26px/1.15 'Cormorant Garamond', serif; color: var(--gold-l); }
+  .chartcap span { display: block; font: 500 16.5px/1.45 'Cormorant Garamond', serif; color: var(--ivory-3); margin-top: 3px; }
+  .hint { font: 500 10px/1.4 'Cinzel', serif; letter-spacing: .28em; padding-left: .28em; text-transform: uppercase; color: var(--ivory-3); margin-top: 10px; opacity: .85; }
+  .venue .frame { width: min(100%, 460px); aspect-ratio: 400 / 440; }
+  .venue .frame .disc { left: 12.5%; top: 20.45%; width: 75%; height: 68.18%; isolation: isolate; -webkit-mask-image: -webkit-radial-gradient(white, black); }
+  .venue iframe { position: absolute; left: -60%; top: -60%; width: 220%; height: 220%; border: 0; }
+  /* soft night-blue ring so the (normal-coloured) map sits naturally inside the astrolabe in every browser */
+  .venue .frame .disc::after { content: ''; position: absolute; inset: 0; z-index: 2; border-radius: 50%; pointer-events: none;
+    box-shadow: inset 0 0 0 2px rgba(224,190,120,.55), inset 0 0 26px 8px rgba(5,8,24,.6); }
+  .addr { font: italic 500 18px/1.45 'Cormorant Garamond', serif; color: var(--ivory-3); margin-top: 10px; }
+
+  /* closing */
+  .sec.closing { padding-bottom: calc(46vh + var(--sab)); text-shadow: 0 2px 18px rgba(2,3,10,.9); }
+  .closing .names { font: italic 500 clamp(52px, 15vw, 96px)/1 'Cormorant Garamond', serif; margin: 18px 0 8px; }
+  .closing .names .amp { display: block; font-size: .5em; margin: .12em 0 .08em; color: var(--gold); -webkit-text-fill-color: currentColor; }
+  .closing .date8 { font: 500 14px/1.6 'Cinzel', serif; letter-spacing: .36em; padding-left: .36em; color: var(--gold-l); }
+  .closing .ty { font: italic 500 20px/1.5 'Cormorant Garamond', serif; color: var(--ivory-2); margin: 22px auto 0; max-width: 20em; }
+  .closing .foot { font: 500 10px/1.6 'Cinzel', serif; letter-spacing: .3em; padding-left: .3em; text-transform: uppercase; color: var(--ivory-3); margin-top: 26px; }
+
+  @media (min-width: 760px) {
+    .coords { font-size: 11.5px; }
+    .skyline { font-size: 21px; }
+    .hdate { font-size: 15px; letter-spacing: .34em; padding-left: calc(16px + .34em); }
+    .sec { padding-top: 96px; padding-bottom: 96px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .htop, .cta, .openwrap, .hdate i { transition-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body class="locked">
+<a class="back-link" href="../">← Designs</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2cf"/><stop offset=".5" stop-color="#e6c178"/><stop offset="1" stop-color="#b98a3a"/></linearGradient>
+    <symbol id="st4" viewBox="-10 -10 20 20"><path d="M0-10 1.6-1.6 10 0 1.6 1.6 0 10-1.6 1.6-10 0-1.6-1.6z" fill="url(#gG)"/></symbol>
+    <symbol id="orn" viewBox="0 0 132 20">
+      <path d="M4 12 30 8 52 13 66 6 80 13 102 8 128 12" fill="none" stroke="#e3bf73" stroke-width=".8" opacity=".75"/>
+      <circle cx="4" cy="12" r="1.3" fill="#f4dca2"/><circle cx="128" cy="12" r="1.3" fill="#f4dca2"/>
+      <circle cx="30" cy="8" r="1.7" fill="#f4dca2"/><circle cx="102" cy="8" r="1.7" fill="#f4dca2"/>
+      <circle cx="52" cy="13" r="1.4" fill="#f4dca2"/><circle cx="80" cy="13" r="1.4" fill="#f4dca2"/>
+      <use href="#st4" x="59" y="-1" width="14" height="14"/>
+    </symbol>
+    <symbol id="cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></g></symbol>
+  </defs>
+</svg>
+
+<div id="stage" aria-hidden="true"><canvas id="sky"></canvas><canvas id="fx"></canvas><div id="land"><canvas id="sil"></canvas><canvas id="bulbs"></canvas></div></div>
+<div id="clock" aria-hidden="true"><span>The sky at</span><b id="clockT">8:00&nbsp;PM</b></div>
+
+<main>
+  <header class="hero" id="hero">
+    <div class="htop" id="htop">
+      <p class="coords"><span>8.52° N, 76.94° E</span><b class="dot"> · </b><span>22 November 2026</span><b class="dot"> · </b><span>8:00&nbsp;PM</span></p>
+      <p class="skyline">The sky above Thiruvananthapuram on our wedding night</p>
+    </div>
+    <h1 class="sr">Anupama &amp; Ajay · Wedding Invitation · Sunday, 22 November 2026</h1>
+    <div class="namebox" id="namebox" aria-hidden="true"></div>
+    <p class="hdate" id="hdate" aria-label="Sunday, 22 November 2026">Sunday · 22 November 2026</p>
+    <div class="intro" id="intro">
+      <div class="intro-in">
+        <button class="cta" id="cta" type="button"><span class="orb"><svg viewBox="-10 -10 20 20" aria-hidden="true"><use href="#st4" x="-10" y="-10" width="20" height="20"/></svg></span>Touch the sky</button>
+        <div class="openwrap" id="openwrap">
+          <button class="btn" id="openBtn" type="button"><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0-9 1.4-1.4 9 0 1.4 1.4 0 9-1.4 1.4-9 0-1.4-1.4z" fill="currentColor"/></svg>Open the invitation</button>
+          <small>or simply scroll</small>
+        </div>
+      </div>
+    </div>
+    <p class="cue" aria-hidden="true">Scroll through the night<i></i></p>
+  </header>
+
+  <section class="sec first" aria-label="Invitation">
+    <article class="glass inv" data-reveal>
+      <svg class="pin" aria-hidden="true"><use href="#st4"/></svg>
+      <p class="host">Together with our families</p>
+      <p class="msg">we request the honour of your esteemed presence and blessings with family on the auspicious occasion of our marriage</p>
+      <p class="nm gold">S. Anupama</p>
+      <p class="par">(D/o Sajeev S &amp; Smitha L.R)</p>
+      <p class="with">with</p>
+      <p class="nm gold">Ajay Ratheendran</p>
+      <p class="par">(S/o P.R Ratheendra Kurup &amp; Usha Devi)</p>
+      <div class="rule"></div>
+      <p class="when">Sunday · 22 November 2026</p>
+      <svg class="pin b" aria-hidden="true"><use href="#st4"/></svg>
+    </article>
+  </section>
+
+  <section class="sec" aria-label="Families">
+    <div class="head" data-reveal>
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="kick">With the blessings of</p>
+      <h2>Our Families</h2>
+    </div>
+    <div class="duo">
+      <article class="glass fcard" data-reveal>
+        <svg class="pin" aria-hidden="true"><use href="#st4"/></svg>
+        <p class="kick role">The Bride</p>
+        <p class="nm gold">S. Anupama</p>
+        <p class="par">D/o Sajeev S &amp; Smitha L.R</p>
+        <div class="sep"></div>
+        <address><b>REVATHY</b>Thachottukavu, Peyad P.O.<br>Thiruvananthapuram – 695573</address>
+      </article>
+      <article class="glass fcard" data-reveal>
+        <svg class="pin" aria-hidden="true"><use href="#st4"/></svg>
+        <p class="kick role">The Groom</p>
+        <p class="nm gold">Ajay Ratheendran</p>
+        <p class="par">S/o P.R Ratheendra Kurup &amp; Usha Devi</p>
+        <div class="sep"></div>
+        <address><b>PUTHAN VEEDU</b>Kodukulanjikarod, Kozhuvalloor P.O.<br>Chengannur, Alappuzha – 689521</address>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" aria-label="Ceremonies">
+    <div class="head" data-reveal>
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="kick">The auspicious hours</p>
+      <h2>Sunday, <span style="white-space:nowrap">22 November 2026</span></h2>
+    </div>
+    <div class="duo">
+      <article class="glass ecard" data-reveal>
+        <svg class="pin" aria-hidden="true"><use href="#st4"/></svg>
+        <p class="no">Ceremony I</p>
+        <h3 class="gold">Sweekaranam</h3>
+        <p class="t">10:45&nbsp;AM</p>
+        <p class="d">Welcoming the bridegroom &amp; family</p>
+        <a class="btn ghost" data-cal="google" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#cal"/></svg>Add to Calendar</a>
+      </article>
+      <article class="glass ecard" data-reveal>
+        <svg class="pin" aria-hidden="true"><use href="#st4"/></svg>
+        <p class="no">Ceremony II</p>
+        <h3 class="gold">Muhurtham</h3>
+        <p class="t"><small>between</small>11:45&nbsp;AM &amp; 12:06&nbsp;PM</p>
+        <p class="d">The sacred thali&#8209;tying ceremony</p>
+        <a class="btn ghost" data-cal="google" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#cal"/></svg>Add to Calendar</a>
+      </article>
+    </div>
+    <p class="evline" data-reveal>Sooryaprabha Convention Centre, Mannanthala</p>
+  </section>
+
+  <section class="sec" aria-label="Our wedding sky">
+    <div class="head" data-reveal>
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="kick">22 November 2026 · 8:00&nbsp;PM</p>
+      <h2>Our Wedding Sky</h2>
+      <p class="sub">The real sky above Thiruvananthapuram, looking straight up, with the waxing Moon and Saturn</p>
+    </div>
+    <div class="frame" id="chartFrame" data-reveal="zoom">
+      <div class="disc"><canvas id="chart" aria-label="Interactive star chart of the wedding night sky" role="img"></canvas></div>
+    </div>
+    <div class="chartcap" id="chartCap" aria-live="polite"><b>Taurus</b><span>The Bull · Aldebaran &amp; the Pleiades</span></div>
+    <p class="hint">Tap a constellation</p>
+  </section>
+
+  <section class="sec" aria-label="Countdown">
+    <div class="head" data-reveal>
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="kick">Counting down to</p>
+      <h2>The Muhurtham</h2>
+    </div>
+    <div class="glass cdcard" data-reveal data-countdown>
+      <div class="cdrow">
+        <div><b data-cd="d">0</b><span>Days</span></div>
+        <div><b data-cd="h">00</b><span>Hours</span></div>
+        <div><b data-cd="m">00</b><span>Minutes</span></div>
+        <div><b data-cd="s">00</b><span>Seconds</span></div>
+      </div>
+    </div>
+    <p class="cdline cd-done">The auspicious moment has arrived. Thank you for your blessings.</p>
+    <p class="cdline">11:45&nbsp;AM · Sunday, 22 November 2026</p>
+  </section>
+
+  <section class="sec venue" aria-label="Venue">
+    <div class="head" data-reveal>
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="kick">Where we gather</p>
+      <h2>Sooryaprabha Convention Centre</h2>
+      <p class="addr">SH 1, Mannanthala, Thiruvananthapuram, Kerala 695015</p>
+    </div>
+    <div class="frame" id="mapFrame" data-reveal="zoom">
+      <div class="disc">
+        <iframe title="Map to Sooryaprabha Convention Centre" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Sooryaprabha%20Convention%20Centre%2C%20Mannanthala%2C%20Thiruvananthapuram&z=15&output=embed"></iframe>
+      </div>
+    </div>
+    <a class="btn" data-map target="_blank" rel="noopener" style="margin-top:28px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Get Directions</a>
+  </section>
+
+  <section class="sec closing" aria-label="With love">
+    <div class="head" data-reveal style="margin-bottom:0">
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="kick">With love &amp; gratitude</p>
+      <h2 class="names gold">Anupama<span class="amp">&amp;</span>Ajay</h2>
+      <p class="date8">22 · 11 · 2026</p>
+      <p class="ty">Thank you for blessing us with your presence</p>
+      <p class="foot">Under the same stars</p>
+    </div>
+  </section>
+</main>
+
+<script src="../assets/common.js"></script>
+<script>
+(function () {
+  'use strict';
+  var doc = document, body = doc.body, root = doc.documentElement;
+  var RM = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var SKIP = /[?&]open\b/.test(location.search);
+  var LAT = 8.524, LON = 76.936;
+  var T0 = Date.UTC(2026, 10, 22, 14, 30, 0);   // 8:00 PM IST, Sunday 22 November 2026
+  var SPAN = 5 * 3600e3;                         // scrolling the page passes five hours of night
+  function $(s) { return doc.querySelector(s); }
+  function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function sm(a, b, x) { var t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); }
+  function eio(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function eo(t) { return 1 - Math.pow(1 - t, 3); }
+  function mulberry(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+  /* =====================================================================
+     STAR CATALOGUE — HYG v4.0 subset (Hipparcos/Yale/Gliese), J2000.
+     600 stars brighter than mag 4.4 that are above the Thiruvananthapuram horizon
+     between 8 PM and 1 AM on 22 Nov 2026, plus fainter stars needed for the figures.
+     stars: [RA deg*100, Dec deg*100, V mag*100, B-V*100, ...] (sorted by brightness)
+     cons:  [abbr, name, note, polylines of star indices] (Stellarium "modern" figures)
+     ===================================================================== */
+  var CAT = {"stars":[10129,-1672,-144,1,9599,-5270,-62,16,27923,3878,3,0,7917,4600,8,80,7863,-820,18,-3,11483,522,40,43,2443,-5724,45,-16,8879,741,45,150,29770,887,76,22,6898,1651,87,154,11633,2803,116,99,34441,-2962,117,14,31036,4528,125,9,15209,1197,136,-9,10466,-2897,150,-21,11365,3189,158,3,8128,635,164,-22,8157,2861,165,-13,13830,-6972,167,7,8405,-120,169,-18,33206,-4696,173,-7,8519,-194,174,-20,12238,-4734,175,-14,19351,5596,176,-2,5108,4986,179,48,27604,-3438,179,-3,16593,6175,181,106,10710,-2639,183,67,20689,4931,185,-10,12563,-5951,186,120,8988,4495,190,8,9943,1640,193,0,13118,-5471,193,4,30641,-5674,194,-12,3795,8926,197,64,9567,-1796,198,-24,14190,-866,199,144,3179,2346,201,115,15499,1984,201,113,1090,-1799,204,102,28382,-2630,205,-13,210,2909,207,-4,1743,3562,207,158,8694,-967,207,-17,34067,-4688,207,161,22268,7416,207,146,26373,1256,208,16,4704,4096,209,0,3097,4233,210,137,17726,1457,214,9,1418,6072,215,-5,12090,-4000,221,-27,13927,-5928,221,19,13700,-4343,223,166,30556,4026,223,67,20098,5493,223,6,1013,5654,224,117,26915,5149,224,152,8300,-30,225,-18,229,5915,228,38,16546,5638,234,3,32605,988,238,152,657,-4231,240,108,17846,5369,241,4,34594,2808,244,166,11102,-2930,245,-8,31964,6259,245,26,14053,-5501,247,-14,31155,3397,248,102,34619,1521,249,0,4557,409,254,163,16853,2052,256,13,8318,-1782,258,21,28565,-2988,260,6,2866,2081,264,16,8491,-3407,265,-12,8993,3721,265,-8,2145,6024,266,16,7425,3317,269,149,10929,-3710,271,162,27525,-2983,272,138,29656,1061,272,151,24600,6151,273,91,16074,-6439,274,-22,8386,-591,275,-21,26587,457,276,117,7696,-509,278,16,26261,5230,279,95,8206,-2076,281,81,642,-7725,282,62,27699,-2542,282,102,331,1518,283,-19,12189,-2430,283,46,5853,3188,284,27,5687,2411,285,-9,32676,-1613,285,18,2969,-6157,286,29,29624,4513,286,0,9574,2251,287,162,33463,-6026,287,139,4457,-4030,288,13,28744,-2102,288,38,11179,829,289,-10,5946,4001,290,-20,32289,-557,290,83,4620,5351,291,72,14678,-6507,292,27,34075,3022,293,85,10248,-5061,294,121,33145,-32,295,97,5951,-1351,297,159,8441,2114,297,-15,14646,2377,297,81,27145,-3042,298,98,28635,1386,299,1,19973,-2317,299,92,3239,3499,300,14,16742,4450,300,114,32848,-3736,300,-8,23018,7183,300,6,5573,4779,301,-12,9508,-3006,302,-16,10576,-2383,302,-8,7549,4382,303,54,29268,2796,305,109,30525,-1478,305,79,10098,2513,306,138,15558,4150,306,160,28814,6766,307,99,27441,-3676,310,158,13385,595,311,98,16241,-1619,311,123,30939,-4729,311,100,8774,-3577,312,115,13480,4804,312,22,25876,2484,312,8,14026,3439,314,155,14281,-5703,316,154,25876,3681,316,144,9944,-4320,317,-10,14322,5168,317,48,25720,6571,317,-12,28141,-2699,317,-11,7663,4123,318,-15,7246,696,319,48,7637,-2237,319,146,31823,3023,321,99,35484,7763,321,103,27533,-290,323,94,32216,7056,323,-20,10205,-6194,324,22,30283,-82,324,-7,11231,-4330,325,151,28474,3269,325,-5,21159,-2668,325,109,5681,-7424,326,159,983,3086,327,127,34366,-1582,327,7,7823,-1621,329,-11,15343,-7004,329,-7,23123,5897,329,117,6850,-5504,330,-8,9372,2251,331,160,1652,-4672,332,88,4629,3884,332,153,18386,5703,332,8,26976,-977,332,99,28674,-2767,332,117,6361,-6247,333,92,16856,1543,333,0,11732,-2486,334,122,2860,6367,335,-15,8112,-240,335,-24,10132,1290,335,44,12757,6072,335,86,29137,311,336,32,13169,642,338,68,8378,993,339,-16,15427,-6133,339,154,33271,5820,339,156,6717,1587,340,18,2209,-4332,341,154,6017,1249,341,-10,31132,6184,341,91,34037,1083,341,-9,2827,2958,342,49,26661,2772,342,75,31124,-6620,342,16,13774,-5897,343,-19,15417,2342,343,31,28656,-488,343,-10,15427,4291,345,3,1227,5782,346,59,1715,-1018,346,116,11919,-5298,346,-18,4083,324,347,9,15183,1676,348,-3,2602,-1594,349,73,10543,-2793,349,173,16962,3309,349,140,27674,-4597,349,-18,34214,-5132,349,8,10246,-3251,350,-12,11003,2198,350,37,34242,6620,350,105,29969,1949,351,157,34250,2460,351,93,5581,-976,352,92,14529,989,352,52,14922,-5457,352,-7,28252,3336,352,0,28443,-2111,352,115,33255,620,352,9,6715,1918,353,101,12413,919,353,148,17325,-3186,354,95,6447,-3380,355,-11,8674,-1482,355,10,27526,7273,355,49,30218,-6618,355,75,486,-882,356,121,3413,-5151,356,-12,11611,2440,357,93,13591,4716,357,1,10952,1654,358,11,30451,-1254,358,88,2450,4863,359,127,7940,-684,359,-12,8612,-2245,359,48,2101,-818,360,106,10320,3396,360,10,13007,-5292,360,-17,14268,-4047,360,37,4250,2726,361,-10,5120,903,361,89,15265,-1235,361,101,2287,1535,362,97,5729,2405,362,-7,11631,-3797,362,171,34548,4233,362,-10,30939,1460,364,42,6495,1563,365,98,14288,6306,365,36,33721,-2,365,41,31370,-5845,367,125,21110,6438,367,-5,7280,561,368,-16,13090,-3319,368,-18,29685,1853,368,131,34736,-2117,368,120,924,5390,369,-20,2899,-5161,369,84,7562,4108,369,115,14631,-6251,369,101,17651,4778,369,118,32502,-1666,369,32,4988,-2176,370,161,26944,2925,370,94,34929,328,370,92,7356,244,371,-18,8910,-1417,371,34,11805,-4058,371,101,27184,956,371,16,29883,641,371,86,5323,-946,372,88,5622,2411,372,-10,8988,5428,372,101,31623,4393,372,161,5179,973,373,-8,26838,5687,373,118,32537,-7739,373,101,34315,-758,373,163,2787,-1034,374,114,31870,3805,374,39,13604,-4710,375,117,26697,271,375,4,8341,-6249,376,64,8783,-2088,376,98,9720,-703,376,-11,28617,-2174,376,101,29243,5173,376,15,33782,5028,376,3,4267,5590,377,169,5630,4258,377,42,6573,1754,377,98,8469,-260,377,-19,12643,-6614,377,113,13016,-4665,377,67,30991,1591,377,-6,32167,-2241,377,100,33175,2535,377,44,10719,-7050,378,101,11143,2780,378,102,14775,5904,378,29,31192,-950,378,0,16337,-5885,378,94,4737,4486,379,98,16333,3421,379,104,4802,-2899,380,54,11471,-2680,380,-16,28928,5337,380,95,30341,4674,380,127,6889,-3056,381,96,15697,-5874,381,32,35439,4646,381,98,3051,276,382,2,13971,3680,382,7,17285,6933,382,161,26487,4601,382,-18,15652,-1684,383,146,5605,-6481,384,113,5608,3229,384,2,6714,1596,384,95,13376,-6064,384,-10,15820,931,384,-15,15933,-4823,384,30,27189,2876,384,-2,27344,-2106,384,20,29704,7027,384,89,6350,-4229,385,108,8682,-5107,385,17,9553,-3344,385,86,15368,-4212,385,5,18837,6979,385,-12,27592,2177,385,117,27880,-824,385,132,1419,3850,386,13,6955,-1430,386,108,8280,-3547,386,113,26906,3725,386,135,33541,-139,386,-6,5646,2437,387,-6,13151,-4604,387,2,29812,101,387,63,235,-4575,388,101,2838,1929,388,-5,14819,2601,388,122,34759,-4525,388,100,4411,-890,389,109,10353,-2418,389,174,13859,231,389,-6,29908,3508,389,102,14496,-114,390,131,6079,599,391,3,12642,-391,391,-1,29042,-1785,392,23,31896,525,392,55,655,-4368,393,18,2281,-4907,393,97,4356,5276,393,76,6908,-335,393,-21,11546,-7261,393,103,27016,293,393,3,16715,-5898,393,123,1710,-5525,394,-12,11531,-955,394,102,11595,-2895,394,16,13117,1815,394,108,31429,4117,394,3,3086,7242,395,0,9917,-1926,395,104,6217,4771,396,-2,8979,-4282,396,115,13516,4178,396,46,13782,-6232,396,-18,29066,-4446,396,-8,29097,-4062,396,-10,30387,4771,396,145,35074,-2010,396,108,6601,-3402,397,147,8787,3915,397,113,10921,-6796,397,76,13003,-3531,397,94,30015,-7291,397,-3,33732,-4350,397,102,34163,2357,397,107,5974,3579,398,2,32350,4559,398,88,3000,-2108,399,155,9371,-627,399,132,34936,-5824,399,41,13561,-6640,400,14,17098,1053,400,42,2592,5069,401,-10,7138,-325,401,-15,10603,2057,401,90,10870,-2677,401,-15,30735,3037,401,40,24047,5857,401,53,13263,-2771,402,127,28491,1507,402,108,28542,-574,402,108,3433,3385,403,2,7585,6044,403,92,13167,2876,403,101,27136,250,403,86,30830,1130,403,-12,35983,686,403,42,6297,-684,404,33,33884,-12,404,-8,4727,4961,405,60,12463,-7692,405,41,13110,-4265,405,87,17028,603,405,-6,34240,-1359,405,157,7409,1351,406,116,11398,2690,406,154,33729,5842,407,78,1183,2427,408,110,3544,-6866,408,3,3987,33,408,-21,4560,-2362,408,16,10355,-1204,408,142,14361,-5923,408,-1,16494,-1830,408,108,28383,4395,408,140,31649,-1723,408,-1,32052,1980,408,111,8423,929,409,95,2420,4141,410,54,4105,4923,410,51,11731,-4637,410,-16,27721,-4907,410,100,28751,-3934,410,116,4017,-3986,411,101,10594,-1563,411,-11,12941,-4299,411,11,14787,-1485,411,92,28737,-3790,411,4,34522,-5275,411,96,3990,-6827,412,-6,6372,4841,412,94,9060,965,412,17,29882,-4187,412,106,31296,-2692,412,163,33744,-4375,412,157,8099,-781,413,94,9724,2021,413,-12,31152,-2527,413,43,34152,-8138,413,21,35499,563,413,51,5272,1294,414,111,5658,2395,414,-5,12941,570,414,0,32616,2565,414,42,33399,3775,414,145,10797,-49,415,0,26092,3715,415,-1,35510,4433,415,-7,9103,2326,416,84,11228,3178,416,32,825,6293,417,13,5736,-3620,417,93,33421,-778,417,98,33376,5704,418,28,34016,-2704,418,-10,28142,2055,419,48,8270,595,420,-14,11921,-2288,420,72,15697,3671,420,91,34167,1217,420,50,34399,-3254,420,95,5227,5994,421,42,6634,2229,421,14,25149,8204,421,90,30740,6299,421,20,32161,-6537,421,49,4265,3832,422,34,5671,-2325,422,43,11833,-4810,422,-13,27519,7134,422,-9,28179,-475,422,109,28305,-6219,422,-15,28363,3690,422,158,31142,3072,422,105,31935,3939,422,10,34858,-605,422,154,501,-6487,423,58,11583,2888,423,112,28660,-3706,423,52,32588,5878,423,224,32670,4931,423,-12,1718,8626,424,121,3675,-4770,424,-14,4103,-1386,424,-12,26535,-1288,424,9,34897,-909,424,111,1894,-6888,425,48,6165,5035,425,-1,6891,1016,425,18,6917,4126,425,117,7729,-875,425,-19,12571,4319,425,155,32636,6112,425,47,1738,4724,426,1,2635,916,426,94,4998,-4307,426,71,5345,-2163,426,-11,6401,-5149,426,31,7351,6634,426,-1,13462,1186,426,14,27038,2160,426,41,33095,6463,426,38,1574,789,427,95,4124,1011,427,31,6388,889,427,-5,6954,1251,427,12,7056,2296,427,-11,29080,-4480,427,35,31166,1612,427,104,35199,638,427,106,6658,2281,428,26,14427,8133,428,149,15679,-3107,428,143,30335,5657,428,11,32056,-1683,428,89,33250,3318,428,47,34672,-4352,428,42,5422,40,429,57,7989,-1318,429,-24,23601,7779,429,4,33161,-1387,429,-8,33788,-3235,429,1,35453,4327,429,-8,17823,-3391,429,-10,1465,-2936,430,-15,3704,846,430,-5,5630,2447,430,-11,5715,-3762,430,-4,6637,1793,430,5,8998,4594,430,170,13081,340,430,-19,16390,2475,430,2,30441,-1251,430,93,13015,-5976,431,-12,30958,-111,431,95,5412,4819,432,-6,7011,-1967,432,160,8305,1859,432,206,9384,2950,432,102,13159,-1355,432,90,14293,2297,432,154,11204,893,433,142,27497,3606,433,116,922,3372,434,-12,964,2931,434,87,1778,5515,434,17,8619,-6574,434,22,9796,-2342,434,-24,12516,-7748,434,116,13905,-5754,434,160,14421,-4936,434,17,26163,414,434,148,28119,3761,434,19,28176,1818,434,15,32613,1735,434,116,33738,4771,434,168,4791,1973,435,103,7265,890,435,1,9874,-5298,435,-2,10432,5842,435,85,12198,-6862,435,-11,13211,584,435,-4,26305,8659,435,2,28909,3813,435,126,32624,-3303,435,-5,789,-6296,436,-6,1084,-5746,436,2,3325,885,436,88,5264,4800,436,137,6117,2208,436,106,7322,-545,436,26,7831,-1294,436,-9,8938,-3528,436,-16,10403,-1705,436,-6,12215,-298,436,97,29418,-129,436,-8,49,-601,437,163,9414,-3514,437,98,10968,-2495,437,-13,27219,2081,437,-16,29993,-3528,437,-15,30222,7771,438,-5,35151,-2064,438,146,35324,-3782,438,-10,2841,-4630,439,160,5738,6553,439,187,8371,949,439,-16,8860,2028,439,59,9594,459,439,22,12057,233,439,125,15198,1000,439,145,29502,1801,439,78,29526,1748,439,104,31997,-5345,439,19,1430,2342,440,94,11702,-2594,440,-7,12226,-1925,440,-16,28424,-6723,440,53,32948,-5499,440,30,10778,3025,441,126,22257,-2796,442,137,9189,1477,442,-16,31086,1507,443,30,30066,-2771,443,164,28889,7336,445,126,12969,334,445,122,7807,-1187,445,-10,9298,1421,445,-18,2536,549,445,135,4128,-1857,447,48,33153,-3954,447,135,9823,733,447,2,7464,171,447,137,32604,2874,449,51,35551,178,449,20,1245,4108,453,-14,26689,-2783,453,60,9876,-2296,454,-4,14300,-118,454,11,14803,5406,455,4,16088,-6057,458,170,14229,-277,459,41,2839,319,461,93,9098,2014,464,24,7372,1015,464,8,8852,-6309,465,102,13082,2147,466,1,10024,990,466,-23,9154,-1494,467,5,1844,2458,467,105,12031,-139,469,148,4493,891,471,-11,3802,-1524,474,45,3995,-4289,474,6,1987,2726,474,3,13994,-1197,477,93,10183,804,477,140,21577,-2775,478,130,4896,-882,480,23,33766,-1068,482,-5,3989,-1187,483,45,2255,614,484,137,26307,5517,486,28,3897,559,487,88,3649,-1229,488,-3,28941,-1895,488,101,16633,-2729,492,37,19726,-2312,494,105,33254,-3255,494,49,9301,1613,495,-15,24438,7576,495,39,35660,349,495,251,35173,126,495,4,32693,-3090,502,4,35009,538,505,120,14508,-1433,507,-15,21319,-2726,507,113,12502,2722,513,49,8000,-1232,529,-10,11726,-2491,532,75,7334,251,533,163,515,819,538,134,33021,-2845,543,-10,1570,3180,550,-4,33231,3317,558,98,29401,-2472,564,18,1207,730,592,110,3484,-298,647,97,9666,1310,660,56,10355,-2393,665,-6],"names":{"0":"Sirius","1":"Canopus","2":"Vega","3":"Capella","4":"Rigel","5":"Procyon","6":"Achernar","7":"Betelgeuse","8":"Altair","9":"Aldebaran","10":"Pollux","11":"Fomalhaut","12":"Deneb","13":"Regulus","14":"Adhara","15":"Castor","16":"Bellatrix","17":"Elnath","19":"Alnilam","20":"Alnair","21":"Alnitak","24":"Mirfak","27":"Wezen","30":"Menkalinan","31":"Alhena","34":"Polaris","35":"Mirzam","37":"Hamal","39":"Diphda","41":"Alpheratz","42":"Mirach","43":"Saiph","47":"Algol","48":"Almach","56":"Schedar","58":"Mintaka","59":"Caph","61":"Enif","62":"Ankaa","64":"Scheat","69":"Markab","70":"Menkar","94":"Alcyone","95":"Deneb Algedi","104":"Sadalsuud","109":"Sadalmelik","237":"Atlas","265":"Electra","331":"Maia","442":"Merope","527":"Taygeta","668":"Mira"},"cons":[["Aql","Aquila","The Eagle \u00b7 with Altair",[[263,8,81],[8,175,333],[151,333],[175,114,390],[175,190]]],["And","Andromeda","The Chained Princess",[[41,156,42],[48,42,326,616]]],["Cet","Cetus","The Whale",[[568,526],[197,39,220],[39,193,229,272,645,641,484,633,197],[668,641],[668,410,195,70,632,504,526,644,195]]],["Ari","Aries","The Ram",[[233,37,74,335]]],["Cnc","Cancer","The Crab",[[394,627,658],[627,357,214],[357,500]]],["Cap","Capricornus","The Sea Goat",[[225,125,416,515,255,95],[515,289,416],[125,438],[416,434]]],["Car","Carina","The Keel \u00b7 with Canopus",[[18,159,83,621,353,295,303,178,52],[534,29,1],[188,52],[188,534],[1,139],[29,51]]],["Cas","Cassiopeia","The Queen",[[171,77,50,56,59]]],["Cep","Cepheus","The King",[[179,204,149,66,179],[204,147,149]]],["Aur","Auriga","The Charioteer \u00b7 with Capella",[[76,30,3,252,78],[17,78],[17,76]]],["Col","Columba","The Dove",[[321,578,573,133,362],[133,75,328]]],["Cyg","Cygnus","The Swan \u00b7 with Deneb",[[300,280,97,54,12],[54,68,146,614],[54,341,124]]],["Del","Delphinus","The Dolphin",[[396,240,288,509,603,240]]],["Dor","Dorado","The Swordfish",[[547,626,276,547],[276,161,498]]],["Dra","Draco","The Dragon",[[269,57,87,643,269,128,318,605,218,141,82,388,160,245,323,307]]],["Eri","Eridanus","The River \u00b7 with Achernar",[[6,251,221,483,634,424,100,496,528,452,216,369,302,468,497,256,411,610,338,639,264,207,350,384,571,86,491,327]]],["Gem","Gemini","The Twins \u00b7 Castor & Pollux",[[31,385,203,224,173],[203,406,222],[406,10],[406,292,600,15],[600,230],[600,126,437],[126,98,162,449]]],["CMa","Canis Major","The Great Dog \u00b7 with Sirius",[[412,425,574,0,122,27,386,65],[14,198,27],[198,670,360,618],[360,35],[360,0],[14,202],[121,14],[574,412]]],["UMa","Ursa Major","The Great Bear",[[28,55,23,165,26,60,63,165],[63,254,117,191],[117,127],[60,620,140,223],[140,134],[620,293,174,242,26]]],["Gru","Grus","The Crane",[[517,374,20,44,337,517],[44,429],[44,201],[20,611,118]]],["Hya","Hydra","The Water Snake",[[531,606,443,176,562,531],[562,130,340,619,622,36,636,656,427,235,309,131,647,215,524,648,115,154,657,638,601]]],["Hyi","Hydrus","The Little Water Snake",[[89,155,430,409,96]]],["Mon","Monoceros","The Unicorn",[[379,446],[278,446,637,589,612,628],[637,628,669],[446,631,575],[631,355]]],["Lep","Lepus","The Hare",[[629,260,217,72,158],[72,277,228,88,145],[72,88],[158,519],[158,572],[145,158],[572,607],[519,659]]],["Leo","Leo","The Lion \u00b7 with Regulus",[[49,169,13,196,38,71,49],[38,189,336,112],[71,169]]],["Lyr","Lyra","The Lyre \u00b7 with Vega",[[2,553,210,153,473,553]]],["Ori","Orion","The Hunter \u00b7 Betelgeuse & Rigel",[[21,19,58],[650,608],[650,624,588],[608,602,588],[608,432,7,21,43,4,58,16,177,7],[16,144,246,661,259,613],[144,558,625],[602,432]]],["Peg","Pegasus","The Winged Horse",[[91,69],[64,107,665],[64,206,375,290,444],[69,460,184,212,61],[41,64],[41,91],[64,69]]],["Per","Perseus","The Hero",[[311,93,376,103,120,24,105,282],[24,47,164,467]]],["CMi","Canis Minor","The Little Dog \u00b7 with Procyon",[[5,102]]],["UMi","Ursa Minor","The Little Bear \u00b7 with Polaris",[[34,563,464,520,651,119,45,520]]],["Phe","Phoenix","The Phoenix",[[354,163,347,354],[163,348,585,163,181,347,62,334,347]]],["Psc","Pisces","The Fishes",[[664,630],[664,635,630,236,495,305,623,609,642,503,667,662,397,440,652,615,653,258,655,510,440]]],["PsA","Piscis Austrinus","The Southern Fish \u00b7 with Fomalhaut",[[11,455,663,654,649,522,461]]],["Pup","Puppis","The Stern",[[92,660,79,139,108,152,51,92]]],["Sgr","Sagittarius","The Archer",[[80,90],[129,25,113,617],[113,80,25,73,142,80],[142,90,317],[73,167,40,142],[40,211,279,646,345],[167,666,604,581,433,366],[433,508]]],["Tau","Taurus","The Bull \u00b7 Aldebaran & the Pleiades",[[17,507,213],[9,111],[241,284],[241,182,234],[9,213],[9,180,241],[213,529,284,237]]],["Tuc","Tucana","The Toucan",[[99,380,477],[380,566]]],["Tri","Triangulum","The Triangle",[[392,116,185,392]]],["Aqr","Aquarius","The Water Bearer",[[104,109,330,243,399,271,486,368],[109,453,521],[453,640,404,157,249],[294,104]]]]};
+  /* Single-stroke script glyphs (EMS Allure, SIL OFL; derived from Allura by Rob Leuschke) in font units */
+  var GLY = {"A":[1062,[-9,41,9,-16,66,-57,154,-66,274,-25,406,79,529,205,662,359,737,463,813,558,882,636,939,699,958,706,876,570,797,346,753,189,750,98,775,19,819,3,910,54,986,126,1030,180],[129,161,132,246,167,302,249,331,324,334,441,312,513,296,652,280,813,261,901,261,929,274,958,293]],"n":[580,[148,328,41,25,183,186,271,280,334,318,381,337,394,312,331,195,290,101,293,47,328,16,387,25,450,69,513,132,548,183]],"u":[495,[47,309,-19,217,-54,123,-57,57,-9,28,79,54,145,139,227,239,293,353,324,343,214,164,205,98,202,54,255,22,321,41,413,120,463,183]],"p":[356,[25,359,-72,57,-176,-192,-227,-350,-255,-369,-91,38,-44,13,85,63,208,135,258,227,268,299,227,346,139,321,72,274,16,198,-25,148,-91,32]],"a":[526,[495,183,457,132,406,79,331,32,271,19,243,63,255,142,296,274,277,243,176,145,69,57,-19,19,-63,66,-57,154,35,261,148,331,230,356,312,356,324,343]],"m":[687,[-32,183,47,255,76,321,-35,28,38,104,167,252,233,309,280,337,302,340,309,312,296,274,208,107,318,195,403,261,491,293,447,230,400,94,413,38,472,19,561,69,655,183]],"j":[258,[-32,183,66,287,104,312,113,299,-82,-145,-173,-309,-243,-391,-306,-416,-365,-406,-387,-353,-359,-287,-252,-183,-69,-60,57,32,151,107,227,183],[205,482,167,444,186,428]],"y":[488,[88,312,3,233,-32,186,-47,132,-54,85,-38,47,13,32,69,47,176,151,280,277,334,334,369,331,274,139,183,-98,107,-230,28,-346,-28,-397,-135,-394,-167,-346,-123,-252,-16,-167,123,-66,265,9,406,123,457,183]]};
+
+  /* ---- ASTRO: sidereal time, precession, Moon (Meeus ch.47, truncated), Sun & planets (JPL Keplerian elements) ---- */
+  var ASTRO = (function () {
+    var D2R = Math.PI / 180, R2D = 180 / Math.PI;
+    function n360(x) { x %= 360; return x < 0 ? x + 360 : x; }
+    function jd(ms) { return ms / 86400000 + 2440587.5; }
+    /* Greenwich mean sidereal time, degrees (IAU 1982) */
+    function gmst(J) { var d = J - 2451545, T = d / 36525; return n360(280.46061837 + 360.98564736629 * d + 0.000387933 * T * T - T * T * T / 38710000); }
+    /* precession matrix, J2000 mean equator -> mean equator of date (IAU 1976: zeta, z, theta) */
+    function precession(J) {
+      var T = (J - 2451545) / 36525, as = D2R / 3600;
+      var ze = (2306.2181 * T + 0.30188 * T * T + 0.017998 * T * T * T) * as;
+      var z = (2306.2181 * T + 1.09468 * T * T + 0.018203 * T * T * T) * as;
+      var th = (2004.3109 * T - 0.42665 * T * T - 0.041833 * T * T * T) * as;
+      var cZe = Math.cos(ze), sZe = Math.sin(ze), cz = Math.cos(z), sz = Math.sin(z), ct = Math.cos(th), st = Math.sin(th);
+      return [cZe * ct * cz - sZe * sz, -sZe * ct * cz - cZe * sz, -st * cz,
+              cZe * ct * sz + sZe * cz, -sZe * ct * sz + cZe * cz, -st * sz,
+              cZe * st, -sZe * st, ct];
+    }
+    function mul(m, v) { return [m[0] * v[0] + m[1] * v[1] + m[2] * v[2], m[3] * v[0] + m[4] * v[1] + m[5] * v[2], m[6] * v[0] + m[7] * v[1] + m[8] * v[2]]; }
+    function mmul(a, b) { var r = []; for (var i = 0; i < 3; i++) for (var j = 0; j < 3; j++) r.push(a[i * 3] * b[j] + a[i * 3 + 1] * b[3 + j] + a[i * 3 + 2] * b[6 + j]); return r; }
+    function tr(m) { return [m[0], m[3], m[6], m[1], m[4], m[7], m[2], m[5], m[8]]; }
+    function radec2v(raDeg, decDeg) { var a = raDeg * D2R, d = decDeg * D2R, c = Math.cos(d); return [c * Math.cos(a), c * Math.sin(a), Math.sin(d)]; }
+    /* equator-of-date -> local horizon (East, North, Up) */
+    function horizonMatrix(lstDeg, latDeg) {
+      var L = lstDeg * D2R, p = latDeg * D2R, cL = Math.cos(L), sL = Math.sin(L), cp = Math.cos(p), sp = Math.sin(p);
+      return [-sL, cL, 0, -sp * cL, -sp * sL, cp, cp * cL, cp * sL, sp];
+    }
+    function altaz(v) { var r = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]); return { alt: Math.asin(v[2] / r) * R2D, az: n360(Math.atan2(v[0], v[1]) * R2D) }; }
+    /* Saemundsson refraction: true altitude -> apparent, degrees */
+    function refract(h) { if (h < -1.5) return h; return h + 1.02 / Math.tan((h + 10.3 / (h + 5.11)) * D2R) / 60; }
+
+    /* ---- Moon: Meeus, Astronomical Algorithms ch. 47 (largest periodic terms) ---- */
+    var ML = [ // D, M, M', F, sigma-l (1e-6 deg), sigma-r (1e-3 km)
+      0,0,1,0,6288774,-20905355, 2,0,-1,0,1274027,-3699111, 2,0,0,0,658314,-2955968, 0,0,2,0,213618,-569925,
+      0,1,0,0,-185116,48888, 0,0,0,2,-114332,-3149, 2,0,-2,0,58793,246158, 2,-1,-1,0,57066,-152138,
+      2,0,1,0,53322,-170733, 2,-1,0,0,45758,-204586, 0,1,-1,0,-40923,-129620, 1,0,0,0,-34720,108743,
+      0,1,1,0,-30383,104755, 2,0,0,-2,15327,10321, 0,0,1,2,-12528,0, 0,0,1,-2,10980,79661,
+      4,0,-1,0,10675,-34782, 0,0,3,0,10034,-23210, 4,0,-2,0,8548,-21636, 2,1,-1,0,-7888,24208,
+      2,1,0,0,-6766,30824, 1,0,-1,0,-5163,-8379, 1,1,0,0,4987,-16675, 2,-1,1,0,4036,-12831,
+      2,0,2,0,3994,-10445, 4,0,0,0,3861,-11650, 2,0,-3,0,3665,14403, 0,1,-2,0,-2689,-7003,
+      2,0,-1,2,-2602,0, 2,-1,-2,0,2390,10056, 1,0,1,0,-2348,6322, 2,-2,0,0,2236,-9884,
+      0,1,2,0,-2120,5751, 0,2,0,0,-2069,0, 2,-2,-1,0,2048,-4950, 2,0,1,-2,-1773,4130,
+      2,0,0,2,-1595,0, 4,-1,-1,0,1215,-3958, 0,0,2,2,-1110,0, 3,0,-1,0,-892,3258,
+      2,1,1,0,-810,2616, 4,-1,-2,0,759,-1897, 0,2,-1,0,-713,-2117, 2,2,-1,0,-700,2354,
+      2,1,-2,0,691,0, 2,-1,0,-2,596,0, 4,0,1,0,549,-1423, 0,0,4,0,537,-1117,
+      4,-1,0,0,520,-1571, 1,0,-2,0,-487,-1739, 2,1,0,-2,-399,0, 0,0,2,-2,-381,-4421,
+      1,1,1,0,351,0, 3,0,-2,0,-340,0, 4,0,-3,0,330,0, 2,-1,2,0,327,0,
+      0,2,1,0,-323,1165, 1,1,-1,0,299,0, 2,0,3,0,294,0, 2,0,-1,-2,0,8752];
+    var MB = [ // D, M, M', F, sigma-b (1e-6 deg)
+      0,0,0,1,5128122, 0,0,1,1,280602, 0,0,1,-1,277693, 2,0,0,-1,173237, 2,0,-1,1,55413, 2,0,-1,-1,46271,
+      2,0,0,1,32573, 0,0,2,1,17198, 2,0,1,-1,9266, 0,0,2,-1,8822, 2,-1,0,-1,8216, 2,0,-2,-1,4324,
+      2,0,1,1,4200, 2,1,0,-1,-3359, 2,-1,-1,1,2463, 2,-1,0,1,2211, 2,-1,-1,-1,2065, 0,1,-1,-1,-1870,
+      4,0,-1,-1,1828, 0,1,0,1,-1794, 0,0,0,3,-1749, 0,1,-1,1,-1565, 1,0,0,1,-1491, 0,1,1,1,-1475,
+      0,1,1,-1,-1410, 0,1,0,-1,-1344, 1,0,0,-1,-1335, 0,0,3,1,1107, 4,0,0,-1,1021, 4,0,-1,1,833];
+    function moonEcliptic(Jtt) {
+      var T = (Jtt - 2451545) / 36525, T2 = T * T, T3 = T2 * T, T4 = T3 * T;
+      var Lp = 218.3164477 + 481267.88123421 * T - 0.0015786 * T2 + T3 / 538841 - T4 / 65194000;
+      var D = 297.8501921 + 445267.1114034 * T - 0.0018819 * T2 + T3 / 545868 - T4 / 113065000;
+      var M = 357.5291092 + 35999.0502909 * T - 0.0001536 * T2 + T3 / 24490000;
+      var Mp = 134.9633964 + 477198.8675055 * T + 0.0087414 * T2 + T3 / 69699 - T4 / 14712000;
+      var F = 93.2720950 + 483202.0175233 * T - 0.0036539 * T2 - T3 / 3526000 + T4 / 863310000;
+      var A1 = 119.75 + 131.849 * T, A2 = 53.09 + 479264.290 * T, A3 = 313.45 + 481266.484 * T;
+      var E = 1 - 0.002516 * T - 0.0000074 * T2, sl = 0, sr = 0, sb = 0, i, a, e;
+      for (i = 0; i < ML.length; i += 6) {
+        a = (ML[i] * D + ML[i + 1] * M + ML[i + 2] * Mp + ML[i + 3] * F) * D2R;
+        e = ML[i + 1] === 0 ? 1 : Math.abs(ML[i + 1]) === 1 ? E : E * E;
+        sl += ML[i + 4] * e * Math.sin(a); sr += ML[i + 5] * e * Math.cos(a);
+      }
+      for (i = 0; i < MB.length; i += 5) {
+        a = (MB[i] * D + MB[i + 1] * M + MB[i + 2] * Mp + MB[i + 3] * F) * D2R;
+        e = MB[i + 1] === 0 ? 1 : Math.abs(MB[i + 1]) === 1 ? E : E * E;
+        sb += MB[i + 4] * e * Math.sin(a);
+      }
+      sl += 3958 * Math.sin(A1 * D2R) + 1962 * Math.sin((Lp - F) * D2R) + 318 * Math.sin(A2 * D2R);
+      sb += -2235 * Math.sin(Lp * D2R) + 382 * Math.sin(A3 * D2R) + 175 * Math.sin((A1 - F) * D2R) + 175 * Math.sin((A1 + F) * D2R) + 127 * Math.sin((Lp - Mp) * D2R) - 115 * Math.sin((Lp + Mp) * D2R);
+      return { lon: n360(Lp + sl / 1e6), lat: sb / 1e6, dist: 385000.56 + sr / 1000 };
+    }
+    /* ---- Sun & planets: JPL "Approximate Positions of the Planets" (Standish), valid 1800-2050 ---- */
+    var EL = { // a, e, I, L, long.peri, long.node  +  rates per Julian century
+      Mercury: [0.38709927, 0.20563593, 7.00497902, 252.25032350, 77.45779628, 48.33076593, 0.00000037, 0.00001906, -0.00594749, 149472.67411175, 0.16047689, -0.12534081],
+      Venus: [0.72333566, 0.00677672, 3.39467605, 181.97909950, 131.60246718, 76.67984255, 0.00000390, -0.00004107, -0.00078890, 58517.81538729, 0.00268329, -0.27769418],
+      Earth: [1.00000261, 0.01671123, -0.00001531, 100.46457166, 102.93768193, 0.0, 0.00000562, -0.00004392, -0.01294668, 35999.37244981, 0.32327364, 0.0],
+      Mars: [1.52371034, 0.09339410, 1.84969142, -4.55343205, -23.94362959, 49.55953891, 0.00001847, 0.00007882, -0.00813131, 19140.30268499, 0.44441088, -0.29257343],
+      Jupiter: [5.20288700, 0.04838624, 1.30439695, 34.39644051, 14.72847983, 100.47390909, -0.00011607, -0.00013253, -0.00183714, 3034.74612775, 0.21252668, 0.20469106],
+      Saturn: [9.53667594, 0.05386179, 2.48599187, 49.95424423, 92.59887831, 113.66242448, -0.00125060, -0.00050991, 0.00193609, 1222.49362201, -0.41897216, -0.28867794]
+    };
+    function helio(name, T) { // heliocentric ecliptic J2000, au
+      var k = EL[name], a = k[0] + k[6] * T, e = k[1] + k[7] * T, I = (k[2] + k[8] * T) * D2R, L = k[3] + k[9] * T, wb = k[4] + k[10] * T, Om = k[5] + k[11] * T;
+      var w = (wb - Om) * D2R, M = n360(L - wb) * D2R, E = M, j; Om *= D2R;
+      for (j = 0; j < 8; j++) E = E - (E - e * Math.sin(E) - M) / (1 - e * Math.cos(E));
+      var x = a * (Math.cos(E) - e), y = a * Math.sqrt(1 - e * e) * Math.sin(E);
+      var cw = Math.cos(w), sw = Math.sin(w), cO = Math.cos(Om), sO = Math.sin(Om), cI = Math.cos(I), sI = Math.sin(I);
+      return [(cw * cO - sw * sO * cI) * x + (-sw * cO - cw * sO * cI) * y,
+              (cw * sO + sw * cO * cI) * x + (-sw * sO + cw * cO * cI) * y,
+              (sw * sI) * x + (cw * sI) * y];
+    }
+    var EPS0 = 23.43928 * D2R;
+    function ecl2eq(v, eps) { var c = Math.cos(eps), s = Math.sin(eps); return [v[0], c * v[1] - s * v[2], s * v[1] + c * v[2]]; }
+    var MAGS = { Mercury: -0.6, Venus: -4.8, Mars: 0.6, Jupiter: -2.2, Saturn: 0.6 }; // approx. for late Nov 2026
+    var DT = 69.2 / 86400; // TT - UT, days
+
+    /* everything for one instant: returns matrices and bodies in horizon frame */
+    function sky(ms, lat, lon) {
+      var J = jd(ms), Jtt = J + DT, T = (Jtt - 2451545) / 36525;
+      var lst = n360(gmst(J) + lon), P = precession(Jtt), H = horizonMatrix(lst, lat), HP = mmul(H, P);
+      var earth = helio('Earth', T), bodies = {};
+      // Sun (geocentric = -Earth), J2000 equatorial -> of date
+      var sunJ = ecl2eq([-earth[0], -earth[1], -earth[2]], EPS0), sunD = mul(P, sunJ);
+      ['Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn'].forEach(function (n) {
+        var h = helio(n, T), g = ecl2eq([h[0] - earth[0], h[1] - earth[1], h[2] - earth[2]], EPS0);
+        bodies[n] = { eq: mul(P, g), hor: mul(HP, g), mag: MAGS[n] };
+      });
+      // Moon: ecliptic of date -> equatorial of date (mean obliquity), topocentric
+      var m = moonEcliptic(Jtt), eps = (23.4392911 - 0.0130042 * T) * D2R;
+      var mv = ecl2eq(radec2v(m.lon, m.lat), eps), Re = 6378.14, d = m.dist;
+      var mg = [mv[0] * d, mv[1] * d, mv[2] * d];
+      var phi = lat * D2R, phip = phi - 0.1924 * D2R * Math.sin(2 * phi), rho = 0.99833 + 0.00167 * Math.cos(2 * phi), L = lst * D2R;
+      var ob = [Re * rho * Math.cos(phip) * Math.cos(L), Re * rho * Math.cos(phip) * Math.sin(L), Re * rho * Math.sin(phip)];
+      var mt = [mg[0] - ob[0], mg[1] - ob[1], mg[2] - ob[2]];
+      // phase: angle Sun-Moon-Earth from geocentric vectors (Sun distance in km)
+      var au = 149597870.7, sk = [sunD[0] * au, sunD[1] * au, sunD[2] * au];
+      var ms2 = [sk[0] - mg[0], sk[1] - mg[1], sk[2] - mg[2]], me = [-mg[0], -mg[1], -mg[2]];
+      var cosi = (ms2[0] * me[0] + ms2[1] * me[1] + ms2[2] * me[2]) / (Math.hypot(ms2[0], ms2[1], ms2[2]) * Math.hypot(me[0], me[1], me[2]));
+      var elong = n360(m.lon - Math.atan2(sunD[1] * Math.cos(eps) + sunD[2] * Math.sin(eps), sunD[0]) * R2D);
+      bodies.Moon = { eq: mt, hor: mul(H, mt), dist: d, lon: m.lon, lat: m.lat, illum: (1 + cosi) / 2, phaseAngle: Math.acos(cosi) * R2D, waxing: elong < 180 };
+      bodies.Sun = { eq: sunD, hor: mul(H, sunD) };
+      return { jd: J, lst: lst, P: P, H: H, HP: HP, bodies: bodies };
+    }
+    return { sky: sky, precession: precession, horizonMatrix: horizonMatrix, mul: mul, mmul: mmul, tr: tr, radec2v: radec2v, altaz: altaz, refract: refract, gmst: gmst, jd: jd, D2R: D2R, R2D: R2D };
+  })();
+
+
+  var D2R = ASTRO.D2R, R2D = ASTRO.R2D;
+  /* galactic <- J2000 equatorial */
+  var GAL = [-0.0548755604, -0.8734370902, -0.4838350155, 0.4941094279, -0.4448296300, 0.7469822445, -0.8676661490, -0.1980763734, 0.4559837762];
+
+  /* ---------- star arrays ---------- */
+  var NS = CAT.stars.length / 4, NP = 5;
+  var SV = new Float32Array(NS * 3), SMAG = new Float32Array(NS), SCOL = new Float32Array(NS * 3);
+  function bv2rgb(bv) {
+    bv = clamp(bv, -0.35, 2.0);
+    var T = 4600 * (1 / (0.92 * bv + 1.7) + 1 / (0.92 * bv + 0.62)) / 100, r, g, b;
+    if (T <= 66) { r = 255; g = 99.4708 * Math.log(T) - 161.1196; b = T <= 19 ? 0 : 138.5177 * Math.log(T - 10) - 305.0448; }
+    else { r = 329.6987 * Math.pow(T - 60, -0.1332); g = 288.1222 * Math.pow(T - 60, -0.0755); b = 255; }
+    r = clamp(r, 0, 255) / 255; g = clamp(g, 0, 255) / 255; b = clamp(b, 0, 255) / 255;
+    r = lerp(r, 1, .32); g = lerp(g, 1, .32); b = lerp(b, 1, .32);
+    var m = Math.max(r, g, b); return [r / m, g / m, b / m];
+  }
+  (function () {
+    var s = CAT.stars;
+    for (var i = 0; i < NS; i++) {
+      var v = ASTRO.radec2v(s[i * 4] / 100, s[i * 4 + 1] / 100), c = bv2rgb(s[i * 4 + 3] / 100);
+      SV[i * 3] = v[0]; SV[i * 3 + 1] = v[1]; SV[i * 3 + 2] = v[2]; SMAG[i] = s[i * 4 + 2] / 100;
+      SCOL[i * 3] = c[0]; SCOL[i * 3 + 1] = c[1]; SCOL[i * 3 + 2] = c[2];
+    }
+  })();
+  var PLANETS = ['Saturn', 'Jupiter', 'Mars', 'Venus', 'Mercury'];
+  var PCOL = { Saturn: [1, .9, .7], Jupiter: [1, .96, .86], Mars: [1, .62, .42], Venus: [1, .98, .92], Mercury: [1, .92, .82] };
+
+  /* ---------- the sky at a given instant ---------- */
+  var SKY = null, skyMs = -1;
+  function skyAt(ms) {
+    if (Math.abs(ms - skyMs) < 400 && SKY) return SKY;
+    skyMs = ms; SKY = ASTRO.sky(ms, LAT, LON);
+    var PT = ASTRO.tr(SKY.P); SKY.PT = PT;
+    // planets: of-date -> J2000 unit vectors for the shared star shader
+    SKY.pJ = PLANETS.map(function (n) { var e = SKY.bodies[n].eq, l = Math.hypot(e[0], e[1], e[2]), v = ASTRO.mul(PT, [e[0] / l, e[1] / l, e[2] / l]); return v; });
+    return SKY;
+  }
+
+  /* =====================================================================
+     VIEW — stereographic projection centred on a point in the east
+     ===================================================================== */
+  var stage = $('#stage'), skyCv = $('#sky'), fxCv = $('#fx'), fx = fxCv.getContext('2d');
+  var W = 0, H = 0, DPR = 1, GDPR = 1;
+  var V = { az0: 78, R: 400, cx: 0, cy: 0, yh0: 0, shift: 0, B: null, BT: null };
+  function layoutView() {
+    // camera centred ON the horizon (so the horizon projects to a straight line),
+    // scaled so the zenith sits near the top edge on phones and above it on wide screens
+    var a = W / H, k = clamp((a - 0.56) / 1.2, 0, 1);
+    V.az0 = lerp(77, 84, k);
+    V.yh0 = H * lerp(0.80, 0.835, k);
+    // scale chosen so the 8 PM Moon (alt 56.6 deg) rides just above the name: 2*tan(56.6/2) = 1.0767
+    V.R = (V.yh0 - H * lerp(0.232, 0.19, k)) / 1.0767;
+    V.cx = W / 2; V.cy = V.yh0;
+    setCam(0);
+  }
+  function setCam(shift) {
+    var Z = V.az0 * D2R, sZ = Math.sin(Z), cZ = Math.cos(Z);
+    var r = [cZ, -sZ, 0], u = [0, 0, 1], f = [sZ, cZ, 0];
+    V.BT = [r[0], r[1], r[2], u[0], u[1], u[2], f[0], f[1], f[2]];   // horizon -> camera
+    V.B = ASTRO.tr(V.BT);
+    V.shift = shift; V.cy = V.yh0 + shift;                          // a shift lens: the horizon stays level
+  }
+  // camera-frame vector -> screen (css px); returns false if far behind
+  var PJ = [0, 0];
+  function projC(c) {
+    if (c[2] < -0.6) return false;
+    var k = 2 / (1 + c[2]); PJ[0] = V.cx + V.R * c[0] * k; PJ[1] = V.cy - V.R * c[1] * k; return true;
+  }
+  function horToCam(v) { return ASTRO.mul(V.BT, v); }
+  // apply refraction to a horizon-frame unit vector
+  function refractV(v) {
+    var alt = Math.asin(clamp(v[2], -1, 1)) * R2D; if (alt < -1.5) return v;
+    var a2 = ASTRO.refract(alt) * D2R, ch = Math.cos(a2), h = Math.hypot(v[0], v[1]) || 1e-6;
+    return [v[0] / h * ch, v[1] / h * ch, Math.sin(a2)];
+  }
+
+  /* =====================================================================
+     MILKY WAY — procedural density in galactic coordinates (seamless in l)
+     ===================================================================== */
+  var MW = (function () {
+    var TW = 512, TH = 128, BMAX = 36 * D2R, data = new Uint8Array(TW * TH * 4), dens = new Float32Array(TW * TH);
+    var P = new Uint8Array(512), rnd = mulberry(7);
+    for (var i = 0; i < 256; i++) P[i] = i;
+    for (i = 255; i > 0; i--) { var j = (rnd() * (i + 1)) | 0, t = P[i]; P[i] = P[j]; P[j] = t; }
+    for (i = 0; i < 256; i++) P[i + 256] = P[i];
+    function fade(t) { return t * t * (3 - 2 * t); }
+    function h3(x, y, z) { return P[P[P[x & 255] + (y & 255)] + (z & 255)] / 255; }
+    function vn(x, y, z) {
+      var X = Math.floor(x), Y = Math.floor(y), Z = Math.floor(z), fx_ = fade(x - X), fy = fade(y - Y), fz = fade(z - Z);
+      var a = lerp(h3(X, Y, Z), h3(X + 1, Y, Z), fx_), b = lerp(h3(X, Y + 1, Z), h3(X + 1, Y + 1, Z), fx_);
+      var c = lerp(h3(X, Y, Z + 1), h3(X + 1, Y, Z + 1), fx_), d = lerp(h3(X, Y + 1, Z + 1), h3(X + 1, Y + 1, Z + 1), fx_);
+      return lerp(lerp(a, b, fy), lerp(c, d, fy), fz);
+    }
+    function fbm(x, y, z, o) { var s = 0, a = .5, n = 0; for (var k = 0; k < o; k++) { s += a * vn(x, y, z); n += a; x *= 2.03; y *= 2.03; z *= 2.03; a *= .5; } return s / n; }
+    for (var y = 0; y < TH; y++) {
+      var b = ((y + .5) / TH * 2 - 1) * BMAX;
+      for (var x = 0; x < TW; x++) {
+        var l = ((x + .5) / TW - .5) * Math.PI * 2, cl = Math.cos(l), sl = Math.sin(l);
+        var bulge = Math.pow(.5 + .5 * cl, 2.2), wid = (7.5 + 8 * bulge) * D2R;
+        var n1 = fbm(cl * 2.6 + 9, sl * 2.6, b * 7, 4), n2 = fbm(cl * 8 + 3, sl * 8 + 5, b * 22, 3);
+        var bd = (b - (n1 - .5) * 5 * D2R) / wid, prof = Math.exp(-bd * bd);
+        var dd = prof * (.34 + .66 * bulge) * (.3 + 1.1 * n1 * n1 * 1.6) * (.7 + .6 * n2);
+        var lane = Math.exp(-Math.pow((b - (1.4 + (n2 - .5) * 3) * D2R) / ((1.1 + 1.6 * n1) * D2R), 2)) * sm(.15, .9, .5 + .5 * Math.cos(l - 0.6));
+        dd *= 1 - .7 * lane;
+        dd += .1 * Math.exp(-bd * bd * .18) * (.5 + .5 * bulge);
+        dens[y * TW + x] = dd;
+        var o = (y * TW + x) * 4, q = clamp(dd, 0, 1.6);
+        data[o] = clamp(q * (150 + 70 * bulge), 0, 255); data[o + 1] = clamp(q * (158 + 50 * bulge), 0, 255); data[o + 2] = clamp(q * 205, 0, 255); data[o + 3] = 255;
+      }
+    }
+    function sample(l, b) { // radians -> density (nearest)
+      if (Math.abs(b) >= BMAX) return 0;
+      var x = ((l / (Math.PI * 2) + .5) * TW) | 0, y = ((b / BMAX * .5 + .5) * TH) | 0;
+      x = ((x % TW) + TW) % TW; return dens[clamp(y, 0, TH - 1) * TW + x];
+    }
+    return { TW: TW, TH: TH, BMAX: BMAX, data: data, sample: sample };
+  })();
+
+  /* =====================================================================
+     WEBGL SKY — gradient, Milky Way, moonlit air, stars & planets as points
+     ===================================================================== */
+  var GL = null;
+  (function initGL() {
+    var gl;
+    try { gl = skyCv.getContext('webgl', { alpha: false, antialias: false, depth: false, stencil: false, premultipliedAlpha: false, powerPreference: 'high-performance' }); } catch (e) { gl = null; }
+    if (!gl) return;
+    var hp = gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.HIGH_FLOAT), FP = hp && hp.precision > 0 ? 'highp' : 'mediump';
+    function sh(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { console.warn(gl.getShaderInfoLog(s)); return null; } return s; }
+    function prog(vs, fs) { var p = gl.createProgram(), a = sh(gl.VERTEX_SHADER, vs), b = sh(gl.FRAGMENT_SHADER, fs); if (!a || !b) return null; gl.attachShader(p, a); gl.attachShader(p, b); gl.linkProgram(p); if (!gl.getProgramParameter(p, gl.LINK_STATUS)) return null; return p; }
+    var bg = prog('attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}',
+      'precision ' + FP + ' float;uniform vec2 uC;uniform float uR;uniform mat3 uK;uniform vec3 uUp;uniform vec3 uMoon;uniform float uMoonA;uniform float uRev;uniform float uMW;uniform sampler2D uTex;uniform float uBmax;' +
+      'void main(){vec2 p=(gl_FragCoord.xy-uC)/uR;float r2=dot(p,p);float z=(4.-r2)/(4.+r2);vec3 c=vec3(p*(1.+z)*.5,z);' +
+      'float up=dot(c,uUp);float h=max(up,0.);' +
+      'vec3 col=mix(vec3(.078,.083,.20),vec3(.026,.032,.098),smoothstep(0.,.3,h));col=mix(col,vec3(.008,.010,.032),smoothstep(.22,.96,h));' +
+      'col+=vec3(.12,.07,.055)*exp(-h*20.);' +
+      'float ang=acos(clamp(dot(c,uMoon),-1.,1.));col+=uMoonA*(vec3(.32,.34,.42)*exp(-ang*15.)*.45+vec3(.035,.05,.10)*exp(-ang*2.4));' +
+      'vec3 g=uK*c;float b=asin(clamp(g.z,-1.,1.));if(abs(b)<uBmax){float l=atan(g.y,g.x);vec3 t=texture2D(uTex,vec2(l/6.2831853+.5,b/uBmax*.5+.5)).rgb;col+=t*uMW*(.3+.7*smoothstep(0.,.3,h));}' +
+      'if(up<0.)col=mix(col,vec3(.012,.014,.03),smoothstep(0.,-.01,up));' +
+      'col*=uRev;float n=fract(sin(dot(gl_FragCoord.xy,vec2(12.9898,78.233)))*43758.5453);col+=(n-.5)/255.;gl_FragColor=vec4(col,1.);}');
+    var st = prog(
+      'attribute vec3 aV;attribute vec4 aD;attribute float aS;uniform mat3 uM;uniform vec3 uUpJ;uniform vec3 uZc;uniform vec2 uC;uniform float uR;uniform vec2 uRes;uniform float uDpr;uniform float uT;uniform float uRev;uniform float uTw;uniform float uSz;' +
+      'varying vec3 vCol;varying float vA;varying float vRc;varying float vHalo;varying float vSize;' +
+      'void main(){vec3 c=uM*aV;float up=dot(uUpJ,aV);float alt=degrees(asin(clamp(up,-1.,1.)));' +
+      'float altA=alt;if(alt>-1.5)altA+=1.02/tan(radians(alt+10.3/(alt+5.11)))/60.;float dA=radians(altA-alt);float ca=max(sqrt(max(1.-up*up,0.)),.001);c=normalize(c+dA*(uZc-c*up)/ca);' +
+      'float upA=sin(radians(altA));if(c.z<-.6||upA<-.02){gl_Position=vec4(2.,2.,2.,1.);gl_PointSize=0.;vA=0.;vCol=vec3(0.);vRc=1.;vHalo=0.;vSize=1.;return;}' +
+      'vec2 P=c.xy*2./(1.+c.z);vec2 px=uC+P*uR;gl_Position=vec4(px/uRes*2.-1.,0.,1.);' +
+      'float h=max(upA,0.);float X=1./(h+.025*exp(-11.*h));float dm=.2*(X-1.);float m=aD.x+dm;' +
+      'float rc=(.62+1.9*exp(-.36*(m+1.5)))*uSz;float halo=clamp((2.6-m)/3.2,0.,1.);float a=clamp(1.32-.15*(m-1.),0.,1.);' +
+      'float th=clamp((aD.x+1.5)/6.5,0.,1.)*.78;a*=smoothstep(th,th+.18,uRev);' +
+      'float tw=aS<0.?1.:1.+uTw*(.1+.3*(1.-smoothstep(0.,.45,h)))*(sin(uT*(1.7+aS*2.6)+aS*31.)*.6+sin(uT*(4.1+aS*3.3)+aS*17.)*.4);' +
+      'a*=tw*smoothstep(-.02,.01,upA);vCol=aD.yzw*vec3(1.,1.-.035*dm,1.-.08*dm);vA=a;vRc=rc*uDpr;vHalo=halo;' +
+      'float rad=(halo>0.?rc*4.5:rc*2.2)+1.;vSize=rad*uDpr;gl_PointSize=2.*vSize;}',
+      'precision mediump float;varying vec3 vCol;varying float vA;varying float vRc;varying float vHalo;varying float vSize;' +
+      'void main(){vec2 q=(gl_PointCoord-.5)*2.*vSize;float d2=dot(q,q);float core=exp(-d2/(vRc*vRc*.9));float hl=vHalo*.2*exp(-sqrt(d2)/(vRc*1.5));gl_FragColor=vec4(vCol*(core+hl)*vA,1.);}');
+    if (!bg || !st) return;
+    var quad = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, quad); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+    var N = NS + NP, arr = new Float32Array(N * 8);
+    for (var i = 0; i < NS; i++) {
+      var o = i * 8; arr[o] = SV[i * 3]; arr[o + 1] = SV[i * 3 + 1]; arr[o + 2] = SV[i * 3 + 2];
+      arr[o + 3] = SMAG[i]; arr[o + 4] = SCOL[i * 3]; arr[o + 5] = SCOL[i * 3 + 1]; arr[o + 6] = SCOL[i * 3 + 2]; arr[o + 7] = ((i * 0.6180339) % 1);
+    }
+    var sbuf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, sbuf); gl.bufferData(gl.ARRAY_BUFFER, arr, gl.DYNAMIC_DRAW);
+    var tex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, MW.TW, MW.TH, 0, gl.RGBA, gl.UNSIGNED_BYTE, MW.data);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    function U(p, n) { return gl.getUniformLocation(p, n); }
+    GL = { gl: gl, bg: bg, st: st, quad: quad, sbuf: sbuf, arr: arr, N: N, tex: tex,
+      ub: { C: U(bg, 'uC'), R: U(bg, 'uR'), K: U(bg, 'uK'), Up: U(bg, 'uUp'), Moon: U(bg, 'uMoon'), MoonA: U(bg, 'uMoonA'), Rev: U(bg, 'uRev'), MW: U(bg, 'uMW'), Tex: U(bg, 'uTex'), Bmax: U(bg, 'uBmax') },
+      us: { M: U(st, 'uM'), UpJ: U(st, 'uUpJ'), Zc: U(st, 'uZc'), C: U(st, 'uC'), R: U(st, 'uR'), Res: U(st, 'uRes'), Dpr: U(st, 'uDpr'), T: U(st, 'uT'), Rev: U(st, 'uRev'), Tw: U(st, 'uTw'), Sz: U(st, 'uSz') },
+      aP: gl.getAttribLocation(bg, 'p'), aV: gl.getAttribLocation(st, 'aV'), aD: gl.getAttribLocation(st, 'aD'), aS: gl.getAttribLocation(st, 'aS') };
+    skyCv.addEventListener('webglcontextlost', function (e) { e.preventDefault(); GL = null; }, false);
+  })();
+
+  function drawGL(sky, t, rev, mwAmt, moonCam, moonAmt) {
+    var g = GL.gl, w = skyCv.width, h = skyCv.height;
+    g.viewport(0, 0, w, h);
+    // background
+    g.disable(g.BLEND); g.useProgram(GL.bg);
+    g.bindBuffer(g.ARRAY_BUFFER, GL.quad); g.enableVertexAttribArray(GL.aP); g.vertexAttribPointer(GL.aP, 2, g.FLOAT, false, 0, 0);
+    var K = ASTRO.mmul(ASTRO.mmul(GAL, sky.PT), ASTRO.mmul(ASTRO.tr(sky.H), V.B));
+    g.uniform2f(GL.ub.C, V.cx * GDPR, (H - V.cy) * GDPR); g.uniform1f(GL.ub.R, V.R * GDPR);
+    g.uniformMatrix3fv(GL.ub.K, false, ASTRO.tr(K));
+    g.uniform3f(GL.ub.Up, V.BT[2], V.BT[5], V.BT[8]);
+    g.uniform3f(GL.ub.Moon, moonCam[0], moonCam[1], moonCam[2]); g.uniform1f(GL.ub.MoonA, moonAmt);
+    g.uniform1f(GL.ub.Rev, rev); g.uniform1f(GL.ub.MW, mwAmt); g.uniform1f(GL.ub.Bmax, MW.BMAX);
+    g.activeTexture(g.TEXTURE0); g.bindTexture(g.TEXTURE_2D, GL.tex); g.uniform1i(GL.ub.Tex, 0);
+    g.drawArrays(g.TRIANGLES, 0, 3);
+    g.disableVertexAttribArray(GL.aP);
+    // stars + planets (additive)
+    g.enable(g.BLEND); g.blendFunc(g.ONE, g.ONE); g.useProgram(GL.st);
+    g.bindBuffer(g.ARRAY_BUFFER, GL.sbuf);
+    var a = GL.arr;
+    for (var i = 0; i < NP; i++) {
+      var o = (NS + i) * 8, v = sky.pJ[i], c = PCOL[PLANETS[i]];
+      a[o] = v[0]; a[o + 1] = v[1]; a[o + 2] = v[2]; a[o + 3] = sky.bodies[PLANETS[i]].mag; a[o + 4] = c[0]; a[o + 5] = c[1]; a[o + 6] = c[2]; a[o + 7] = -1;
+    }
+    g.bufferSubData(g.ARRAY_BUFFER, NS * 32, a.subarray(NS * 8));
+    g.enableVertexAttribArray(GL.aV); g.enableVertexAttribArray(GL.aD); g.enableVertexAttribArray(GL.aS);
+    g.vertexAttribPointer(GL.aV, 3, g.FLOAT, false, 32, 0); g.vertexAttribPointer(GL.aD, 4, g.FLOAT, false, 32, 12); g.vertexAttribPointer(GL.aS, 1, g.FLOAT, false, 32, 28);
+    var M = ASTRO.mmul(V.BT, sky.HP);
+    g.uniformMatrix3fv(GL.us.M, false, ASTRO.tr(M));
+    g.uniform3f(GL.us.UpJ, sky.HP[6], sky.HP[7], sky.HP[8]);
+    g.uniform3f(GL.us.Zc, V.BT[2], V.BT[5], V.BT[8]);
+    g.uniform2f(GL.us.C, V.cx * GDPR, (H - V.cy) * GDPR); g.uniform1f(GL.us.R, V.R * GDPR); g.uniform2f(GL.us.Res, w, h);
+    g.uniform1f(GL.us.Dpr, GDPR); g.uniform1f(GL.us.T, t); g.uniform1f(GL.us.Rev, rev); g.uniform1f(GL.us.Tw, RM ? 0 : 1); g.uniform1f(GL.us.Sz, W < 700 ? 1 : 1.12);
+    g.drawArrays(g.POINTS, 0, GL.N);
+    g.disableVertexAttribArray(GL.aV); g.disableVertexAttribArray(GL.aD); g.disableVertexAttribArray(GL.aS);
+  }
+
+  /* =====================================================================
+     SPRITES — star glow, moon
+     ===================================================================== */
+  function glowSprite(size, stops) {
+    var c = doc.createElement('canvas'); c.width = c.height = size; var g = c.getContext('2d'), r = size / 2;
+    var gr = g.createRadialGradient(r, r, 0, r, r, r); stops.forEach(function (s) { gr.addColorStop(s[0], s[1]); });
+    g.fillStyle = gr; g.fillRect(0, 0, size, size); return c;
+  }
+  var SPR_STAR = glowSprite(64, [[0, 'rgba(255,252,240,1)'], [.08, 'rgba(255,240,200,.95)'], [.22, 'rgba(244,206,130,.42)'], [.5, 'rgba(232,180,90,.1)'], [1, 'rgba(232,180,90,0)']]);
+  var SPR_WARM = glowSprite(64, [[0, 'rgba(255,246,214,1)'], [.12, 'rgba(255,214,130,.9)'], [.35, 'rgba(255,170,70,.28)'], [1, 'rgba(255,150,50,0)']]);
+  var SPR_BLUE = glowSprite(64, [[0, 'rgba(255,255,255,1)'], [.1, 'rgba(225,235,255,.85)'], [.3, 'rgba(170,190,255,.22)'], [1, 'rgba(150,170,255,0)']]);
+
+  // Moon face (north up, as seen by eye): limb-darkened disc with maria
+  var MOONTEX = null, MOONR = 0, MOONC = doc.createElement('canvas'), moonKey = '';
+  function buildMoonTex(r) {
+    MOONR = r; var s = Math.ceil(r * 2 * DPR) + 4, c = doc.createElement('canvas'); c.width = c.height = s;
+    var g = c.getContext('2d'), R = r * DPR, o = s / 2;
+    var gr = g.createRadialGradient(o - R * .2, o - R * .25, 0, o, o, R);
+    gr.addColorStop(0, '#fbf7ea'); gr.addColorStop(.7, '#ece4cf'); gr.addColorStop(1, '#c9bfa6');
+    g.fillStyle = gr; g.beginPath(); g.arc(o, o, R, 0, Math.PI * 2); g.fill();
+    g.save(); g.beginPath(); g.arc(o, o, R, 0, Math.PI * 2); g.clip();
+    var maria = [[-.55, -.08, .34, .30], [-.22, -.42, .24, .5], [.24, -.36, .17, .5], [.33, -.05, .2, .45], [.66, -.3, .11, .55], [.55, .15, .13, .45], [.38, .32, .1, .4], [-.15, .44, .14, .4], [-.46, .38, .1, .4], [-.62, -.35, .16, .3], [.02, -.1, .1, .3]];
+    maria.forEach(function (m) {
+      var x = o + m[0] * R, y = o + m[1] * R, rr = m[2] * R * 1.25;
+      var mg = g.createRadialGradient(x, y, 0, x, y, rr); mg.addColorStop(0, 'rgba(120,122,132,' + m[3] + ')'); mg.addColorStop(.7, 'rgba(130,132,140,' + m[3] * .6 + ')'); mg.addColorStop(1, 'rgba(140,140,150,0)');
+      g.fillStyle = mg; g.beginPath(); g.arc(x, y, rr, 0, Math.PI * 2); g.fill();
+    });
+    // Tycho & Copernicus
+    [[-.1, .74, .05, .9], [-.3, -.12, .04, .7]].forEach(function (k) { var x = o + k[0] * R, y = o + k[1] * R, rr = k[2] * R; var cg = g.createRadialGradient(x, y, 0, x, y, rr * 3); cg.addColorStop(0, 'rgba(255,255,250,' + k[3] + ')'); cg.addColorStop(1, 'rgba(255,255,250,0)'); g.fillStyle = cg; g.beginPath(); g.arc(x, y, rr * 3, 0, Math.PI * 2); g.fill(); });
+    g.restore();
+    MOONTEX = c; MOONC.width = MOONC.height = s; moonKey = '';
+  }
+  // render the lit moon (phase) into MOONC: northAng/sunAng are screen angles (radians)
+  function renderMoon(northAng, sunAng, cosi) {
+    var key = (northAng * 60 | 0) + ',' + (sunAng * 60 | 0) + ',' + (cosi * 200 | 0);
+    if (key === moonKey) return; moonKey = key;
+    var g = MOONC.getContext('2d'), s = MOONC.width, o = s / 2, R = MOONR * DPR;
+    g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, s, s);
+    g.save(); g.translate(o, o); g.rotate(northAng + Math.PI / 2); g.drawImage(MOONTEX, -s / 2, -s / 2); g.restore();
+    g.save(); g.translate(o, o); g.rotate(sunAng); g.globalCompositeOperation = 'source-atop';
+    g.fillStyle = 'rgba(14,18,40,.9)'; g.beginPath();
+    g.arc(0, 0, R + 1, Math.PI / 2, Math.PI * 1.5, false);
+    g.ellipse(0, 0, Math.max(.01, Math.abs(cosi)) * (R + 1), R + 1, 0, Math.PI * 1.5, Math.PI / 2, cosi > 0);
+    g.fill(); g.restore();
+  }
+
+  /* =====================================================================
+     HORIZON — coconut palms, distant treeline and a lit wedding mandap
+     ===================================================================== */
+  var SIL = null, SILTOP = 0, BULBS = [], MANDAP = null, BOFF = 0, landShift = -1;
+  var silCv = $('#sil'), bulbCv = $('#bulbs'), bulbG = bulbCv.getContext('2d'), land = $('#land');
+  function buildSil() {
+    var top = Math.round(H * 0.26); SILTOP = top;
+    var hh = Math.ceil(H - top + H * 0.2), c = silCv;
+    c.width = Math.ceil(W * DPR); c.height = Math.ceil(hh * DPR); c.style.top = top + 'px'; c.style.height = hh + 'px';
+    var g = c.getContext('2d'); g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, c.width, c.height); g.scale(DPR, DPR); g.translate(0, -top);
+    var rnd = mulberry(1122), yh = V.yh0, S = Math.min(1.25, Math.max(.78, Math.min(W, H * .62) / 420));
+    BULBS = [];
+    var cNear = '#010207', cMid = '#03050f', cFar = '#060918', cFar2 = '#080c20';
+    // faint warm haze along the land
+    var hz = g.createLinearGradient(0, yh - 40, 0, yh + 6); hz.addColorStop(0, 'rgba(255,170,90,0)'); hz.addColorStop(1, 'rgba(255,170,90,.05)'); g.fillStyle = hz; g.fillRect(0, yh - 40, W, 46);
+    // far treeline
+    function treeline(col, base, amp, freq, seed) {
+      var r = mulberry(seed); g.fillStyle = col; g.beginPath(); g.moveTo(0, base + 30);
+      var x = 0; while (x <= W + 8) { var bump = amp * (.45 + .55 * r()); g.lineTo(x, base - bump * (.6 + .4 * Math.sin(x * freq + seed))); x += 4 + r() * 7; }
+      g.lineTo(W + 10, base + 30); g.closePath(); g.fill();
+    }
+    treeline(cFar2, yh + 1, 7 * S, .05, 3);
+    // tiny distant lights on the land
+    for (var k = 0; k < Math.round(W / 34); k++) { var lx = rnd() * W; if (Math.abs(lx - W / 2) < 70 * S) continue; BULBS.push({ x: lx, y: yh - 1 - rnd() * 3, r: .7 + rnd() * .6, a: .35 + rnd() * .3, ph: rnd() * 9, sp: .4 + rnd(), far: 1 }); }
+    // distant palms
+    var mx = W / 2, mw = 46 * S;
+    var nFar = Math.max(4, Math.round(W / 70));
+    for (k = 0; k < nFar; k++) {
+      var px = (k + .3 + rnd() * .5) / nFar * W; if (Math.abs(px - mx) < mw * 1.8) continue;
+      palm(g, px, yh + 2, (34 + rnd() * 30) * S, (rnd() - .5) * 14 * S, .9 + rnd() * .2, cFar, rnd);
+    }
+    treeline(cFar, yh + 3, 4 * S, .09, 11);
+    // the mandap
+    MANDAP = mandap(g, mx, yh + 2, S, cMid);
+    // mid palms
+    var mids = W < 700 ? [.2, .33, .7, .82] : [.12, .22, .33, .67, .78, .9];
+    mids.forEach(function (f, i) { var px = f * W + (rnd() - .5) * 20; palm(g, px, yh + 6, (56 + rnd() * 34) * S * (W < 700 ? 1 : 1.15), (rnd() - .5) * 26 * S, 1, cMid, rnd); });
+    // ground
+    g.fillStyle = cMid; g.beginPath(); g.moveTo(0, yh + 4);
+    for (var x = 0; x <= W + 10; x += 10) g.lineTo(x, yh + 4 + Math.sin(x * .013) * 2 + Math.sin(x * .031 + 1) * 1.5);
+    g.lineTo(W + 10, H + H * .3); g.lineTo(0, H + H * .3); g.closePath(); g.fill();
+    var gg = g.createLinearGradient(0, yh, 0, H); gg.addColorStop(0, 'rgba(1,2,7,0)'); gg.addColorStop(.5, 'rgba(1,2,7,.85)'); gg.addColorStop(1, cNear); g.fillStyle = gg; g.fillRect(0, yh + 4, W, H * 1.3 - yh);
+    // warm pool of light under the mandap
+    var PR = 110 * S; g.save(); g.translate(mx, yh + 10); g.scale(1, .3);
+    var pg = g.createRadialGradient(0, 0, 0, 0, 0, PR); pg.addColorStop(0, 'rgba(255,170,80,.2)'); pg.addColorStop(1, 'rgba(255,170,80,0)'); g.fillStyle = pg; g.fillRect(-PR, -PR, PR * 2, PR * 2); g.restore();
+    // foreground palms framing the sky
+    if (W < 700) {
+      var big = Math.min(H * .33, 380);
+      palm(g, -W * .03, H + 30, big, big * .1, 1.05, cNear, rnd);
+      palm(g, W * 1.03, H + 30, big * .9, -big * .1, 1, cNear, rnd);
+    } else {
+      var bg2 = Math.min(H * .5, 440), edge = Math.min(W * .05, 70);
+      palm(g, edge, H + 30, bg2, bg2 * .05, 1.05, cNear, rnd);
+      palm(g, W - edge, H + 30, bg2 * .92, -bg2 * .05, 1, cNear, rnd);
+      if (W > 1000) { palm(g, edge + W * .07, H + 40, bg2 * .68, bg2 * .03, .92, cNear, rnd); palm(g, W - edge - W * .065, H + 40, bg2 * .62, -bg2 * .03, .9, cNear, rnd); }
+    }
+    // festoon strings from the mandap out to the mid palms
+    festoon(g, mx - mw * .95, yh - 30 * S, mx - mw * 3.2, yh - 44 * S, 9, 9 * S);
+    festoon(g, mx + mw * .95, yh - 30 * S, mx + mw * 3.2, yh - 44 * S, 9, 9 * S);
+    SIL = c;
+    // the twinkling bulbs live on a thin canvas laid over the horizon band
+    var y0 = 1e9, y1 = -1e9; BULBS.forEach(function (b) { y0 = Math.min(y0, b.y); y1 = Math.max(y1, b.y); });
+    BOFF = Math.floor(y0 - 10); var bh = Math.ceil(y1 + 10 - BOFF);
+    bulbCv.width = Math.ceil(W * DPR); bulbCv.height = Math.ceil(bh * DPR); bulbCv.style.top = BOFF + 'px'; bulbCv.style.height = bh + 'px';
+  }
+  function festoon(g, x0, y0, x1, y1, n, sag) {
+    g.strokeStyle = 'rgba(2,3,10,.9)'; g.lineWidth = .7; g.beginPath();
+    for (var i = 0; i <= 24; i++) { var t = i / 24, x = lerp(x0, x1, t), y = lerp(y0, y1, t) + sag * 4 * t * (1 - t); i ? g.lineTo(x, y) : g.moveTo(x, y); }
+    g.stroke();
+    for (i = 1; i < n; i++) { var u = i / n; BULBS.push({ x: lerp(x0, x1, u), y: lerp(y0, y1, u) + sag * 4 * u * (1 - u) + 1.2, r: 1.05, a: .9, ph: i * 1.7 + x0, sp: .8 + (i % 3) * .3 }); }
+  }
+  function palm(g, x, y, h, lean, s, col, rnd) {
+    var tx = x + lean, ty = y - h, cx = x + lean * .1, cy = y - h * .55, N = 26, L = [], R = [];
+    for (var i = 0; i <= N; i++) {
+      var t = i / N, it = 1 - t;
+      var px = it * it * x + 2 * it * t * cx + t * t * tx, py = it * it * y + 2 * it * t * cy + t * t * ty;
+      var dx = 2 * it * (cx - x) + 2 * t * (tx - cx), dy = 2 * it * (cy - y) + 2 * t * (ty - cy), dl = Math.hypot(dx, dy) || 1;
+      var nx = -dy / dl, ny = dx / dl, w = h * (.024 * it + .013 * t) + (t < .06 ? h * .018 * (1 - t / .06) : 0);
+      L.push([px - nx * w, py - ny * w]); R.push([px + nx * w, py + ny * w]);
+    }
+    g.fillStyle = col; g.strokeStyle = col; g.beginPath(); g.moveTo(L[0][0], L[0][1]);
+    for (i = 1; i <= N; i++) g.lineTo(L[i][0], L[i][1]);
+    for (i = N; i >= 0; i--) g.lineTo(R[i][0], R[i][1]);
+    g.closePath(); g.fill();
+    // crown
+    var nF = 15 + (rnd() * 4 | 0);
+    for (var k = 0; k < nF; k++) {
+      var f = k / (nF - 1), ang = -Math.PI / 2 + (f - .5) * Math.PI * 1.5 + (rnd() - .5) * .2 + (lean / h) * .4;
+      var len = h * .33 * s * (.8 + rnd() * .3) * (1 - .22 * Math.pow(1 - Math.abs(f - .5) * 2, 3));
+      frond(g, tx, ty, ang, len, rnd);
+    }
+    for (k = 0; k < 4; k++) { g.beginPath(); g.arc(tx + (rnd() - .5) * h * .04, ty + h * .02 + rnd() * h * .02, h * .012, 0, Math.PI * 2); g.fill(); }
+    g.beginPath(); g.arc(tx, ty, h * .02, 0, Math.PI * 2); g.fill();
+  }
+  function frond(g, x, y, ang, len, rnd) {
+    var ca = Math.cos(ang), sa = Math.sin(ang), hor = Math.abs(ca);
+    var ex = x + ca * len * .86, ey = y + sa * len * .8 + len * (.12 + .4 * hor * hor);
+    var cx = x + ca * len * .55, cy = y + sa * len * .55 - len * .13;
+    g.lineCap = 'round'; g.lineWidth = Math.max(.9, len * .018);
+    g.beginPath(); g.moveTo(x, y); g.quadraticCurveTo(cx, cy, ex, ey); g.stroke();
+    var nL = Math.max(10, Math.round(len / 4.4)); g.lineWidth = Math.max(.55, len * .0075); g.beginPath();
+    for (var j = 3; j <= nL; j++) {
+      var t = j / nL, it = 1 - t;
+      var px = it * it * x + 2 * it * t * cx + t * t * ex, py = it * it * y + 2 * it * t * cy + t * t * ey;
+      var dx = 2 * it * (cx - x) + 2 * t * (ex - cx), dy = 2 * it * (cy - y) + 2 * t * (ey - cy), dl = Math.hypot(dx, dy) || 1; dx /= dl; dy /= dl;
+      var ll = len * .19 * Math.pow(Math.sin(Math.PI * Math.min(1, t * 1.02)), .55) * (.82 + rnd() * .36);
+      for (var sd = -1; sd <= 1; sd += 2) {
+        var a = .95, ux = dx * Math.cos(a) - dy * Math.sin(a) * sd, uy = dy * Math.cos(a) + dx * Math.sin(a) * sd;
+        var lx = ux * .8, ly = uy * .8 + .38, n = Math.hypot(lx, ly); lx /= n; ly /= n;
+        g.moveTo(px, py); g.quadraticCurveTo(px + ux * ll * .42, py + uy * ll * .42, px + lx * ll, py + ly * ll);
+      }
+    }
+    g.stroke();
+  }
+  function mandap(g, x, y, S, col) {
+    var w = 46 * S, ph = 24 * S, e = 1;
+    g.fillStyle = col; g.strokeStyle = col;
+    // interior glow (warm)
+    var ig = g.createLinearGradient(0, y - ph, 0, y); ig.addColorStop(0, 'rgba(255,200,120,.42)'); ig.addColorStop(.6, 'rgba(255,165,80,.24)'); ig.addColorStop(1, 'rgba(255,150,70,.14)');
+    g.fillStyle = ig; g.fillRect(x - w * .78, y - ph, w * 1.56, ph);
+    var HR = w * 1.7, hg = g.createRadialGradient(x, y - ph * .45, 0, x, y - ph * .45, HR); hg.addColorStop(0, 'rgba(255,190,100,.24)'); hg.addColorStop(1, 'rgba(255,170,80,0)');
+    g.fillStyle = hg; g.fillRect(x - HR, y - ph * .45 - HR, HR * 2, HR * 2);
+    g.fillStyle = col;
+    // platform & steps
+    g.fillRect(x - w * .95, y - 3 * S, w * 1.9, 4 * S + 2); g.fillRect(x - w * .6, y + S, w * 1.2, 3 * S);
+    // pillars
+    [-.78, -.3, .3, .78].forEach(function (f) { g.fillRect(x + f * w - 1.6 * S, y - ph, 3.2 * S, ph); g.fillRect(x + f * w - 2.6 * S, y - ph, 5.2 * S, 2.4 * S); g.fillRect(x + f * w - 2.6 * S, y - 4.6 * S, 5.2 * S, 2 * S); });
+    // hanging garlands silhouette (inside, between pillars)
+    // lower roof with flared eaves
+    var ey = y - ph, r1 = ey - 16 * S;
+    g.beginPath(); g.moveTo(x - w * 1.12, ey + 2.5 * S); g.quadraticCurveTo(x - w * .9, ey - 1 * S, x - w * .52, r1); g.lineTo(x + w * .52, r1); g.quadraticCurveTo(x + w * .9, ey - 1 * S, x + w * 1.12, ey + 2.5 * S); g.lineTo(x + w * .95, ey + 1 * S); g.lineTo(x - w * .95, ey + 1 * S); g.closePath(); g.fill();
+    // upper roof
+    var r2 = r1 - 17 * S;
+    g.beginPath(); g.moveTo(x - w * .66, r1 + 2 * S); g.quadraticCurveTo(x - w * .45, r1 - 2 * S, x - w * .14, r2); g.lineTo(x + w * .14, r2); g.quadraticCurveTo(x + w * .45, r1 - 2 * S, x + w * .66, r1 + 2 * S); g.closePath(); g.fill();
+    // gable + finial (kalasam)
+    g.beginPath(); g.moveTo(x - w * .2, r2 + 1); g.lineTo(x, r2 - 8 * S); g.lineTo(x + w * .2, r2 + 1); g.closePath(); g.fill();
+    g.beginPath(); g.arc(x, r2 - 9.5 * S, 2.6 * S, 0, Math.PI * 2); g.fill();
+    g.beginPath(); g.arc(x, r2 - 13 * S, 1.7 * S, 0, Math.PI * 2); g.fill();
+    g.fillRect(x - .5 * S, r2 - 19 * S, 1 * S, 6 * S);
+    // bulbs along the eaves, roofs and swags
+    var i, t;
+    for (i = 0; i <= 14; i++) { t = i / 14; BULBS.push({ x: x - w * 1.08 + t * w * 2.16, y: ey + 3.4 * S - Math.sin(t * Math.PI) * 1.2 * S, r: 1.05, a: 1, ph: i * 2.1, sp: 1.2 }); }
+    for (i = 0; i <= 8; i++) { t = i / 8; var bx = x - w * .64 + t * w * 1.28; BULBS.push({ x: bx, y: r1 + 2.6 * S, r: .95, a: .95, ph: i * 1.3 + 5, sp: 1 }); }
+    for (i = 0; i <= 5; i++) { t = i / 5; BULBS.push({ x: lerp(x - w * .14, x - w * .62, t), y: lerp(r2, r1 - 1 * S, eo(t)) + .5, r: .85, a: .85, ph: i, sp: .9 }); BULBS.push({ x: lerp(x + w * .14, x + w * .62, t), y: lerp(r2, r1 - 1 * S, eo(t)) + .5, r: .85, a: .85, ph: i + 3, sp: .9 }); }
+    [-.54, 0, .54].forEach(function (f) { for (var j = 1; j < 5; j++) { var u = j / 5, bx = x + (f - .24) * w + u * w * .48; BULBS.push({ x: bx, y: ey + 2.5 * S + Math.sin(u * Math.PI) * 5 * S, r: .8, a: .9, ph: j * 2 + f * 9, sp: 1.4 }); } });
+    BULBS.push({ x: x, y: r2 - 19.5 * S, r: 1.3, a: 1, ph: 0, sp: .6 });
+    return { x: x, y: y, w: w };
+  }
+
+  /* =====================================================================
+     NAME CONSTELLATION — sampled from single-stroke script letterforms
+     ===================================================================== */
+  var AMP = 'M 86 66 C 84 96 66 124 42 124 C 22 124 10 112 10 96 C 10 78 26 68 44 58 C 58 50 66 40 64 26 C 62 14 54 8 46 8 C 37 8 32 16 33 26 C 35 48 62 92 98 124';
+  var AMPPTS = (function () {
+    var svg = doc.createElementNS('http://www.w3.org/2000/svg', 'svg'), p = doc.createElementNS('http://www.w3.org/2000/svg', 'path');
+    svg.setAttribute('width', '0'); svg.setAttribute('height', '0'); svg.style.position = 'absolute'; p.setAttribute('d', AMP); svg.appendChild(p); body.appendChild(svg);
+    var L = p.getTotalLength(), out = [];
+    for (var i = 0; i <= 90; i++) { var q = p.getPointAtLength(L * i / 90); out.push([q.x, q.y]); }
+    body.removeChild(svg); return out;
+  })();
+  function smoothStroke(pts) { // Catmull-Rom through the font polyline, splitting at sharp cusps
+    var out = [], n = pts.length; if (n < 3) return pts.slice();
+    out.push(pts[0]);
+    for (var i = 0; i < n - 1; i++) {
+      var p0 = pts[Math.max(0, i - 1)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(n - 1, i + 2)];
+      if (i > 0 && cusp(pts, i)) p0 = p1; if (i + 1 < n - 1 && cusp(pts, i + 1)) p3 = p2;
+      var seg = Math.hypot(p2[0] - p1[0], p2[1] - p1[1]), steps = Math.max(1, Math.ceil(seg / 2.5));
+      for (var k = 1; k <= steps; k++) {
+        var t = k / steps, t2 = t * t, t3 = t2 * t;
+        out.push([.5 * ((2 * p1[0]) + (-p0[0] + p2[0]) * t + (2 * p0[0] - 5 * p1[0] + 4 * p2[0] - p3[0]) * t2 + (-p0[0] + 3 * p1[0] - 3 * p2[0] + p3[0]) * t3),
+                  .5 * ((2 * p1[1]) + (-p0[1] + p2[1]) * t + (2 * p0[1] - 5 * p1[1] + 4 * p2[1] - p3[1]) * t2 + (-p0[1] + 3 * p1[1] - 3 * p2[1] + p3[1]) * t3)]);
+      }
+    }
+    return out;
+  }
+  function cusp(p, i) { var a = p[i - 1], b = p[i], c = p[i + 1]; var x1 = b[0] - a[0], y1 = b[1] - a[1], x2 = c[0] - b[0], y2 = c[1] - b[1]; var d = (x1 * x2 + y1 * y2) / ((Math.hypot(x1, y1) * Math.hypot(x2, y2)) || 1); return d < -0.35; }
+
+  var NAME = null; // { strokes:[{pts, cum, len, t0, dur}], stars:[{x,y,s,ox,oy,t0,seed,ctrl}] }
+  function buildName() {
+    var box = $('#namebox').getBoundingClientRect(), bw = box.width, bh = box.height, bx = box.left, by = box.top + scrollY;
+    var stacked = bw / bh < 2.6;
+    // word strokes in font units (y up)
+    function word(txt) {
+      var x = 0, st = [];
+      for (var i = 0; i < txt.length; i++) {
+        var gd = GLY[txt[i]]; for (var s = 1; s < gd.length; s++) { var a = gd[s], pts = []; for (var k = 0; k < a.length; k += 2) pts.push([a[k] + x, a[k + 1]]); st.push(pts); }
+        x += gd[0];
+      }
+      return st;
+    }
+    function amp(hgt) { var k = hgt / 116, pts = AMPPTS.map(function (p) { return [p[0] * k, (124 - p[1]) * k - 20]; }); return [pts]; }
+    function bbox(sts) { var a = [1e9, 1e9, -1e9, -1e9]; sts.forEach(function (s) { s.forEach(function (p) { a[0] = Math.min(a[0], p[0]); a[1] = Math.min(a[1], p[1]); a[2] = Math.max(a[2], p[0]); a[3] = Math.max(a[3], p[1]); }); }); return a; }
+    function shift(sts, dx, dy) { return sts.map(function (s) { return s.map(function (p) { return [p[0] + dx, p[1] + dy]; }); }); }
+    var lines = [];
+    var w1 = word('Anupama'), w2 = word('Ajay'), am = amp(stacked ? 470 : 560);
+    var b1 = bbox(w1), b2 = bbox(w2), ba = bbox(am);
+    if (stacked) {
+      // centre each line on its own visual box
+      lines.push(shift(w1, -(b1[0] + b1[2]) / 2, 0));
+      lines.push(shift(am, -(ba[0] + ba[2]) / 2, -860));
+      lines.push(shift(w2, -(b2[0] + b2[2]) / 2 + 60, -1560));
+    } else {
+      var gap = 170, tw = (b1[2] - b1[0]) + gap + (ba[2] - ba[0]) + gap + (b2[2] - b2[0]), x0 = -tw / 2;
+      lines.push(shift(w1, x0 - b1[0], 0)); x0 += (b1[2] - b1[0]) + gap;
+      lines.push(shift(am, x0 - ba[0], 30)); x0 += (ba[2] - ba[0]) + gap;
+      lines.push(shift(w2, x0 - b2[0], 0));
+    }
+    var all = [].concat.apply([], lines), B = bbox(all);
+    var sc = Math.min(bw * (stacked ? .9 : .94) / (B[2] - B[0]), bh * .98 / (B[3] - B[1]));
+    var ox = bx + bw / 2 - (B[0] + B[2]) / 2 * sc, oy = by + bh / 2 + (B[1] + B[3]) / 2 * sc;
+    var strokes = [], stars = [], order = 0, rnd = mulberry(2211);
+    var step = clamp(bw / 17, 15, 28);
+    lines.forEach(function (ln, li) {
+      ln.forEach(function (s) {
+        var raw = s.map(function (p) { return [ox + p[0] * sc, oy - p[1] * sc]; });
+        var pts = li === 1 ? raw : smoothStroke(raw), cum = [0];
+        for (var i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+        var len = cum[cum.length - 1]; if (len < 2) return;
+        strokes.push({ pts: pts, cum: cum, len: len, li: li, x0: Math.min.apply(null, pts.map(function (p) { return p[0]; })) });
+      });
+    });
+    strokes.sort(function (a, b) { return a.li - b.li || a.x0 - b.x0; });
+    var total = 0; strokes.forEach(function (s) { total += s.len; });
+    var acc = 0, LD = 2.7;
+    strokes.forEach(function (s) {
+      s.t0 = 1.55 + acc / total * LD * .94; s.dur = s.len / total * LD + .05; acc += s.len;
+      // stars along the stroke: ends, cusps and every ~step px
+      var marks = [0], last = 0, i;
+      for (i = 1; i < s.pts.length - 1; i++) {
+        var d = s.cum[i] - last;
+        if (d >= step * (.85 + rnd() * .3) || (d > step * .45 && sharp(s.pts, i))) { marks.push(i); last = s.cum[i]; }
+      }
+      if (s.len - last > step * .4) marks.push(s.pts.length - 1); else marks[marks.length - 1] = s.pts.length - 1;
+      marks.forEach(function (mi, k) {
+        var end = k === 0 || k === marks.length - 1, p = s.pts[mi];
+        stars.push({ x: p[0], y: p[1], s: end ? 1 : (rnd() < .22 ? .95 : .45 + rnd() * .35), ord: s.t0 + (s.cum[mi] / s.len) * s.dur, seed: rnd() * 100 });
+      });
+    });
+    function sharp(p, i) { var a = p[Math.max(0, i - 3)], b = p[i], c = p[Math.min(p.length - 1, i + 3)]; var x1 = b[0] - a[0], y1 = b[1] - a[1], x2 = c[0] - b[0], y2 = c[1] - b[1]; return (x1 * x2 + y1 * y2) / ((Math.hypot(x1, y1) * Math.hypot(x2, y2)) || 1) < .2; }
+    // de-duplicate stars that sit on top of each other (joins between letters)
+    var keep = [];
+    stars.forEach(function (a) { for (var i = 0; i < keep.length; i++) { var b = keep[i]; if (Math.hypot(a.x - b.x, a.y - b.y) < step * .38) { b.s = Math.max(a.s, b.s); return; } } keep.push(a); });
+    NAME = { strokes: strokes, stars: keep, box: [bx, by, bw, bh], step: step, origins: false };
+  }
+  // pick launch points for the gathering stars from real stars currently on screen
+  function seedOrigins() {
+    if (!NAME) return;
+    var cand = [];
+    for (var i = 0; i < NS; i++) {
+      if (SMAG[i] < 2.4) continue;
+      var v = refractV(ASTRO.mul(SKY.HP, [SV[i * 3], SV[i * 3 + 1], SV[i * 3 + 2]])); if (v[2] < .05) continue;
+      if (projC(horToCam(v)) && PJ[0] > 4 && PJ[0] < W - 4 && PJ[1] > 4 && PJ[1] < V.yh0 - 30) cand.push([PJ[0], PJ[1] + scrollY]);
+    }
+    var rnd = mulberry(99), n = NAME.stars.length;
+    NAME.stars.forEach(function (s, k) {
+      var o = cand.length ? cand[(rnd() * cand.length) | 0] : [rnd() * W, rnd() * H * .6];
+      s.ox = o[0] + (rnd() - .5) * 6; s.oy = o[1] + (rnd() - .5) * 6;
+      var dx = s.x - s.ox, dy = s.y - s.oy, d = Math.hypot(dx, dy) || 1, sw = (rnd() < .5 ? -1 : 1) * d * (.18 + rnd() * .2);
+      s.cx = (s.x + s.ox) / 2 - dy / d * sw; s.cy = (s.y + s.oy) / 2 + dx / d * sw;
+      s.t0 = .05 + clamp((s.ord - 1.55) / 2.7, 0, 1) * .95 + rnd() * .12; s.dur = 1.35 + rnd() * .35;
+    });
+    NAME.origins = true;
+  }
+  function drawName(g, t, offY, alpha) {
+    if (!NAME || alpha <= 0.002) return;
+    var st = NAME.strokes, i, s;
+    g.save(); g.translate(0, offY); g.lineCap = 'round'; g.lineJoin = 'round';
+    // soft dark veil so the lettering reads over the stars
+    if (alpha > 0) {
+      var bx = NAME.box[0] + NAME.box[2] / 2, by = NAME.box[1] + NAME.box[3] / 2, rr = Math.max(NAME.box[2], NAME.box[3]) * .62;
+      var vg = g.createRadialGradient(bx, by, 0, bx, by, rr); vg.addColorStop(0, 'rgba(2,3,12,' + (.42 * alpha * NAME.veil) + ')'); vg.addColorStop(1, 'rgba(2,3,12,0)');
+      g.fillStyle = vg; g.save(); g.translate(bx, by); g.scale(1, NAME.box[3] / NAME.box[2] * 1.5); g.translate(-bx, -by); g.fillRect(bx - rr, by - rr, rr * 2, rr * 2); g.restore();
+    }
+    var heads = [];
+    function path(lw, col) {
+      g.lineWidth = lw; g.strokeStyle = col; g.beginPath();
+      for (i = 0; i < st.length; i++) {
+        s = st[i]; var f = NAME.done ? 1 : clamp((t - s.t0) / s.dur, 0, 1); if (f <= 0) continue;
+        var L = f * s.len, p = s.pts, c = s.cum; g.moveTo(p[0][0], p[0][1]);
+        for (var k = 1; k < p.length; k++) { if (c[k] <= L) g.lineTo(p[k][0], p[k][1]); else { var u = (L - c[k - 1]) / (c[k] - c[k - 1]); var hx = lerp(p[k - 1][0], p[k][0], u), hy = lerp(p[k - 1][1], p[k][1], u); g.lineTo(hx, hy); if (lw < 2) heads.push([hx, hy]); break; } }
+      }
+      g.stroke();
+    }
+    g.globalAlpha = alpha;
+    path(3.4, 'rgba(240,196,110,.16)');
+    path(1.15, 'rgba(250,226,168,.92)');
+    g.globalCompositeOperation = 'lighter';
+    var S = NAME.step;
+    for (i = 0; i < NAME.stars.length; i++) {
+      s = NAME.stars[i]; var x = s.x, y = s.y, a = 1, sz = (6 + 13 * s.s) * clamp(S / 22, .8, 1.2);
+      if (!NAME.done) {
+        var u = clamp((t - s.t0) / s.dur, 0, 1); if (u <= 0) continue;
+        var e = eio(u), it = 1 - e; x = it * it * s.ox + 2 * it * e * s.cx + e * e * s.x; y = it * it * s.oy + 2 * it * e * s.cy + e * e * s.y;
+        a = .35 + .65 * sm(0, .4, u); var fl = clamp((t - s.t0 - s.dur) / .7, 0, 1); if (u >= 1) sz *= 1 + 1.3 * (1 - fl) * (fl > 0 ? 1 : 0) * Math.sin(Math.PI * Math.min(1, fl * 1.6));
+        if (u < 1) sz *= .7 + .3 * e;
+      } else a = .82 + .18 * Math.sin(t * 1.4 + s.seed);
+      g.globalAlpha = alpha * a; g.drawImage(SPR_STAR, x - sz / 2, y - sz / 2, sz, sz);
+    }
+    g.globalAlpha = alpha;
+    for (i = 0; i < heads.length; i++) g.drawImage(SPR_WARM, heads[i][0] - 9, heads[i][1] - 9, 18, 18);
+    g.restore();
+  }
+
+  /* =====================================================================
+     SHOOTING STARS
+     ===================================================================== */
+  var METEORS = [], nextMeteor = 0;
+  function addMeteor(x0, y0, x1, y1, dur, t, cb) { METEORS.push({ x0: x0, y0: y0, x1: x1, y1: y1, dur: dur, t0: t, cb: cb, len: Math.min(220, Math.hypot(x1 - x0, y1 - y0) * .32) }); }
+  function drawMeteors(g, t) {
+    for (var i = METEORS.length - 1; i >= 0; i--) {
+      var m = METEORS[i], u = (t - m.t0) / m.dur; if (u < 0) continue;
+      if (u > 1.25) { METEORS.splice(i, 1); continue; }
+      var e = 1 - Math.pow(1 - clamp(u, 0, 1), 1.6), x = lerp(m.x0, m.x1, e), y = lerp(m.y0, m.y1, e);
+      var dx = m.x1 - m.x0, dy = m.y1 - m.y0, d = Math.hypot(dx, dy); dx /= d; dy /= d;
+      var fade = u > 1 ? 1 - (u - 1) / .25 : sm(0, .12, u) * (1 - sm(.82, 1, u) * .7), L = m.len * (0.4 + 0.6 * sm(0, .35, u));
+      var gr = g.createLinearGradient(x, y, x - dx * L, y - dy * L);
+      gr.addColorStop(0, 'rgba(255,250,235,' + (.95 * fade) + ')'); gr.addColorStop(.25, 'rgba(250,226,170,' + (.45 * fade) + ')'); gr.addColorStop(1, 'rgba(240,200,140,0)');
+      g.strokeStyle = gr; g.lineCap = 'round'; g.lineWidth = 1.7; g.beginPath(); g.moveTo(x, y); g.lineTo(x - dx * L, y - dy * L); g.stroke();
+      if (u <= 1) { g.globalCompositeOperation = 'lighter'; g.globalAlpha = fade; g.drawImage(SPR_BLUE, x - 9, y - 9, 18, 18); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; }
+      if (m.cb) m.cb(x, y, u);
+    }
+  }
+
+  /* =====================================================================
+     CONSTELLATION FIGURES on the live sky (faint)
+     ===================================================================== */
+  var SX = new Float32Array(NS), SY = new Float32Array(NS), SU = new Float32Array(NS), SOK = new Uint8Array(NS), LINEST = [];
+  CAT.cons.forEach(function (c) { c[3].forEach(function (pl) { pl.forEach(function (i) { LINEST[i] = 1; }); }); });
+  var LINEIDX = []; LINEST.forEach(function (v, i) { if (v) LINEIDX.push(i); });
+  function projectLineStars(sky) {
+    var M = ASTRO.mmul(V.BT, sky.HP), HP = sky.HP;
+    for (var k = 0; k < LINEIDX.length; k++) {
+      var i = LINEIDX[k], v = [SV[i * 3], SV[i * 3 + 1], SV[i * 3 + 2]], h = refractV(ASTRO.mul(HP, v));
+      SU[i] = h[2]; SOK[i] = projC(horToCam(h)) ? 1 : 0; SX[i] = PJ[0]; SY[i] = PJ[1];
+    }
+  }
+  function drawFigures(g, a) {
+    if (a <= 0.003) return;
+    g.lineWidth = .8; g.strokeStyle = 'rgba(226,200,140,' + (.16 * a) + ')'; g.beginPath();
+    CAT.cons.forEach(function (c) {
+      c[3].forEach(function (pl) {
+        for (var k = 1; k < pl.length; k++) {
+          var i = pl[k - 1], j = pl[k]; if (!SOK[i] || !SOK[j] || SU[i] < .01 || SU[j] < .01) continue;
+          var dx = SX[j] - SX[i], dy = SY[j] - SY[i], d = Math.hypot(dx, dy); if (d < 8 || d > 400) continue;
+          var gap = Math.min(4, d * .2); dx /= d; dy /= d;
+          g.moveTo(SX[i] + dx * gap, SY[i] + dy * gap); g.lineTo(SX[j] - dx * gap, SY[j] - dy * gap);
+        }
+      });
+    });
+    g.stroke();
+  }
+
+  /* =====================================================================
+     MAIN LOOP
+     ===================================================================== */
+  var hero = $('#hero'), htop = $('#htop'), cta = $('#cta'), openwrap = $('#openwrap'), hdate = $('#hdate'), clockT = $('#clockT');
+  var phase = SKIP ? 'skip' : 'reveal', tStart = performance.now() / 1000, tTap = 0, revealShift = 0, maxScroll = 1, simMs = T0, lastClock = '';
+  var raf = 0, running = false, tilt = 0;
+  // date letters (revealed by the shooting star)
+  (function () {
+    var txt = hdate.textContent, html = '', words = txt.split(' ');
+    words.forEach(function (w, wi) { html += '<span class="w">'; for (var i = 0; i < w.length; i++) html += '<i>' + w[i] + '</i>'; html += '</span>' + (wi < words.length - 1 ? ' ' : ''); });
+    hdate.innerHTML = html;
+  })();
+  var DATEI = [].slice.call(hdate.querySelectorAll('i'));
+  function dateAll() { DATEI.forEach(function (el) { el.classList.add('on'); }); }
+
+  function resize(force) {
+    var nw = stage.clientWidth || innerWidth, nh = stage.clientHeight || innerHeight;
+    if (!force && nw === W && Math.abs(nh - H) < 140) { maxScroll = Math.max(1, root.scrollHeight - innerHeight); return; }
+    W = nw; H = nh; DPR = Math.min(window.devicePixelRatio || 1, 2); GDPR = Math.min(window.devicePixelRatio || 1, W < 700 ? 2 : 1.6);
+    fxCv.width = Math.round(W * DPR); fxCv.height = Math.round(H * DPR);
+    skyCv.width = Math.round(W * GDPR); skyCv.height = Math.round(H * GDPR);
+    layoutView(); buildSil(); buildMoonTex(clamp(V.R * .036, 12, 21));
+    var keepDone = NAME && NAME.done; buildName(); if (NAME) { NAME.done = keepDone || phase === 'opened' || phase === 'done' || phase === 'skip'; NAME.veil = 1; }
+    if (NAME && !NAME.done && (phase === 'gather' || phase === 'meteor')) { skyAt(simMs); seedOrigins(); }
+    maxScroll = Math.max(1, root.scrollHeight - innerHeight);
+  }
+
+  function fmtClock(ms) {
+    var d = new Date(ms + 5.5 * 3600e3), h = d.getUTCHours(), m = d.getUTCMinutes(), ap = h >= 12 ? 'PM' : 'AM', h12 = h % 12 || 12;
+    return h12 + ':' + (m < 10 ? '0' : '') + m + ' ' + ap;
+  }
+
+  function frame(nowMs) {
+    raf = requestAnimationFrame(frame);
+    var t = nowMs / 1000, el = t - tStart, sy = window.scrollY || 0;
+    // reveal: the sky fades in from black, stars appear by brightness
+    var rev = SKIP || RM ? 1 : clamp((el + revealShift - .3) / 3.4, 0, 1);
+    var mw = (SKIP || RM ? 1 : sm(1.6, 4.6, el + revealShift)) * 0.55;
+    if (phase === 'reveal') {
+      if (el + revealShift > 1.5) htop.classList.add('show');
+      if (el + revealShift > 3.0) { cta.classList.add('show'); phase = 'ready'; }
+    }
+    // time of night follows scroll
+    var p = clamp(sy / maxScroll, 0, 1), target = T0 + p * SPAN;
+    simMs = RM ? target : simMs + (target - simMs) * .085; if (Math.abs(target - simMs) < 500) simMs = target;
+    var sky = skyAt(simMs);
+    var c = fmtClock(simMs); if (c !== lastClock) { lastClock = c; clockT.textContent = c; }
+    // camera tilts up a little while reading, back down for the closing horizon
+    var tl = sm(0, H * .75, sy) * (1 - sm(maxScroll - H * .75, maxScroll - H * .02, sy));
+    tilt = RM ? tl : tilt + (tl - tilt) * .12;
+    setCam(tilt * H * .12);
+    var moon = sky.bodies.Moon, ml = Math.hypot(moon.hor[0], moon.hor[1], moon.hor[2]), mh = refractV([moon.hor[0] / ml, moon.hor[1] / ml, moon.hor[2] / ml]), mc = horToCam(mh);
+    if (GL) drawGL(sky, t, rev, mw, mc, sm(-.05, .1, mh[2]) * rev);
+    // ---- 2D layer ----
+    var g = fx; g.setTransform(DPR, 0, 0, DPR, 0, 0); g.clearRect(0, 0, W, H);
+    if (!GL) drawFallback(g, sky, t, rev);
+    projectLineStars(sky);
+    var figA = rev * (phase === 'opened' ? .5 + .5 * sm(H * .3, H * 1.2, sy) : phase === 'gather' || phase === 'meteor' || phase === 'done' ? .45 : sm(.7, 1, rev) * .75);
+    drawFigures(g, figA);
+    drawMoon(g, sky, mh, mc, rev);
+    drawMeteors(g, t);
+    // horizon
+    if (Math.abs(V.shift - landShift) > .05) { landShift = V.shift; land.style.transform = 'translate3d(0,' + V.shift.toFixed(2) + 'px,0)'; }
+    drawBulbs(t, rev);
+    // name
+    if (phase === 'gather' || phase === 'meteor' || phase === 'done' || phase === 'opened') {
+      var a = 1 - sm(H * .25, H * .8, sy);
+      drawName(g, t - tTap, -sy, a);
+    }
+    // intro sequencing
+    if (phase === 'gather' && t - tTap > 4.35) { phase = 'meteor'; launchDateMeteor(t); }
+    if (phase === 'meteor' && t - tTap > 5.75) { phase = 'done'; NAME.done = true; openwrap.classList.add('show'); }
+    // occasional shooting stars over the page
+    if (phase === 'opened' && !RM) {
+      if (!nextMeteor) nextMeteor = t + 4 + Math.random() * 5;
+      if (t > nextMeteor) { nextMeteor = t + 7 + Math.random() * 10; randomMeteor(t); }
+    }
+  }
+  function randomMeteor(t) {
+    var ang = (Math.random() < .5 ? 1 : -1) * (.35 + Math.random() * .5), len = Math.min(W, H) * (.25 + Math.random() * .25);
+    var x0 = W * (.15 + Math.random() * .7), y0 = H * (.06 + Math.random() * .3), dir = Math.random() < .5 ? 1 : -1;
+    addMeteor(x0, y0, x0 + Math.cos(ang) * len * dir, y0 + Math.abs(Math.sin(ang)) * len, .7 + Math.random() * .4, t);
+  }
+  function launchDateMeteor(t) {
+    var r = hdate.getBoundingClientRect(), y = r.top + r.height / 2;
+    var xs = DATEI.map(function (el) { var b = el.getBoundingClientRect(); return b.left + b.width / 2; });
+    if (RM) { dateAll(); return; }
+    addMeteor(-W * .06, y - H * .09, W * 1.02, y + H * .012, 1.25, t, function (x) { for (var i = 0; i < xs.length; i++) if (xs[i] < x - 6) DATEI[i].classList.add('on'); });
+    setTimeout(dateAll, 1500);
+  }
+  function drawMoon(g, sky, mh, mc, rev) {
+    if (mh[2] < -.01 || !projC(mc)) return;
+    var x = PJ[0], y = PJ[1], r = MOONR;
+    // screen directions of celestial north and of the Sun at the Moon
+    var ncp = [0, Math.cos(LAT * D2R), Math.sin(LAT * D2R)], sun = sky.bodies.Sun.hor, sl = Math.hypot(sun[0], sun[1], sun[2]); sun = [sun[0] / sl, sun[1] / sl, sun[2] / sl];
+    function dirTo(v) { var d = v[0] * mh[0] + v[1] * mh[1] + v[2] * mh[2], tv = [v[0] - mh[0] * d, v[1] - mh[1] * d, v[2] - mh[2] * d], l = Math.hypot(tv[0], tv[1], tv[2]) || 1, e = .01;
+      var q = [mh[0] + tv[0] / l * e, mh[1] + tv[1] / l * e, mh[2] + tv[2] / l * e]; projC(horToCam(q)); var a = Math.atan2(PJ[1] - y, PJ[0] - x); return a; }
+    var na = dirTo(ncp), sa = dirTo(sun);
+    renderMoon(na, sa, Math.cos(sky.bodies.Moon.phaseAngle * D2R));
+    g.globalAlpha = rev; g.globalCompositeOperation = 'lighter';
+    g.drawImage(SPR_BLUE, x - r * 4.2, y - r * 4.2, r * 8.4, r * 8.4);
+    g.globalCompositeOperation = 'source-over';
+    var s = MOONC.width / DPR; g.drawImage(MOONC, x - s / 2, y - s / 2, s, s); g.globalAlpha = 1;
+  }
+  function drawBulbs(t, rev) {
+    if (!BULBS.length) return;
+    var g = bulbG; g.setTransform(DPR, 0, 0, DPR, 0, 0); g.clearRect(0, 0, W, bulbCv.height / DPR);
+    g.globalCompositeOperation = 'lighter'; var off = -BOFF;
+    for (var i = 0; i < BULBS.length; i++) {
+      var b = BULBS[i], tw = RM ? 1 : .78 + .22 * Math.sin(t * b.sp * 2.2 + b.ph) * Math.sin(t * b.sp * .9 + b.ph * 1.7), s = b.far ? 7 * b.r : 9 * b.r;
+      g.globalAlpha = clamp(b.a * tw * (0.25 + .75 * rev), 0, 1); g.drawImage(SPR_WARM, b.x - s / 2, b.y + off - s / 2, s, s);
+    }
+    g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+  }
+  // 2D fallback when WebGL is unavailable
+  function drawFallback(g, sky, t, rev) {
+    var gr = g.createLinearGradient(0, 0, 0, V.yh0 + V.shift); gr.addColorStop(0, '#02030a'); gr.addColorStop(.6, '#070b22'); gr.addColorStop(1, '#151a40');
+    g.globalAlpha = rev; g.fillStyle = gr; g.fillRect(0, 0, W, H);
+    var M = ASTRO.mmul(V.BT, sky.HP); g.globalCompositeOperation = 'lighter';
+    for (var i = 0; i < NS; i++) {
+      var v = [SV[i * 3], SV[i * 3 + 1], SV[i * 3 + 2]], up = sky.HP[6] * v[0] + sky.HP[7] * v[1] + sky.HP[8] * v[2]; if (up < 0.01) continue;
+      if (!projC(ASTRO.mul(M, v))) continue; var m = SMAG[i], s = 2 + 9 * Math.exp(-.42 * (m + 1.5));
+      g.globalAlpha = rev * clamp(1.25 - .17 * (m - 1), .2, 1); g.drawImage(SPR_BLUE, PJ[0] - s / 2, PJ[1] - s / 2, s, s);
+    }
+    g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+  }
+
+  /* ---------- interaction ---------- */
+  function touchSky(e) {
+    if (phase !== 'reveal' && phase !== 'ready') return;
+    if (e) e.preventDefault();
+    var el = performance.now() / 1000 - tStart; if (el + revealShift < 3.4) revealShift = 3.4 - el;   // finish the fade-in
+    htop.classList.add('show'); cta.classList.add('show'); cta.classList.add('gone');
+    phase = 'gather'; tTap = performance.now() / 1000;
+    skyAt(simMs); seedOrigins();
+    if (RM) { NAME.done = true; phase = 'done'; dateAll(); openwrap.classList.add('show'); }
+  }
+  function open() {
+    if (phase === 'opened') return;
+    if (NAME) NAME.done = true; dateAll(); htop.classList.add('show');
+    phase = 'opened'; body.classList.remove('locked'); body.classList.add('opened');
+    maxScroll = Math.max(1, root.scrollHeight - innerHeight);
+  }
+  hero.addEventListener('click', function (e) {
+    if (e.target.closest('#openBtn')) return;
+    if (phase === 'reveal' || phase === 'ready') touchSky(e); else if (phase === 'done') open();
+  });
+  $('#openBtn').addEventListener('click', function (e) { e.stopPropagation(); open(); });
+  // a scroll gesture also continues once the names have formed
+  addEventListener('wheel', function (e) { if (phase === 'done' && e.deltaY > 4) open(); }, { passive: true });
+  var ty0 = null;
+  addEventListener('touchstart', function (e) { ty0 = e.touches[0].clientY; }, { passive: true });
+  addEventListener('touchmove', function (e) { if (phase === 'done' && ty0 !== null && ty0 - e.touches[0].clientY > 28) { open(); ty0 = null; } }, { passive: true });
+  addEventListener('keydown', function (e) {
+    if (phase === 'done' && (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ')) { open(); }
+  });
+
+  /* ---------- visibility & resize ---------- */
+  function start() { if (!running) { running = true; raf = requestAnimationFrame(frame); } }
+  function stop() { running = false; cancelAnimationFrame(raf); }
+  doc.addEventListener('visibilitychange', function () { if (doc.hidden) stop(); else start(); });
+  var rT = 0; addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(function () { resize(false); }, 120); });
+  addEventListener('load', function () { maxScroll = Math.max(1, root.scrollHeight - innerHeight); });
+
+  /* =====================================================================
+     STAR CHART (zenith-centred, 8:00 PM) + astrolabe rings
+     ===================================================================== */
+  function ringSVG(opts) {
+    var NSs = 'http://www.w3.org/2000/svg', s = '', cx = 200, cy = 200, i;
+    var top = opts.kursi ? -40 : 0;
+    s += '<svg class="ring" viewBox="0 ' + top + ' 400 ' + (400 - top) + '" xmlns="' + NSs + '" aria-hidden="true"><defs><linearGradient id="rg' + opts.id + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0c8"/><stop offset=".45" stop-color="#e3bf73"/><stop offset="1" stop-color="#9c7230"/></linearGradient></defs>';
+    var G = 'url(#rg' + opts.id + ')';
+    if (opts.kursi) {
+      s += '<g fill="none" stroke="' + G + '" stroke-width="1.4"><circle cx="200" cy="-26" r="10"/><circle cx="200" cy="-26" r="6.5" stroke-width=".7"/></g>';
+      s += '<path d="M168 6 C170 -6 182 -14 192 -15 L200 -17 L208 -15 C218 -14 230 -6 232 6 Z" fill="rgba(8,10,30,.85)" stroke="' + G + '" stroke-width="1.3"/>';
+      s += '<path d="M182 2 C186 -6 194 -9 200 -9 C206 -9 214 -6 218 2" fill="none" stroke="' + G + '" stroke-width=".8" opacity=".8"/><circle cx="200" cy="-3" r="2.2" fill="' + G + '"/>';
+    }
+    s += '<circle cx="200" cy="200" r="194" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="8"/>';
+    s += '<circle cx="200" cy="200" r="191" fill="rgba(6,8,26,.78)" stroke="' + G + '" stroke-width="1.6"/>';
+    s += '<circle cx="200" cy="200" r="186" fill="none" stroke="' + G + '" stroke-width=".6" opacity=".8"/>';
+    s += '<circle cx="200" cy="200" r="160" fill="none" stroke="' + G + '" stroke-width=".6" opacity=".8"/>';
+    s += '<circle cx="200" cy="200" r="153" fill="none" stroke="' + G + '" stroke-width="2"/>';
+    var ticks = '';
+    for (i = 0; i < 360; i += 2) {
+      var a = (opts.mirror ? -i : i) * D2R, sa = Math.sin(a), ca = -Math.cos(a), r0 = 186, r1 = i % 10 === 0 ? 177 : i % 5 === 0 ? 180.5 : 182.5;
+      ticks += 'M' + (cx + sa * r0).toFixed(2) + ' ' + (cy + ca * r0).toFixed(2) + 'L' + (cx + sa * r1).toFixed(2) + ' ' + (cy + ca * r1).toFixed(2);
+    }
+    s += '<path d="' + ticks + '" stroke="' + G + '" stroke-width=".7" fill="none"/>';
+    for (i = 0; i < 360; i += 30) {
+      if (i % 90 === 0) continue;
+      var b = (opts.mirror ? -i : i) * D2R, x = cx + Math.sin(b) * 168.5, y = cy - Math.cos(b) * 168.5;
+      s += '<text x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" transform="rotate(' + (opts.mirror ? -i : i) + ' ' + x.toFixed(1) + ' ' + y.toFixed(1) + ')" font-family="Cinzel, serif" font-size="8.5" letter-spacing=".5" fill="#ecd29a" text-anchor="middle" dominant-baseline="central">' + i + '°</text>';
+    }
+    var labels = opts.mirror ? [['N', 0], ['E', -90], ['S', 180], ['W', 90]] : [['N', 0], ['E', 90], ['S', 180], ['W', 270]];
+    labels.forEach(function (L) {
+      var b = L[1] * D2R, sb = Math.sin(b), cb = -Math.cos(b);
+      var px = cx + sb * 168.5, py = cy + cb * 168.5;
+      s += '<text x="' + px.toFixed(1) + '" y="' + py.toFixed(1) + '" font-family="Cinzel, serif" font-weight="600" font-size="13" fill="#fbe7b6" text-anchor="middle" dominant-baseline="central">' + L[0] + '</text>';
+      // compass ray beyond the rim
+      var tipR = 199, baseR = 190, w = 4.2, tx = cx + sb * tipR, ty = cy + cb * tipR, lx = cx + sb * baseR - cb * w, ly = cy + cb * baseR + sb * w, rx = cx + sb * baseR + cb * w, ry = cy + cb * baseR - sb * w;
+      if (!(opts.kursi && L[0] === 'N')) s += '<path d="M' + lx.toFixed(1) + ' ' + ly.toFixed(1) + 'L' + tx.toFixed(1) + ' ' + ty.toFixed(1) + 'L' + rx.toFixed(1) + ' ' + ry.toFixed(1) + 'Z" fill="' + G + '"/>';
+    });
+    for (i = 45; i < 360; i += 90) { var d = i * D2R, qx = cx + Math.sin(d) * 156.5, qy = cy - Math.cos(d) * 156.5; s += '<path d="M' + qx + ' ' + (qy - 3) + 'l3 3-3 3-3-3z" fill="#e3bf73" transform="rotate(' + i + ' ' + qx + ' ' + qy + ')"/>'; }
+    s += '</svg>';
+    return s;
+  }
+  $('#chartFrame').insertAdjacentHTML('afterbegin', ringSVG({ id: 'c', mirror: true }));
+  $('#mapFrame').insertAdjacentHTML('afterbegin', ringSVG({ id: 'm', kursi: true }));
+
+  var CH = { cv: $('#chart'), sel: 'Tau', ready: false };
+  function buildChart() {
+    var cv = CH.cv, size = Math.round(cv.getBoundingClientRect().width); if (size < 40) return;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2); cv.width = cv.height = Math.round(size * dpr);
+    CH.size = size; CH.dpr = dpr; CH.Rc = size / 2;
+    var sky = ASTRO.sky(T0, LAT, LON), HP = sky.HP; CH.sky = sky;
+    function pos(h) { var alt = Math.asin(clamp(h[2], -1, 1)), az = Math.atan2(h[0], h[1]), r = CH.Rc * Math.tan((Math.PI / 2 - alt) / 2); return [CH.Rc - r * Math.sin(az), CH.Rc - r * Math.cos(az), h[2]]; }
+    CH.pos = pos;
+    CH.P = []; for (var i = 0; i < NS; i++) CH.P.push(pos(refractV(ASTRO.mul(HP, [SV[i * 3], SV[i * 3 + 1], SV[i * 3 + 2]]))));
+    // Milky Way underlay (per pixel, once)
+    var n = Math.round(size * dpr), img = new ImageData(n, n), d = img.data, Q = ASTRO.mmul(ASTRO.mmul(GAL, ASTRO.tr(sky.P)), ASTRO.tr(sky.H)), Rp = n / 2;
+    for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) {
+      var dx = (x + .5 - Rp) / Rp, dy = (y + .5 - Rp) / Rp, rr = Math.hypot(dx, dy), o = (y * n + x) * 4; if (rr > 1.01) continue;
+      var zd = 2 * Math.atan(rr), az = Math.atan2(-dx, -dy), alt = Math.PI / 2 - zd, ca = Math.cos(alt);
+      var gv = ASTRO.mul(Q, [ca * Math.sin(az), ca * Math.cos(az), Math.sin(alt)]), dd = MW.sample(Math.atan2(gv[1], gv[0]), Math.asin(clamp(gv[2], -1, 1)));
+      var base = .5 + .5 * (1 - rr);
+      d[o] = 5 + 10 * base + dd * 42; d[o + 1] = 7 + 12 * base + dd * 46; d[o + 2] = 22 + 30 * base + dd * 62; d[o + 3] = 255;
+    }
+    var bgc = doc.createElement('canvas'); bgc.width = bgc.height = n; bgc.getContext('2d').putImageData(img, 0, 0); CH.bg = bgc;
+    // bodies
+    CH.moon = pos(refractV((function (v) { var l = Math.hypot(v[0], v[1], v[2]); return [v[0] / l, v[1] / l, v[2] / l]; })(sky.bodies.Moon.hor)));
+    CH.sat = pos(refractV((function (v) { var l = Math.hypot(v[0], v[1], v[2]); return [v[0] / l, v[1] / l, v[2] / l]; })(sky.bodies.Saturn.hor)));
+    CH.ready = true; drawChart();
+  }
+  function drawChart() {
+    var g = CH.cv.getContext('2d'), s = CH.size, P = CH.P, i, k;
+    g.setTransform(CH.dpr, 0, 0, CH.dpr, 0, 0); g.clearRect(0, 0, s, s);
+    g.drawImage(CH.bg, 0, 0, s, s);
+    var c = s / 2;
+    g.save(); g.beginPath(); g.arc(c, c, c, 0, Math.PI * 2); g.clip();
+    // altitude rings
+    g.strokeStyle = 'rgba(227,191,115,.16)'; g.lineWidth = .7; g.setLineDash([2, 4]);
+    [30, 60].forEach(function (a) { var r = c * Math.tan((90 - a) * D2R / 2); g.beginPath(); g.arc(c, c, r, 0, Math.PI * 2); g.stroke(); });
+    g.beginPath(); g.moveTo(c, 0); g.lineTo(c, s); g.moveTo(0, c); g.lineTo(s, c); g.stroke(); g.setLineDash([]);
+    // figures
+    CAT.cons.forEach(function (cn) {
+      var on = cn[0] === CH.sel; g.strokeStyle = on ? 'rgba(250,224,160,.95)' : 'rgba(227,191,115,.34)'; g.lineWidth = on ? 1.4 : .8;
+      g.beginPath();
+      cn[3].forEach(function (pl) { for (k = 1; k < pl.length; k++) { var a = P[pl[k - 1]], b = P[pl[k]]; if (a[2] < 0 && b[2] < 0) continue; g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); } });
+      if (on) { g.save(); g.shadowColor = 'rgba(255,214,140,.9)'; g.shadowBlur = 8; g.stroke(); g.restore(); } else g.stroke();
+    });
+    // stars
+    g.globalCompositeOperation = 'lighter';
+    for (i = NS - 1; i >= 0; i--) {
+      var p = P[i]; if (p[2] < -0.002) continue; var m = SMAG[i], r = clamp(2.6 - .42 * m, .55, 3.4) * (s / 340);
+      var col = 'rgb(' + (SCOL[i * 3] * 255 | 0) + ',' + (SCOL[i * 3 + 1] * 255 | 0) + ',' + (SCOL[i * 3 + 2] * 255 | 0) + ')';
+      if (m < 1.6) { g.globalAlpha = .35; g.drawImage(SPR_BLUE, p[0] - r * 3.2, p[1] - r * 3.2, r * 6.4, r * 6.4); }
+      g.globalAlpha = clamp(1.2 - .14 * m, .45, 1); g.fillStyle = col; g.beginPath(); g.arc(p[0], p[1], r, 0, Math.PI * 2); g.fill();
+    }
+    g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+    // Saturn
+    var sp = CH.sat; g.fillStyle = '#ffe2a4'; g.beginPath(); g.arc(sp[0], sp[1], 2.6 * s / 340, 0, Math.PI * 2); g.fill();
+    g.strokeStyle = 'rgba(255,226,164,.8)'; g.lineWidth = .8; g.beginPath(); g.ellipse(sp[0], sp[1], 5.2 * s / 340, 1.9 * s / 340, -.3, 0, Math.PI * 2); g.stroke();
+    // Moon with phase (bright limb toward the Sun)
+    var mp = CH.moon, mr = 7.5 * s / 340, mo = CH.sky.bodies.Moon, sun = CH.sky.bodies.Sun.hor, su = CH.pos(refractV((function (v) { var l = Math.hypot(v[0], v[1], v[2]); return [v[0] / l, v[1] / l, v[2] / l]; })(sun)));
+    var sa = Math.atan2(su[1] - mp[1], su[0] - mp[0]), ci = Math.cos(mo.phaseAngle * D2R);
+    g.globalCompositeOperation = 'lighter'; g.globalAlpha = .55; g.drawImage(SPR_BLUE, mp[0] - mr * 5, mp[1] - mr * 5, mr * 10, mr * 10); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+    g.save(); g.translate(mp[0], mp[1]); g.rotate(sa);
+    g.fillStyle = 'rgba(40,46,80,.9)'; g.beginPath(); g.arc(0, 0, mr, 0, Math.PI * 2); g.fill();
+    g.fillStyle = '#f7f0dc'; g.beginPath(); g.arc(0, 0, mr, -Math.PI / 2, Math.PI / 2, false); g.ellipse(0, 0, Math.abs(ci) * mr, mr, 0, Math.PI / 2, Math.PI * 1.5, ci < 0); g.fill();
+    g.restore();
+    // labels for the selected figure / bodies
+    g.font = '600 ' + Math.round(11 * Math.max(.9, s / 340)) + 'px Cinzel, serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    function label(txt, x, y, al, sz) {
+      g.font = '600 ' + sz + 'px Cinzel, serif'; g.textAlign = al; var w = g.measureText(txt).width, x0 = al === 'left' ? x : al === 'right' ? x - w : x - w / 2;
+      g.fillStyle = 'rgba(4,6,20,.72)'; g.fillRect(x0 - 5, y - sz * .72, w + 10, sz * 1.44); g.fillStyle = '#fbe7b6'; g.fillText(txt, x, y + .5);
+    }
+    g.restore();
+    g.save(); g.beginPath(); g.arc(c, c, c, 0, Math.PI * 2); g.clip();
+    var fs = Math.round(9.5 * Math.max(.95, s / 340));
+    // Moon label on the side away from Saturn, Saturn label on the other side
+    var mLeft = mp[0] < sp[0];
+    label('Moon', mLeft ? mp[0] - mr - 6 : mp[0] + mr + 6, mp[1], mLeft ? 'right' : 'left', fs);
+    label('Saturn', mLeft ? sp[0] + 9 : sp[0] - 9, sp[1], mLeft ? 'left' : 'right', fs);
+    if (CH.selPos) label(CH.selName.toUpperCase(), CH.selPos[0], CH.selPos[1], 'center', fs + 1);
+    g.restore();
+  }
+  function selectCon(ab) {
+    var cn = CAT.cons.filter(function (c) { return c[0] === ab; })[0]; if (!cn) return;
+    CH.sel = ab; CH.selName = cn[1];
+    var sx = 0, sy = 0, n = 0; cn[3].forEach(function (pl) { pl.forEach(function (i) { var p = CH.P[i]; if (p[2] > 0) { sx += p[0]; sy += p[1]; n++; } }); });
+    var lp = n ? [clamp(sx / n, 40, CH.size - 40), clamp(sy / n - 16, 16, CH.size - 16)] : null;
+    if (lp) [CH.moon, CH.sat].forEach(function (b) { if (Math.abs(lp[0] - b[0]) < 46 && Math.abs(lp[1] - b[1]) < 20) lp[1] += lp[1] < b[1] ? -18 : 18; });
+    CH.selPos = lp;
+    $('#chartCap').innerHTML = '<b>' + cn[1] + '</b><span>' + cn[2].replace(/&/g, '&amp;') + '</span>';
+    drawChart();
+  }
+  CH.cv.addEventListener('click', function (e) {
+    if (!CH.ready) return;
+    var r = CH.cv.getBoundingClientRect(), x = (e.clientX - r.left) * CH.size / r.width, y = (e.clientY - r.top) * CH.size / r.height;
+    if (Math.hypot(x - CH.moon[0], y - CH.moon[1]) < 16) { var mo = CH.sky.bodies.Moon; CH.sel = ''; CH.selPos = null; $('#chartCap').innerHTML = '<b>The Moon</b><span>Waxing gibbous, ' + Math.round(mo.illum * 100) + '% lit, two days before full</span>'; drawChart(); return; }
+    if (Math.hypot(x - CH.sat[0], y - CH.sat[1]) < 14) { CH.sel = ''; CH.selPos = null; $('#chartCap').innerHTML = '<b>Saturn</b><span>The ringed planet, high in Pisces</span>'; drawChart(); return; }
+    var best = null, bd = 22;
+    CAT.cons.forEach(function (cn) {
+      cn[3].forEach(function (pl) {
+        for (var k = 1; k < pl.length; k++) {
+          var a = CH.P[pl[k - 1]], b = CH.P[pl[k]]; if (a[2] < 0 || b[2] < 0) continue;
+          var dx = b[0] - a[0], dy = b[1] - a[1], L = dx * dx + dy * dy || 1, u = clamp(((x - a[0]) * dx + (y - a[1]) * dy) / L, 0, 1);
+          var d = Math.hypot(x - a[0] - u * dx, y - a[1] - u * dy); if (d < bd) { bd = d; best = cn[0]; }
+        }
+      });
+    });
+    if (best) selectCon(best);
+  });
+  if ('IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (en) { if (en[0].isIntersecting && !CH.ready) { buildChart(); selectCon(CH.sel); cio.disconnect(); } }, { rootMargin: '600px 0px' });
+    cio.observe($('#chartFrame'));
+  } else { buildChart(); selectCon(CH.sel); }
+  var chartW = 0; addEventListener('resize', function () { var w = Math.round(CH.cv.getBoundingClientRect().width); if (CH.ready && w !== chartW && w > 40) { chartW = w; CH.ready = false; buildChart(); selectCon(CH.sel || 'Tau'); } });
+
+  /* ---------- go ---------- */
+  WED.init();
+  resize(true);
+  if (SKIP) { open(); }
+  start();
+  if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(function () { resize(true); if (CH.ready) { buildChart(); selectCon(CH.sel || 'Tau'); } });
+  // debug hook for testing
+  window.__NSKY = { sky: function (ms) { return ASTRO.sky(ms || T0, LAT, LON); }, ASTRO: ASTRO, phase: function () { return phase; } };
+})();
+</script>
+</body>
+</html>
