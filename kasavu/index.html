@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anupama &amp; Ajay · Kasavu</title>
+<meta name="description" content="Wedding of S. Anupama & Ajay Ratheendran · Sunday, 22 November 2026 · Sooryaprabha Convention Centre, Thiruvananthapuram">
+<meta property="og:title" content="Anupama weds Ajay · 22 November 2026">
+<meta property="og:description" content="Muhurtham between 11:45 AM & 12:06 PM · Sooryaprabha Convention Centre, Mannanthala">
+<meta name="theme-color" content="#100c07">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+<link rel="preload" as="image" href="../assets/img/kasavu/mandap-dawn.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/common.css">
+<style>
+  :root {
+    --ivory: #fff6e3; --ivory-2: rgba(255,246,227,.86); --ivory-3: rgba(255,246,227,.7);
+    --gold: #f6d98c; --gold-2: #e3b553; --gold-d: #b8862b; --ink: #2b1d08;
+    --ui-bg: rgba(16,12,7,.55); --ui-fg: var(--ivory); --ui-line: rgba(246,217,140,.45);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; }
+  @supports (overflow: clip) { html, body { overflow-x: clip; } }
+  body { background: #100c07; color: var(--ivory); font: 400 17px/1.65 'Gelasio', Georgia, serif; }
+  a { color: inherit; }
+  p, h1, h2, h3 { text-wrap: balance; }
+
+  .kick { font: 700 11.5px/1.5 'Lato', sans-serif; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
+  .kick.it { font: italic 500 17px/1.4 'Cormorant Garamond', serif; letter-spacing: .22em; color: var(--ivory-2); }
+  .it { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+  .names { font: 500 clamp(54px, 15vw, 96px)/1.02 'Gelasio', serif; color: var(--ivory); text-shadow: 0 4px 30px rgba(0,0,0,.45); letter-spacing: -.01em; }
+  .names .amp { display: block; font: italic 500 .42em/1 'Cormorant Garamond', serif; color: var(--gold-2); margin: .04em 0 .02em; }
+  h2 { font: 500 clamp(36px, 9.5vw, 56px)/1.12 'Gelasio', serif; color: var(--ivory); text-shadow: 0 3px 24px rgba(0,0,0,.5); }
+
+  /* ---------- Background scenes ---------- */
+  .scenes { position: fixed; inset: 0; z-index: 0; overflow: hidden; background: #100c07; }
+  .scene { position: absolute; inset: -2%; background: center / cover no-repeat; opacity: 0; transform: scale(1.1); transition: opacity 1.6s ease, transform 9s ease-out; will-change: opacity, transform; }
+  .scene.on { opacity: 1; transform: scale(1); }
+  .scene[data-bg="lamp"] { background-position: 47% 50%; }
+  .scenes::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, rgba(34,12,4,.5) 0%, rgba(34,12,4,.12) 30%, rgba(30,12,5,.28) 60%, rgba(20,10,5,.72) 100%); }
+  .tint { position: absolute; inset: 0; z-index: 1; pointer-events: none; transition: background 1.6s ease; background: rgba(40,20,10,.05); }
+  body[data-time="dusk"] .tint { background: rgba(60,20,30,.25); }
+  body[data-time="night"] .tint { background: rgba(10,10,30,.35); }
+
+  /* ---------- Intro: kasavu silk drape ---------- */
+  #intro { position: fixed; inset: 0; z-index: 100; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 24px 16px; text-align: center;
+    transition: visibility 0s 1.9s; }
+  #intro.gone { visibility: hidden; }
+  .drape { position: absolute; top: 0; bottom: 0; width: 50.5%; z-index: 1;
+    background:
+      repeating-linear-gradient(90deg, rgba(150,110,40,.07) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(0deg, rgba(150,110,40,.05) 0 1px, transparent 1px 4px),
+      radial-gradient(120% 90% at 50% 40%, #fffaf0, #f6ead0 70%, #ecdbb5);
+    box-shadow: inset 0 0 80px rgba(120,80,20,.18);
+    transition: transform 1.6s cubic-bezier(.7,0,.25,1) .25s; will-change: transform; }
+  .drape.l { left: 0; } .drape.r { right: 0; }
+  /* gold kasavu border along the meeting edge, and across the top and bottom */
+  .drape::before { content: ''; position: absolute; top: 0; bottom: 0; width: 34px;
+    background:
+      linear-gradient(90deg, transparent 0 4px, #a87a22 4px 5px, transparent 5px 8px,
+        #c8962e 8px 10px, #f6d98c 10px 14px, #d9a63f 14px 20px, #f6d98c 20px 24px, #c8962e 24px 26px,
+        transparent 26px 29px, #a87a22 29px 30px, transparent 30px); }
+  .drape.l::before { right: 0; } .drape.r::before { left: 0; transform: scaleX(-1); }
+  .drape::after { content: ''; position: absolute; left: 0; right: 0; top: 18px; height: 22px;
+    background: linear-gradient(transparent 0 3px, #a87a22 3px 4px, transparent 4px 6px, #d9a63f 6px 8px, #f6d98c 8px 14px, #d9a63f 14px 16px, transparent 16px 18px, #a87a22 18px 19px, transparent 19px);
+    box-shadow: 0 calc(100vh - 58px) 0 0 transparent; }
+  .drape .hem { position: absolute; left: 0; right: 0; bottom: 18px; height: 22px;
+    background: linear-gradient(transparent 0 3px, #a87a22 3px 4px, transparent 4px 6px, #d9a63f 6px 8px, #f6d98c 8px 14px, #d9a63f 14px 16px, transparent 16px 18px, #a87a22 18px 19px, transparent 19px); }
+  #intro.open .drape.l { transform: translateX(-102%); }
+  #intro.open .drape.r { transform: translateX(102%); }
+  .intro-card { position: relative; z-index: 2; color: var(--ink); max-width: 360px; padding: 34px 26px 30px; transition: opacity .6s ease, transform .8s ease; }
+  .intro-card::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: 4px; background: rgba(255,250,238,.92);
+    box-shadow: 0 0 0 1px rgba(184,134,43,.55), 0 0 0 6px rgba(255,250,238,.92), 0 0 0 7px rgba(184,134,43,.35), 0 24px 60px rgba(120,80,20,.22); }
+  #intro.open .intro-card { opacity: 0; transform: scale(.96) translateY(-8px); }
+  .intro-card .kick { color: #9a6b14; }
+  .intro-card .names { color: #3a2508; text-shadow: none; font-size: clamp(48px, 13vw, 72px); margin: 12px 0 8px; }
+  .intro-card .names .amp { color: #b8862b; }
+  .intro-card .when { font: italic 500 19px/1.4 'Cormorant Garamond', serif; color: #6b4a14; }
+  .intro-card .orn { display: block; width: 120px; height: 14px; margin: 16px auto 20px; color: #b8862b; }
+  .open-btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border: 0; border-radius: 999px; cursor: pointer;
+    font: 900 12.5px/1 'Lato', sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #fff6e3;
+    background: linear-gradient(180deg, #2a1d0a, #1a1206); box-shadow: 0 0 0 1px rgba(246,217,140,.6) inset, 0 10px 26px rgba(42,29,10,.3);
+    transition: transform .3s, box-shadow .3s; -webkit-tap-highlight-color: transparent; }
+  .open-btn:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(246,217,140,.9) inset, 0 14px 30px rgba(42,29,10,.38); }
+  .open-btn i { width: 8px; height: 8px; background: #f6d98c; transform: rotate(45deg); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .35; transform: rotate(45deg) scale(.7); } }
+
+  /* ---------- Sections ---------- */
+  main { position: relative; z-index: 2; }
+  .sec { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 96px 20px; position: relative; }
+  .col { width: 100%; max-width: 560px; margin: 0 auto; }
+  .halo { position: relative; isolation: isolate; }
+  .halo::before { content: ''; position: absolute; inset: -40px -16px; z-index: -1; pointer-events: none; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(30,10,4,.6), rgba(30,10,4,.32) 60%, transparent); }
+  .rule { width: 64px; height: 1px; margin: 22px auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+  /* hero */
+  .hero .names { font-size: clamp(60px, 17vw, 110px); margin: 14px 0 12px; }
+  .hero .where { font: italic 500 clamp(18px, 4.6vw, 22px)/1.4 'Cormorant Garamond', serif; color: var(--ivory-2); }
+  .hero .seq { opacity: 0; transform: translateY(18px); transition: opacity 1.2s ease, transform 1.2s ease; }
+  body.opened .hero .seq { opacity: 1; transform: none; }
+  .cue { position: absolute; bottom: calc(26px + env(safe-area-inset-bottom)); left: 0; right: 0; font: 700 10.5px 'Lato', sans-serif; letter-spacing: .3em; color: var(--ivory-3); text-transform: uppercase; }
+  .cue::after { content: ''; display: block; width: 1px; height: 26px; margin: 10px auto 0; background: linear-gradient(var(--gold), transparent); animation: drip 2s ease-in-out infinite; transform-origin: top; }
+  @keyframes drip { 0% { transform: scaleY(0); opacity: 1; } 70% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+
+  /* coin */
+  .coin-wrap { perspective: 900px; margin: 22px auto 18px; width: 172px; height: 172px; }
+  .coin { position: relative; display: block; width: 100%; height: 100%; border: 0; padding: 0; background: none; cursor: pointer;
+    transform-style: preserve-3d; -webkit-transform-style: preserve-3d; will-change: transform; -webkit-tap-highlight-color: transparent; }
+  .coin.flip { animation: coin-flip 1.3s cubic-bezier(.45,.05,.2,1) forwards; }
+  @keyframes coin-flip {
+    0% { transform: translateZ(0) rotateY(0) scale(1); }
+    45% { transform: translateZ(60px) rotateY(100deg) scale(1.12); }
+    100% { transform: translateZ(0) rotateY(180deg) scale(1); } }
+  .face { position: absolute; inset: 0; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; backface-visibility: hidden; -webkit-backface-visibility: hidden; color: var(--ink);
+    background: radial-gradient(circle at 35% 30%, #fff1c2, #f3d27c 35%, #d9a63f 70%, #a87a22);
+    box-shadow: 0 0 0 4px rgba(255,236,180,.35), 0 0 0 9px rgba(246,217,140,.12), 0 18px 40px rgba(0,0,0,.5), inset 0 0 0 7px rgba(255,255,255,.18), inset 0 -6px 14px rgba(120,80,10,.35); }
+  .face::before { content: ''; position: absolute; inset: 12px; border-radius: 50%; border: 1px solid rgba(80,50,8,.35); }
+  .face .lotus { width: 70px; height: 48px; }
+  .face small { font: 900 9.5px 'Lato', sans-serif; letter-spacing: .22em; margin-top: 16px; color: #5a3a08; text-transform: uppercase; }
+  .face.back b { font: 600 46px/1 'Gelasio', serif; }
+  .face.back span { font: 900 12px 'Lato', sans-serif; letter-spacing: .28em; margin-top: 4px; }
+  .face.back em { font: italic 500 16px 'Cormorant Garamond', serif; margin-top: 4px; }
+  /* shine sweep (no filters: filters flatten the 3D flip) */
+  .face { overflow: hidden; transform: translateZ(1px); }
+  .face.back { transform: rotateY(180deg) translateZ(1px); }
+  .front::after { content: ''; position: absolute; top: -20%; bottom: -20%; width: 40%; left: -60%; transform: skewX(-18deg);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); animation: sweep 3.2s ease-in-out infinite; }
+  @keyframes sweep { 0%, 55% { left: -60%; } 100% { left: 130%; } }
+  .coin-cap { transition: opacity .45s ease, transform .45s ease; }
+  .coin-cap.swap { opacity: 0; transform: translateY(6px); }
+  .reveal-line { font: 600 clamp(20px, 5.4vw, 26px) 'Gelasio', serif; letter-spacing: .06em; }
+  .reveal-line + .it { color: var(--ivory-2); font-size: 19px; }
+
+  /* invitation + families */
+  .msg { font: italic 500 clamp(19px, 4.8vw, 22px)/1.5 'Cormorant Garamond', serif; color: var(--ivory-2); margin: 16px auto 18px; max-width: 30ch; }
+  .invite .names { font-size: clamp(44px, 12vw, 72px); }
+  .names .of { display: block; font: italic 500 18px/1.5 'Cormorant Garamond', serif; color: var(--ivory-2); letter-spacing: 0; margin: .25em 0 .1em; }
+  .sub { font: italic 500 18px/1.5 'Cormorant Garamond', serif; color: var(--ivory-2); }
+  .person { margin-top: 34px; }
+  .person .role { font: 700 11.5px 'Lato', sans-serif; letter-spacing: .3em; color: var(--gold); text-transform: uppercase; }
+  .person .nm { font: 500 clamp(30px, 8vw, 38px)/1.2 'Gelasio', serif; margin: 6px 0 4px; }
+  .person .par { font-size: 17.5px; color: var(--ivory); }
+  .person address { font-style: normal; font-size: 16.5px; color: var(--ivory-2); margin-top: 6px; line-height: 1.55; }
+  .person address b { font: 700 11px 'Lato', sans-serif; letter-spacing: .26em; color: var(--gold); display: block; margin-bottom: 2px; text-transform: uppercase; }
+
+  /* countdown */
+  .cd { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 26px auto 0; max-width: 460px; }
+  .cd div { padding: 18px 4px 12px; border-radius: 14px; border: 1px solid rgba(246,217,140,.35); background: rgba(16,12,7,.42); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); overflow: hidden; }
+  .cd b { display: block; font: 500 clamp(30px, 8.5vw, 44px)/1 'Gelasio', serif; color: var(--gold); }
+  .cd span { font: 700 9.5px 'Lato', sans-serif; letter-spacing: .24em; color: var(--ivory-2); text-transform: uppercase; }
+  .cd-done { display: none; margin-top: 16px; }
+  [data-countdown].done + .cd-done { display: block; }
+
+  /* celebrations carousel */
+  .events { width: 100%; max-width: 560px; margin: 26px auto 0; }
+  .track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .track::-webkit-scrollbar { display: none; }
+  .slide { flex: 0 0 100%; scroll-snap-align: center; padding: 6px 10px; }
+  .slide h3 { font: 500 clamp(42px, 12vw, 62px)/1.06 'Gelasio', serif; margin: 10px 0 10px; text-shadow: 0 3px 24px rgba(0,0,0,.5); }
+  .slide .gold { font: 500 clamp(19px, 5vw, 22px) 'Gelasio', serif; color: var(--gold); letter-spacing: .04em; }
+  .slide .time { font: 600 clamp(22px, 6vw, 27px)/1.3 'Gelasio', serif; margin: 8px 0 4px; }
+  .slide .meta { color: var(--ivory-2); font-size: 16.5px; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 11px 18px; border-radius: 999px; border: 1px solid rgba(246,217,140,.7); color: var(--ivory);
+    font: 700 11px/1 'Lato', sans-serif; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; background: rgba(16,12,7,.35); cursor: pointer; transition: background .3s, color .3s; }
+  .pill:hover { background: var(--gold); color: var(--ink); }
+  .pill svg { width: 14px; height: 14px; }
+  .dots { display: flex; gap: 8px; justify-content: center; margin-top: 18px; }
+  .dots button { width: 8px; height: 8px; border-radius: 50%; border: 0; background: rgba(255,246,227,.4); padding: 0; cursor: pointer; transition: transform .3s, background .3s; }
+  .dots button.on { background: var(--gold); transform: scale(1.5); }
+  @media (min-width: 900px) {
+    .events { max-width: 980px; }
+    .track { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; overflow: visible; }
+    .dots, .swipe-hint { display: none; }
+  }
+
+  /* venue: arch map frame */
+  .arch-map { position: relative; width: 100%; max-width: 520px; margin: 36px auto 0; padding-top: 62px; }
+  .arch-map .arch { position: absolute; left: 14%; right: 14%; top: 0; height: 74px; }
+  .arch-map .arch svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .arch-map .frame { position: relative; padding: 7px; border-radius: 22px; border: 1.5px solid rgba(246,217,140,.85);
+    background: linear-gradient(180deg, rgba(246,217,140,.22), rgba(16,12,7,.4)); box-shadow: 0 0 0 5px rgba(246,217,140,.08), 0 20px 50px rgba(0,0,0,.5), 0 0 40px rgba(246,217,140,.15); }
+  .arch-map .frame::before, .arch-map .frame::after { content: ''; position: absolute; width: 10px; height: 10px; background: var(--gold); transform: rotate(45deg); top: 50%; margin-top: -5px; }
+  .arch-map .frame::before { left: -6px; } .arch-map .frame::after { right: -6px; }
+  .arch-map iframe { display: block; width: 100%; height: 360px; border: 0; border-radius: 16px; filter: sepia(.18) saturate(.95); }
+  @media (max-width: 480px) { .arch-map iframe { height: 320px; } }
+
+  /* closing */
+  .closing .names { font-size: clamp(54px, 15vw, 92px); margin: 18px 0 10px; }
+  footer { position: relative; z-index: 2; text-align: center; padding: 0 16px calc(84px + env(safe-area-inset-bottom)); font: 400 13px 'Lato', sans-serif; letter-spacing: .08em; color: var(--ivory-3); }
+
+  .hero .cue { bottom: calc(34px + env(safe-area-inset-bottom)); }
+</style>
+</head>
+<body class="locked" data-time="dawn">
+
+<div class="scenes" aria-hidden="true">
+  <div class="scene on" data-bg="dawn" style="background-image:url(../assets/img/kasavu/mandap-dawn.jpg)"></div>
+  <div class="scene" data-bg="canoe" style="background-image:url(../assets/img/kasavu/garlands.jpg)"></div>
+  <div class="scene" data-bg="paddy" style="background-image:url(../assets/img/kasavu/garland-leaf.jpg)"></div>
+  <div class="scene" data-bg="pookalam" style="background-image:url(../assets/img/kasavu/marigold-rose.jpg)"></div>
+  <div class="scene" data-bg="elephants" style="background-image:url(../assets/img/kasavu/stage.jpg)"></div>
+  <div class="scene" data-bg="canal" style="background-image:url(../assets/img/kasavu/hall.jpg)"></div>
+  <div class="scene" data-bg="lamp" style="background-image:url(../assets/img/kasavu/diyas.jpg)"></div>
+  <div class="tint"></div>
+</div>
+
+<div id="intro">
+  <div class="drape l"><span class="hem"></span></div>
+  <div class="drape r"><span class="hem"></span></div>
+  <div class="intro-card">
+    <p class="kick">Wedding Invitation</p>
+    <h1 class="names">Anupama<span class="amp">&amp;</span>Ajay</h1>
+    <p class="when">Sunday · 22 November 2026</p>
+    <svg class="orn" viewBox="0 0 120 14" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 7h46M74 7h46"/><path d="M60 1l6 6-6 6-6-6z"/></g><circle cx="60" cy="7" r="1.6" fill="currentColor"/></svg>
+    <button class="open-btn" type="button"><i aria-hidden="true"></i>Open the invitation</button>
+  </div>
+</div>
+
+<a class="back-link" href="../">← Designs</a>
+
+
+<main>
+  <section class="sec hero" data-scene="dawn" data-time="dawn">
+    <div class="col halo">
+      <p class="kick seq" style="transition-delay:.3s">With the blessings of our families</p>
+      <h1 class="names seq" style="transition-delay:.6s">Anupama<span class="amp">&amp;</span>Ajay</h1>
+      <p class="where seq" style="transition-delay:.9s">Sooryaprabha Convention Centre · Thiruvananthapuram</p>
+    </div>
+    <p class="cue seq" style="transition-delay:1.4s">Scroll down</p>
+  </section>
+
+  <section class="sec" data-scene="dawn" data-time="dawn">
+    <div class="col halo" data-reveal>
+      <p class="kick">Save the date</p>
+      <div class="coin-wrap">
+        <button class="coin" type="button" aria-label="Touch to reveal the wedding date">
+          <span class="face front"><svg class="lotus" viewBox="0 0 64 44" aria-hidden="true"><g fill="none" stroke="#6a440c" stroke-width="1.6" stroke-linejoin="round"><path d="M32 4c-7 8-7 22 0 34 7-12 7-26 0-34z"/><path d="M32 38C22 34 14 24 14 12c9 2 15 10 18 26"/><path d="M32 38c10-4 18-14 18-26-9 2-15 10-18 26"/><path d="M32 38C20 38 8 32 3 22c10-1 21 5 29 16"/><path d="M32 38c12 0 24-6 29-16-10-1-21 5-29 16"/><path d="M14 41h36"/></g></svg><small>Touch to reveal</small></span>
+          <span class="face back"><b>22</b><span>NOV · 2026</span><em>Sunday</em></span>
+        </button>
+      </div>
+      <p class="reveal-line coin-cap" id="revealLine">The day is keeping a secret</p>
+      <p class="it coin-cap" id="revealSub">Touch the coin to reveal it</p>
+    </div>
+  </section>
+
+  <section class="sec invite" data-scene="canoe" data-time="early">
+    <div class="col halo" data-reveal>
+      <p class="kick">Together with our families</p>
+      <p class="msg">we request the honour of your esteemed presence and blessings with family on the auspicious occasion of our marriage</p>
+      <h2 class="names">S. Anupama<span class="of">D/o Sajeev S &amp; Smitha L.R</span><span class="amp">with</span>Ajay Ratheendran</h2>
+      <p class="sub">S/o P.R Ratheendra Kurup &amp; Usha Devi</p>
+      <div class="rule"></div>
+      <p class="reveal-line">Sunday, 22 November 2026</p>
+      <p class="sub">Muhurtham between 11:45&nbsp;AM &amp; 12:06&nbsp;PM</p>
+    </div>
+  </section>
+
+  <section class="sec" data-scene="paddy" data-time="morning">
+    <div class="col halo">
+      <p class="kick" data-reveal>With the blessings of our elders</p>
+      <h2 data-reveal>Two families, one muhurtham</h2>
+      <div class="person" data-reveal>
+        <p class="role">The Bride</p>
+        <p class="nm">S. Anupama</p>
+        <p class="par">D/o Sajeev S &amp; Smitha L.R</p>
+        <address><b>Revathy</b>Thachottukavu, Peyad P.O.<br>Thiruvananthapuram – 695573</address>
+      </div>
+      <div class="rule" data-reveal></div>
+      <div class="person" style="margin-top:0" data-reveal>
+        <p class="role">The Groom</p>
+        <p class="nm">Ajay Ratheendran</p>
+        <p class="par">S/o P.R Ratheendra Kurup &amp; Usha Devi</p>
+        <address><b>Puthan Veedu</b>Kodukulanjikarod, Kozhuvalloor P.O.<br>Chengannur, Alappuzha – 689521</address>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" data-scene="pookalam" data-time="morning">
+    <div class="col halo">
+      <p class="kick" data-reveal>Counting the moments</p>
+      <h2 data-reveal>Until the muhurtham</h2>
+      <div class="cd" data-countdown data-reveal>
+        <div><b data-cd="d">0</b><span>Days</span></div>
+        <div><b data-cd="h">00</b><span>Hours</span></div>
+        <div><b data-cd="m">00</b><span>Mins</span></div>
+        <div><b data-cd="s">00</b><span>Secs</span></div>
+      </div>
+      <p class="it cd-done">The auspicious moment has arrived — thank you for your blessings.</p>
+    </div>
+  </section>
+
+  <section class="sec" data-scene="elephants" data-time="late">
+    <div class="col halo" style="max-width:none">
+      <p class="kick" data-reveal>The auspicious hours</p>
+      <h2 data-reveal>The Celebrations</h2>
+      <p class="sub swipe-hint" data-reveal>2 ceremonies · swipe to see both</p>
+      <div class="events" data-reveal>
+        <div class="track" id="track">
+          <article class="slide">
+            <p class="kick">The celebrations · 01 of 02</p>
+            <h3>Sweekaranam</h3>
+            <p class="gold">Sunday, 22 November 2026</p>
+            <p class="time">10:45&nbsp;AM</p>
+            <p class="it meta" style="font-size:19px">Welcoming the bridegroom &amp; family</p>
+            <p class="meta">Sooryaprabha Convention Centre</p>
+            <a class="pill" data-cal="google" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Add to Calendar</a>
+          </article>
+          <article class="slide">
+            <p class="kick">The celebrations · 02 of 02</p>
+            <h3>Muhurtham</h3>
+            <p class="gold">Sunday, 22 November 2026</p>
+            <p class="time">11:45&nbsp;AM – 12:06&nbsp;PM</p>
+            <p class="it meta" style="font-size:19px">The sacred thali-tying ceremony</p>
+            <p class="meta">Sooryaprabha Convention Centre</p>
+            <a class="pill" data-cal="google" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Add to Calendar</a>
+          </article>
+        </div>
+        <div class="dots" id="dots"><button class="on" aria-label="Sweekaranam"></button><button aria-label="Muhurtham"></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" data-scene="canal" data-time="midday">
+    <div class="col">
+      <div class="halo">
+        <p class="kick it" data-reveal>Where we gather</p>
+        <h2 data-reveal>Sooryaprabha Convention Centre</h2>
+        <p class="sub" data-reveal>SH 1, Mannanthala, Thiruvananthapuram, Kerala 695015</p>
+      </div>
+      <div class="arch-map" data-reveal>
+        <div class="arch" aria-hidden="true"><svg viewBox="0 0 300 74" preserveAspectRatio="none"><path d="M2 72C2 30 70 10 150 10S298 30 298 72" fill="none" stroke="#f6d98c" stroke-width="1.6" vector-effect="non-scaling-stroke"/><path d="M150 2l7 8-7 8-7-8z" fill="#f6d98c"/></svg></div>
+        <div class="frame">
+          <iframe title="Map to Sooryaprabha Convention Centre" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=Sooryaprabha%20Convention%20Centre%2C%20Mannanthala%2C%20Thiruvananthapuram&z=15&output=embed"></iframe>
+        </div>
+      </div>
+      <a class="pill" data-map target="_blank" rel="noopener" data-reveal style="margin-top:26px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Open directions</a>
+    </div>
+  </section>
+
+  <section class="sec closing" data-scene="lamp" data-time="night">
+    <div class="col halo">
+      <p class="it" style="font-size:21px;color:var(--ivory-2)" data-reveal>With the lamp lit and our hearts full — thank you for being part of our day.</p>
+      <h2 class="names" data-reveal>Anupama<span class="amp">&amp;</span>Ajay</h2>
+      <p class="kick" data-reveal>With love, gratitude &amp; blessings</p>
+      <p class="sub" style="margin-top:8px" data-reveal>Sunday · 22 November 2026</p>
+    </div>
+  </section>
+</main>
+<footer>The families of Anupama &amp; Ajay</footer>
+
+<script src="../assets/common.js"></script>
+<script>
+(function () {
+  var body = document.body;
+  var intro = document.getElementById('intro'), opened = false;
+  function finishOpen() { body.classList.remove('locked'); body.classList.add('opened'); }
+  function open() {
+    if (opened) return; opened = true;
+    intro.classList.add('open');
+    setTimeout(finishOpen, 900);
+    setTimeout(function () { intro.classList.add('gone'); }, 1900);
+  }
+  intro.querySelector('.open-btn').addEventListener('click', open);
+  if (/[?&]open\b/.test(location.search)) { opened = true; intro.style.display = 'none'; finishOpen(); }
+
+  // date coin
+  var coin = document.querySelector('.coin');
+  coin.addEventListener('click', function () {
+    if (coin.classList.contains('flip')) return;
+    coin.classList.add('flip');
+    var caps = document.querySelectorAll('.coin-cap');
+    caps.forEach(function (c) { c.classList.add('swap'); });
+    setTimeout(function () {
+      document.getElementById('revealLine').textContent = 'Sunday, 22 November 2026';
+      document.getElementById('revealSub').textContent = 'Muhurtham between 11:45 AM & 12:06 PM';
+      caps.forEach(function (c) { c.classList.remove('swap'); });
+    }, 650);
+  });
+
+  // the background photo follows the section in the middle of the screen
+  var scenes = {}; document.querySelectorAll('.scene[data-bg]').forEach(function (s) { scenes[s.dataset.bg] = s; });
+  function activate(sec) {
+    var key = sec.dataset.scene;
+    Object.keys(scenes).forEach(function (k) { scenes[k].classList.toggle('on', k === key); });
+    body.dataset.time = sec.dataset.time;
+  }
+  var secs = document.querySelectorAll('.sec[data-scene]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) activate(e.target); }); }, { rootMargin: '-45% 0px -45% 0px' });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+
+  // events carousel dots
+  var track = document.getElementById('track'), dots = document.querySelectorAll('#dots button');
+  track.addEventListener('scroll', function () {
+    var i = Math.round(track.scrollLeft / track.clientWidth);
+    dots.forEach(function (d, k) { d.classList.toggle('on', k === i); });
+  }, { passive: true });
+  dots.forEach(function (d, k) { d.addEventListener('click', function () { track.scrollTo({ left: k * track.clientWidth, behavior: 'smooth' }); }); });
+
+
+  WED.init();
+})();
+</script>
+</body>
+</html>

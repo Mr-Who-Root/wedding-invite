@@ -1,0 +1,28 @@
+/* Shared UI: "other designs" link + reveal animations. Themes set the --ui-* colours. */
+.back-link {
+  position: fixed; left: 12px; top: calc(12px + env(safe-area-inset-top)); z-index: 90;
+  font: 500 12px/1 system-ui, -apple-system, sans-serif; letter-spacing: .04em;
+  padding: 9px 13px; border-radius: 999px; text-decoration: none;
+  color: var(--ui-fg, #fff); background: var(--ui-bg, rgba(0,0,0,.45));
+  border: 1px solid var(--ui-line, rgba(255,255,255,.3));
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  opacity: 0; transition: opacity .5s;
+}
+body.opened .back-link { opacity: .85; }
+
+[data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 1s ease, transform 1s cubic-bezier(.2,.8,.2,1); }
+[data-reveal].in { opacity: 1; transform: none; }
+[data-reveal="fade"] { transform: none; }
+[data-reveal="zoom"] { transform: scale(.92); }
+[data-reveal="left"] { transform: translateX(-30px); }
+[data-reveal="right"] { transform: translateX(30px); }
+
+.flip { animation: cd-flip .5s ease; }
+@keyframes cd-flip { 0% { transform: translateY(-30%); opacity: 0; } 100% { transform: none; opacity: 1; } }
+
+body.locked { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  [data-reveal] { opacity: 1; transform: none; }
+}

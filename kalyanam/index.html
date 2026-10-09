@@ -1,0 +1,1484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anupama &amp; Ajay · Kalyanam</title>
+<meta name="description" content="Wedding of S. Anupama & Ajay Ratheendran · Sunday, 22 November 2026 · Sooryaprabha Convention Centre, Thiruvananthapuram">
+<meta property="og:title" content="Anupama weds Ajay · 22 November 2026">
+<meta property="og:description" content="Muhurtham between 11:45 AM & 12:06 PM · Sooryaprabha Convention Centre, Mannanthala">
+<meta name="theme-color" content="#f4e6cf">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌼</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/common.css">
+<style>
+  :root {
+    --ink: #3b2412; --ink-2: #6b4a2c; --maroon: #8e1f2b; --maroon-d: #6d1520; --gold: #b8862b; --gold-l: #e2b955; --gold-xl: #f7e2a6;
+    --green: #5d7d3a; --ivory: #fffaf0; --paper: rgba(255,251,242,.95);
+    --band: 180px; --sat: env(safe-area-inset-top); --sab: env(safe-area-inset-bottom);
+    --ui-bg: rgba(255,250,240,.8); --ui-fg: #7a2330; --ui-line: rgba(184,134,43,.55);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  html, body { overflow-x: hidden; }
+  @supports (overflow: clip) { html, body { overflow-x: clip; } }
+  body { background: #f6ead6; color: var(--ink); font: 400 17px/1.6 'Gelasio', Georgia, serif; -webkit-tap-highlight-color: transparent; }
+  a { color: inherit; }
+  p, h1, h2, h3 { text-wrap: balance; }
+  .it { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+  .kick { font: 600 11px/1.5 'Jost', sans-serif; letter-spacing: .32em; text-transform: uppercase; color: var(--maroon); padding-left: .32em; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* ---------- sky (warms as you scroll) ---------- */
+  .sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+    background: linear-gradient(180deg, #cfe3e6 0%, #e9eedf 34%, #f8efdc 62%, #fbe6c6 100%); }
+  .sky-b { position: absolute; inset: 0; opacity: 0; will-change: opacity;
+    background: linear-gradient(180deg, #f1c09a 0%, #f8d6ae 34%, #fce4c0 62%, #fdd9a8 100%); }
+  .sun { position: absolute; left: 72%; top: 9%; width: 46vmin; height: 46vmin; margin: -23vmin 0 0 -23vmin; border-radius: 50%; will-change: transform;
+    background: radial-gradient(closest-side, rgba(255,250,232,.95), rgba(255,236,190,.55) 38%, rgba(255,226,170,0) 72%); }
+  .cloud { position: absolute; height: 26px; border-radius: 26px; background: rgba(255,255,255,.55); filter: blur(1px); }
+  .cloud::before, .cloud::after { content: ''; position: absolute; border-radius: 50%; background: inherit; }
+  .cloud::before { width: 46%; height: 190%; left: 16%; bottom: 20%; }
+  .cloud::after { width: 32%; height: 150%; left: 52%; bottom: 25%; }
+  .c1 { width: 120px; left: 8%; top: 17%; animation: drift 70s linear infinite; }
+  .c2 { width: 86px; left: 60%; top: 31%; opacity: .7; animation: drift 90s linear infinite reverse; }
+  @keyframes drift { 50% { transform: translateX(40px); } }
+
+  /* hanging garland (thoranam) along the top */
+  .toran { position: fixed; left: 0; right: 0; top: 0; height: 58px; z-index: 1; pointer-events: none; opacity: .95; }
+  .toran svg { width: 100%; height: 100%; display: block; }
+
+  /* ---------- illustrated stage (fixed, sits over content: the hills hide cards, never the reverse) ---------- */
+  #scene { position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; overflow: hidden; }
+  #petals { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 6; pointer-events: none; }
+
+  /* ---------- intro: jasmine-string curtain ---------- */
+  #intro { position: fixed; inset: 0; z-index: 100; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: calc(30px + var(--sat)) 16px calc(var(--band) + 10px); }
+  #intro.gone { visibility: hidden; }
+  /* hanging strands are simulated on a canvas: each one is a rope that swings, collides with your finger and parts with momentum */
+  #strands { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; touch-action: pan-y; transition: opacity .8s ease; }
+  #intro.fade #strands { opacity: 0; }
+  .valance { position: absolute; left: 0; right: 0; top: 0; height: 70px; z-index: 2; transition: transform 1.2s cubic-bezier(.6,0,.3,1) .2s; }
+  .valance svg { width: 100%; height: 100%; display: block; }
+  #intro.open .valance { transform: translateY(-110%); }
+  .icard { position: relative; z-index: 3; width: 100%; max-width: 360px; padding: 40px 24px 30px; text-align: center; border-radius: 22px; background: rgba(255,251,242,.95);
+    box-shadow: inset 0 0 0 1px rgba(184,134,43,.6), inset 0 0 0 6px #fffaf0, inset 0 0 0 7.5px #d9ae52, inset 0 0 0 9.5px #f4da92, inset 0 0 0 10.5px #b8862b, 0 26px 60px -20px rgba(90,50,10,.45);
+    transition: opacity .7s ease, transform .9s ease; }
+  #intro.open .icard { opacity: 0; transform: translateY(-14px) scale(.97); }
+  .icard .orn { position: absolute; left: 50%; top: -17px; width: 92px; height: 34px; margin-left: -46px; }
+  .icard h1 { font: 500 clamp(44px, 12.5vw, 62px)/1.02 'Gelasio', serif; color: var(--ink); margin: 12px 0 6px; letter-spacing: -.01em; }
+  .icard h1 .amp { display: block; font: italic 500 .5em/1.15 'Cormorant Garamond', serif; color: var(--gold); }
+  .icard .when { font: italic 500 19px/1.4 'Cormorant Garamond', serif; color: var(--ink-2); }
+  .icard .hint { font: italic 500 16.5px/1.4 'Cormorant Garamond', serif; color: var(--ink-2); margin: 4px 0 20px; }
+  /* brass bell: ring it to open */
+  .bell-btn { position: relative; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; border: 0; background: none; padding: 0 18px 4px; cursor: pointer;
+    font: 600 12px/1 'Jost', sans-serif; letter-spacing: .24em; text-transform: uppercase; color: var(--maroon, #8e1f2b); -webkit-tap-highlight-color: transparent; }
+  .bell-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 14px; }
+  .bell-btn svg { width: 64px; height: 84px; overflow: visible; filter: drop-shadow(0 6px 8px rgba(110,70,10,.28)); }
+  .bell-btn .lbl { display: inline-flex; align-items: center; gap: 8px; }
+  .bell-btn .lbl i { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); animation: pulse 2s ease-in-out infinite; }
+  .bell-btn .ring { position: absolute; left: 50%; top: 52px; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; border: 1.5px solid rgba(201,150,46,.75); opacity: 0; pointer-events: none; }
+  .bell-btn.rung .ring { animation: bellRing 1s ease-out forwards; }
+  .bell-btn.rung .ring:nth-child(2) { animation-delay: .18s; } .bell-btn.rung .ring:nth-child(3) { animation-delay: .36s; }
+  @keyframes bellRing { 0% { opacity: .9; transform: scale(.6); } 100% { opacity: 0; transform: scale(3.2); } }
+  @keyframes pulse { 50% { opacity: .35; transform: rotate(45deg) scale(.7); } }
+
+  /* ---------- content ---------- */
+  main { position: relative; z-index: 2; }
+  .sec { min-height: calc(100vh - var(--band)); min-height: calc(100svh - var(--band)); display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: calc(74px + var(--sat)) 16px 40px; text-align: center; }
+  .hero { padding-top: calc(80px + var(--sat)); }
+  .hero .seq { opacity: 0; transform: translateY(16px); transition: opacity 1.2s ease, transform 1.2s ease; }
+  body.opened .hero .seq { opacity: 1; transform: none; }
+  .hero h1 { font: 500 clamp(50px, min(15vw, 10.5vh), 100px)/1 'Gelasio', serif; color: var(--ink); letter-spacing: -.015em; margin: 14px 0 8px; text-shadow: 0 2px 30px rgba(255,250,235,.8); }
+  .hero h1 .amp { display: block; font: italic 500 .56em/1.1 'Cormorant Garamond', serif; color: var(--gold); }
+  .hero .lead { font: italic 500 clamp(19px, 5vw, 23px)/1.4 'Cormorant Garamond', serif; color: var(--ink-2); }
+  .hero .date { font: 600 12.5px/1.5 'Jost', sans-serif; letter-spacing: .3em; color: var(--ink); margin-top: 14px; padding-left: .3em; }
+  @media (min-width: 700px) { .hero h1 .amp { display: inline; padding: 0 .12em; } }
+  .cue { margin-top: 34px; display: inline-flex; flex-direction: column; align-items: center; gap: 10px; font: 500 10.5px/1.4 'Jost', sans-serif; letter-spacing: .28em; text-transform: uppercase; color: var(--ink-2); }
+  .cue svg { width: 64px; height: 22px; overflow: visible; }
+  .cue .ft { animation: steps 1.6s ease-in-out infinite; }
+  .cue .ft.b { animation-delay: .8s; }
+  @keyframes steps { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+
+  .card { position: relative; width: 100%; max-width: 540px; margin: 0 auto; padding: 46px 24px 36px; text-align: center; border-radius: 22px; background: var(--paper);
+    box-shadow: inset 0 0 0 1px rgba(184,134,43,.6), inset 0 0 0 6px #fffaf0, inset 0 0 0 7.5px #d9ae52, inset 0 0 0 9.5px #f4da92, inset 0 0 0 10.5px #b8862b,
+      0 22px 46px -22px rgba(90,50,10,.42), 0 2px 10px rgba(90,50,10,.07); }
+  .card .orn { position: absolute; left: 50%; top: -17px; width: 92px; height: 34px; margin-left: -46px; }
+  .card h2 { font: 500 clamp(30px, 8.4vw, 42px)/1.15 'Gelasio', serif; color: var(--ink); margin: 10px 0 6px; }
+  .card .lede { font: italic 500 clamp(18.5px, 4.8vw, 21px)/1.5 'Cormorant Garamond', serif; color: var(--ink-2); }
+  .host { font: 500 clamp(21px, 5.6vw, 25px)/1.3 'Gelasio', serif; color: var(--maroon); margin: 14px 0 8px; }
+  .msg { font: italic 500 clamp(18.5px, 4.9vw, 21px)/1.5 'Cormorant Garamond', serif; color: var(--ink-2); max-width: 32ch; margin: 0 auto 14px; }
+  .nm { font: 500 clamp(32px, 9vw, 46px)/1.1 'Gelasio', serif; color: var(--ink); }
+  .with { font: italic 500 22px/1.6 'Cormorant Garamond', serif; color: var(--gold); }
+  .par { font: italic 500 18.5px/1.45 'Cormorant Garamond', serif; color: var(--ink-2); margin-top: 4px; }
+  .kasavu { width: min(220px, 70%); height: 9px; margin: 24px auto;
+    background: linear-gradient(#b8862b, #b8862b) 0 0 / 100% 1px no-repeat,
+      linear-gradient(90deg, #c9963a, #f7dc8f 30%, #d9a63f 50%, #f7dc8f 70%, #c9963a) 0 3px / 100% 4px no-repeat,
+      linear-gradient(#b8862b, #b8862b) 0 8px / 100% 1px no-repeat; }
+  .when-l { font: 600 12.5px/1.5 'Jost', sans-serif; letter-spacing: .26em; text-transform: uppercase; color: var(--ink); padding-left: .26em; }
+
+  .fam { display: grid; gap: 34px; width: 100%; max-width: 980px; margin: 0 auto; }
+  @media (min-width: 860px) { .fam { grid-template-columns: 1fr 1fr; gap: 28px; } .fam .card { height: 100%; } }
+  .role { display: inline-flex; align-items: center; gap: 10px; }
+  .role::before, .role::after { content: ''; width: 18px; height: 1px; background: var(--gold); }
+  .fam .nm { margin: 10px 0 2px; }
+  address { font-style: normal; font-size: 16.5px; line-height: 1.6; color: var(--ink-2); margin-top: 14px; }
+  address b { display: block; font: 600 11.5px/1.6 'Jost', sans-serif; letter-spacing: .28em; color: var(--maroon); margin-bottom: 2px; padding-left: .28em; }
+
+  .evts { display: grid; gap: 0; margin-top: 22px; }
+  .evt { padding: 20px 6px; }
+  .evt + .evt { border-top: 1px dashed rgba(184,134,43,.55); }
+  .evt h3 { font: 500 clamp(28px, 7.6vw, 36px)/1.15 'Gelasio', serif; color: var(--maroon); }
+  .evt .t { font: 600 clamp(19px, 5.2vw, 22px)/1.4 'Gelasio', serif; color: var(--ink); margin: 6px 0 2px; }
+  .evt .d { font: italic 500 19px/1.4 'Cormorant Garamond', serif; color: var(--ink-2); }
+  @media (min-width: 640px) { .evts { grid-template-columns: 1fr 1fr; } .evt + .evt { border-top: 0; border-left: 1px dashed rgba(184,134,43,.55); } }
+  .venue-l { font: italic 500 18px/1.4 'Cormorant Garamond', serif; color: var(--ink-2); margin-top: 6px; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 24px; margin-top: 22px; border-radius: 999px; text-decoration: none; cursor: pointer;
+    font: 600 12px/1.2 'Jost', sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #fff6e3;
+    background: linear-gradient(180deg, #9c2633, #74161f); box-shadow: inset 0 0 0 1px rgba(247,226,166,.7), inset 0 0 0 3px rgba(116,22,31,.9), inset 0 0 0 4px rgba(247,226,166,.3), 0 10px 22px -12px rgba(116,22,31,.7);
+    transition: transform .25s, box-shadow .25s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px rgba(247,226,166,.9), inset 0 0 0 3px rgba(116,22,31,.9), inset 0 0 0 4px rgba(247,226,166,.4), 0 14px 26px -12px rgba(116,22,31,.8); }
+  .btn svg { width: 16px; height: 16px; flex: none; }
+
+  .cd { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 24px auto 4px; max-width: 420px; }
+  .cd div { position: relative; padding: 16px 2px 11px; border-radius: 14px; background: linear-gradient(180deg, #fffdf6, #f8ecd2); overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(184,134,43,.55), inset 0 0 0 4px #fffaf0, inset 0 0 0 5px rgba(217,174,82,.6); }
+  .cd b { display: block; font: 500 clamp(28px, 8.4vw, 42px)/1 'Gelasio', serif; color: var(--maroon); font-variant-numeric: tabular-nums; }
+  .cd span { display: block; margin-top: 6px; font: 600 9.5px/1 'Jost', sans-serif; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-2); padding-left: .22em; }
+  .cd-done { display: none; margin-top: 14px; }
+  [data-countdown].done + .cd-done { display: block; }
+
+  /* map in a kasavu frame with a small mandapam arch and garland */
+  .mapf { position: relative; width: 100%; max-width: 560px; margin: 22px auto 0; }
+  .mapf .arch { position: relative; z-index: 2; margin: 0 -2%; pointer-events: none; }
+  .mapf .arch svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .mapf .frame { position: relative; z-index: 1; margin-top: -2.6%; padding: 13px; border-radius: 10px; background: #fffaf0;
+    box-shadow: inset 0 0 0 1px #b8862b, inset 0 0 0 4px #fffaf0, inset 0 0 0 6px #e2b955, inset 0 0 0 7px #f7e2a6, inset 0 0 0 8.5px #b8862b,
+      0 24px 50px -24px rgba(90,50,10,.5); }
+  .mapf .frame::before, .mapf .frame::after { content: ''; position: absolute; top: 50%; width: 12px; height: 12px; margin-top: -6px; transform: rotate(45deg); background: linear-gradient(135deg, #f7e2a6, #b8862b); box-shadow: 0 0 0 2px #fffaf0, 0 0 0 3px rgba(184,134,43,.6); }
+  .mapf .frame::before { left: -6px; } .mapf .frame::after { right: -6px; }
+  .mapf iframe { display: block; width: 100%; height: 330px; border: 0; border-radius: 4px; filter: sepia(.15) saturate(.92); }
+  @media (max-width: 480px) { .mapf iframe { height: 290px; } }
+  .addr { font: italic 500 19px/1.45 'Cormorant Garamond', serif; color: var(--ink-2); margin: 8px auto 0; max-width: 30ch; }
+
+  /* ---------- finale ---------- */
+  #finale { position: relative; height: 640vh; }
+  #fin { position: fixed; left: 0; right: 0; top: calc(56px + var(--sat)); z-index: 5; text-align: center; padding: 0 16px; pointer-events: none; }
+  .end { position: relative; }
+  .cap { position: absolute; left: 0; right: 0; top: 4px; padding: 0 18px; opacity: 0; will-change: opacity, transform; }
+  .cap b { display: block; font: 500 clamp(28px, 7.6vw, 42px)/1.15 'Gelasio', serif; color: var(--maroon); }
+  .cap span { display: block; margin-top: 4px; font: italic 500 clamp(18px, 4.8vw, 22px)/1.35 'Cormorant Garamond', serif; color: var(--ink-2); }
+  .cap .kick { display: block; margin-bottom: 6px; }
+  .end { isolation: isolate; }
+  .end::before { content: ''; position: absolute; z-index: -1; left: -6%; right: -6%; top: -18%; bottom: -14%; pointer-events: none; opacity: var(--halo, 0);
+    background: radial-gradient(closest-side, rgba(255,248,232,.82), rgba(255,246,228,.5) 60%, rgba(255,246,228,0)); }
+  .end > * { opacity: 0; will-change: opacity, transform; }
+  .end .kick { margin-bottom: 4px; }
+  .end h2 { font: 500 clamp(42px, 11.5vw, 72px)/1.02 'Gelasio', serif; color: var(--ink); letter-spacing: -.01em; text-shadow: 0 2px 24px rgba(255,248,230,.9); }
+  .end h2 .amp { font: italic 500 .6em 'Cormorant Garamond', serif; color: var(--gold); padding: 0 .08em; }
+  .end .bl { font: italic 500 clamp(19px, 5vw, 23px)/1.35 'Cormorant Garamond', serif; color: var(--ink-2); margin-top: 6px; }
+  .end .dt { font: 600 12px/1.5 'Jost', sans-serif; letter-spacing: .28em; text-transform: uppercase; color: var(--maroon); margin-top: 10px; padding-left: .28em; }
+  .end .vn { font: 500 clamp(15px, 4vw, 17px)/1.45 'Gelasio', serif; color: var(--ink); margin-top: 4px; }
+  .end .ty { font: italic 500 clamp(17px, 4.4vw, 20px)/1.4 'Cormorant Garamond', serif; color: var(--gold); margin-top: 8px; }
+
+  body.wide #fin { top: 0; bottom: 0; right: auto; width: 40vw; padding: 0; }
+  body.wide .cap { top: 26%; padding: 0 1vw 0 4vw; }
+  body.wide .end { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); padding: 0 1vw 0 4vw; }
+  body.wide .end h2 { font-size: min(58px, 4.3vw); white-space: nowrap; }
+
+  /* progress heart */
+  .heart { position: fixed; right: 12px; top: calc(12px + var(--sat)); z-index: 90; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--ui-bg); border: 1px solid var(--ui-line); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); opacity: 0; transition: opacity .6s; }
+  body.opened .heart { opacity: 1; }
+  .heart svg { width: 22px; height: 22px; overflow: visible; }
+  .heart.full svg { animation: beat 1.4s ease-in-out infinite; }
+  @keyframes beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(1); } 45% { transform: scale(1.12); } }
+
+  @media (prefers-reduced-motion: reduce) { .cloud { animation: none; } }
+</style>
+</head>
+<body class="locked">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="orn" viewBox="0 0 92 34">
+    <path d="M34 17C26 8.5 15 9.5 9 17c6 7.5 17 8.5 25 0z" fill="#fffaf0" stroke="#b8862b" stroke-width="1.2"/>
+    <path d="M58 17c8-8.5 19-7.5 25 0-6 7.5-17 8.5-25 0z" fill="#fffaf0" stroke="#b8862b" stroke-width="1.2"/>
+    <path d="M14 17h18M60 17h18" stroke="#d9a63f" stroke-width=".9"/>
+    <path d="M46 2.5l10.5 14.5L46 31.5 35.5 17z" fill="#fffaf0" stroke="#b8862b" stroke-width="1.4"/>
+    <path d="M46 9l5.6 8-5.6 8-5.6-8z" fill="#d9a63f"/>
+    <circle cx="46" cy="17" r="2" fill="#8e1f2b"/>
+    <circle cx="5" cy="17" r="2.4" fill="#d9a63f"/><circle cx="87" cy="17" r="2.4" fill="#d9a63f"/>
+  </symbol>
+</svg>
+
+<div class="sky" aria-hidden="true">
+  <div class="sky-b" id="skyB"></div>
+  <div class="sun" id="sun"></div>
+  <span class="cloud c1"></span><span class="cloud c2"></span>
+</div>
+
+<div class="toran" aria-hidden="true">
+  <svg preserveAspectRatio="none">
+    <defs>
+      <pattern id="toranP" width="96" height="58" patternUnits="userSpaceOnUse">
+        <path d="M0 6Q48 36 96 6" fill="none" stroke="#e9891a" stroke-width="6.5" stroke-dasharray="0 6" stroke-linecap="round"/>
+        <path d="M0 6Q48 36 96 6" fill="none" stroke="#ffc53d" stroke-width="5.5" stroke-dasharray="0 12" stroke-dashoffset="3" stroke-linecap="round"/>
+        <path d="M48 21v19" stroke="#fffef8" stroke-width="4" stroke-dasharray="0 4.4" stroke-linecap="round"/>
+        <circle cx="48" cy="44" r="3.6" fill="#c8233a"/>
+        <path d="M0 5C-5.5 17-3.5 29 0 36c3.5-7 5.5-19 0-31z" fill="#6c934a"/><path d="M96 5c-5.5 12-3.5 24 0 31 3.5-7 5.5-19 0-31z" fill="#6c934a"/>
+        <path d="M0 8v24M96 8v24" stroke="#4f7434" stroke-width=".8"/>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="58" fill="url(#toranP)"/>
+    <rect x="0" y="4" width="100%" height="1.6" fill="#b8862b"/>
+  </svg>
+</div>
+
+<!-- ======= the illustrated stage: land, mandapam, bride & groom ======= -->
+<svg id="scene" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8e19a"/><stop offset=".45" stop-color="#e0b04a"/><stop offset="1" stop-color="#b8862b"/></linearGradient>
+    <linearGradient id="gBrass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a5a14"/><stop offset=".35" stop-color="#f4d478"/><stop offset=".7" stop-color="#c48f2a"/><stop offset="1" stop-color="#7a4e10"/></linearGradient>
+    <linearGradient id="gPillar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e2d2b0"/><stop offset=".35" stop-color="#fffaf0"/><stop offset="1" stop-color="#d4bf96"/></linearGradient>
+    <linearGradient id="gRoof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a3322a"/><stop offset="1" stop-color="#6c1a18"/></linearGradient>
+    <radialGradient id="gFlame" cx=".5" cy=".75" r=".7"><stop offset="0" stop-color="#fffbe8"/><stop offset=".4" stop-color="#ffd257"/><stop offset="1" stop-color="#f0751a"/></radialGradient>
+    <radialGradient id="gHalo"><stop offset="0" stop-color="#ffe6a0" stop-opacity=".85"/><stop offset="1" stop-color="#ffe6a0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gGlow"><stop offset="0" stop-color="#fff8e4" stop-opacity=".95"/><stop offset=".5" stop-color="#ffe7b4" stop-opacity=".45"/><stop offset="1" stop-color="#ffdc98" stop-opacity="0"/></radialGradient>
+    <g id="palm"></g>
+    <g id="pillar">
+      <rect x="-15" y="-20" width="30" height="20" rx="2" fill="url(#gGold)"/>
+      <rect x="-12" y="-27" width="24" height="8" rx="2" fill="#c9963a"/>
+      <rect x="-8.5" y="-364" width="17" height="338" fill="url(#gPillar)"/>
+      <g fill="url(#gGold)"><rect x="-10.5" y="-92" width="21" height="6" rx="2"/><rect x="-10.5" y="-206" width="21" height="6" rx="2"/><rect x="-10.5" y="-318" width="21" height="6" rx="2"/></g>
+      <path d="M-8.5 -300L8.5 -284M-8.5 -270L8.5 -254M-8.5 -240L8.5 -224M-8.5 -190L8.5 -174M-8.5 -160L8.5 -144M-8.5 -130L8.5 -114" stroke="#fffef8" stroke-width="3.6" stroke-dasharray="0 4.6" stroke-linecap="round"/>
+      <rect x="-15.5" y="-380" width="31" height="17" rx="2" fill="url(#gGold)"/>
+      <path d="M-15.5 -380h31l7-7h-45z" fill="#b8862b"/>
+    </g>
+    <g id="lamp">
+      <ellipse cx="0" cy="-2.5" rx="21" ry="4" fill="#7d5212"/>
+      <path d="M-19 -3Q-17 -15-6 -17h12q11 2 13 14z" fill="url(#gBrass)"/>
+      <rect x="-2.7" y="-94" width="5.4" height="79" fill="url(#gBrass)"/>
+      <ellipse cx="0" cy="-42" rx="6.4" ry="3.3" fill="#c9962f"/><ellipse cx="0" cy="-68" rx="5.2" ry="2.9" fill="#c9962f"/>
+      <path d="M-25 -97Q0 -84 25 -97q-4 7-25 9-21-2-25-9z" fill="#a8721c"/>
+      <ellipse cx="0" cy="-97" rx="25" ry="4.6" fill="url(#gBrass)"/>
+      <path d="M-2.2 -100v-16q2.2-8 4.4 0v16z" fill="#c9962f"/>
+      <circle cx="0" cy="-119" r="3.4" fill="#e3b450"/>
+      <path d="M0 -122q3.4 5 0 11-3.4-6 0-11z" transform="rotate(180 0 -122)" fill="#c9962f"/>
+    </g>
+    <g id="flame">
+      <circle cx="0" cy="-6" r="11" fill="url(#gHalo)"/>
+      <path d="M0 0C-3.4-3-2.8-8.5 0-14c2.8 5.5 3.4 11 0 14z" fill="url(#gFlame)"/>
+    </g>
+  </defs>
+
+  <g id="world">
+    <g id="land"></g>
+    <rect id="warm" x="-6000" y="-700" width="12000" height="3000" fill="#f2a65a" opacity="0"/>
+
+    <g id="mandap" style="display:none">
+      <circle id="mGlow" cx="0" cy="-240" r="320" fill="url(#gGlow)" opacity="0"/>
+      <g id="mPlat">
+        <path d="M-168 -13H168L180 5H-180z" fill="#f2e2bd"/>
+        <path d="M-120 -13H120L128 5H-128z" fill="#b8323b" opacity=".9"/>
+        <path d="M-118 -11H118M-125 3H125" stroke="#e2b955" stroke-width="1.2"/>
+        <rect x="-180" y="5" width="360" height="22" fill="#8a2230"/>
+        <rect x="-180" y="8" width="360" height="2.6" fill="#e2b955"/><rect x="-180" y="20" width="360" height="2.6" fill="#e2b955"/>
+        <path d="M-180 14.6H180" stroke="#f7e2a6" stroke-width="1.2" stroke-dasharray="1.5 5"/>
+      </g>
+      <g id="mBack" fill="#d9c59c"><rect x="-123" y="-380" width="12" height="368"/><rect x="111" y="-380" width="12" height="368"/></g>
+      <g id="lampL" transform="translate(-106 0)"><use href="#lamp"/><g class="fls"><use href="#flame" x="-20" y="-100"/><use href="#flame" x="-10" y="-101"/><use href="#flame" x="10" y="-101"/><use href="#flame" x="20" y="-100"/></g></g>
+      <g id="lampR" transform="translate(106 0)"><use href="#lamp"/><g class="fls"><use href="#flame" x="-20" y="-100"/><use href="#flame" x="-10" y="-101"/><use href="#flame" x="10" y="-101"/><use href="#flame" x="20" y="-100"/></g></g>
+      <g id="mPilL"><use href="#pillar" x="-152"/></g>
+      <g id="mPilR"><use href="#pillar" x="152"/></g>
+      <g id="mRoof">
+        <path d="M-210 -397Q-162 -405-130 -442H130Q162 -405 210 -397z" fill="url(#gRoof)"/>
+        <path d="M-196 -404Q0 -398 196 -404M-176 -414Q0 -409 176 -414M-158 -424Q0 -420 158 -424M-142 -434Q0 -431 142 -434" stroke="#5a1311" stroke-width="1.2" fill="none" opacity=".5"/>
+        <path d="M-210 -397Q-162 -405-130 -442M210 -397Q162 -405 130 -442" stroke="#e2b955" stroke-width="2.4" fill="none"/>
+        <path d="M-104 -438L0 -496l104 58z" fill="url(#gRoof)"/>
+        <path d="M-78 -438L0 -482l78 44z" fill="#d6a443"/>
+        <path d="M-60 -438L0 -472l60 34M-40 -438L0 -461l40 23M-20 -438L0 -449l20 11M0 -482v44M-39 -460l-0 22M39 -460v22" stroke="#9e6b1c" stroke-width="1.2" fill="none"/>
+        <path d="M-104 -438L0 -496l104 58" stroke="#e2b955" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+        <path d="M-6 -497h12l-2 -6h-8z" fill="#c9963a"/><circle cx="0" cy="-508" r="6.5" fill="url(#gGold)"/><path d="M-1.6 -514L0 -528l1.6 14z" fill="#c9963a"/>
+        <rect x="-184" y="-399" width="368" height="14" fill="#7a1d1c"/>
+        <rect x="-184" y="-397" width="368" height="2.6" fill="#e2b955"/><rect x="-184" y="-390" width="368" height="2.6" fill="#e2b955"/>
+        <path d="M-196 -397v8M196 -397v8" stroke="#b8862b" stroke-width="1.2"/>
+        <path d="M-201 -389q5-8 10 0z M191 -389q5-8 10 0z" fill="#d9a63f"/>
+      </g>
+      <g id="mStr"></g>
+      <g id="mSwag">
+        <path d="M-152 -374Q-76 -322 0 -374Q76 -322 152 -374" fill="none" stroke="#e9861a" stroke-width="8" stroke-dasharray="0 7" stroke-linecap="round"/>
+        <path d="M-152 -374Q-76 -322 0 -374Q76 -322 152 -374" fill="none" stroke="#ffc53d" stroke-width="7" stroke-dasharray="0 14" stroke-dashoffset="3.5" stroke-linecap="round"/>
+        <g fill="#6c934a"><path d="M0 -376c-6 10-4 21 0 27 4-6 6-17 0-27z"/><path d="M-152 -376c-6 10-4 21 0 27 4-6 6-17 0-27z"/><path d="M152 -376c-6 10-4 21 0 27 4-6 6-17 0-27z"/></g>
+        <circle cx="0" cy="-347" r="4.6" fill="#c8233a"/><circle cx="-152" cy="-347" r="4.2" fill="#c8233a"/><circle cx="152" cy="-347" r="4.2" fill="#c8233a"/>
+      </g>
+    </g>
+
+    <!-- ===== GROOM (left, faces right) ===== -->
+    <g id="groom">
+      <ellipse class="shadow" cx="0" cy="1.5" rx="30" ry="4.5" fill="#4a3a1e" opacity=".2"/>
+      <g class="feet"><g class="fr"><g class="fside"><path d="M-3.6 -1.8C-5.8-.2-6.3 4.2-4.8 6H9.8c2.1 0 2.4-2.2.5-3-3.2-1.2-6.2-2.2-7.6-4.6z" fill="#bd7f52"/><path d="M-5 6.3h15.4" stroke="#5b3a22" stroke-width="1.7" stroke-linecap="round"/><path d="M2.4 1.1q2.6-2.4 5.2.4" stroke="#6b4226" stroke-width="1.3" fill="none"/></g><g class="ffront"><path d="M-6.4 6q-.8-6 3.8-6.8 5-.5 7.6 3.2 1.2 2.4-.4 3.6z" fill="#bd7f52"/><path d="M-6.7 6.4h12.8" stroke="#5b3a22" stroke-width="1.6" stroke-linecap="round"/></g></g><g class="fl"><g class="fside"><path d="M-3.6 -1.8C-5.8-.2-6.3 4.2-4.8 6H9.8c2.1 0 2.4-2.2.5-3-3.2-1.2-6.2-2.2-7.6-4.6z" fill="#bd7f52"/><path d="M-5 6.3h15.4" stroke="#5b3a22" stroke-width="1.7" stroke-linecap="round"/><path d="M2.4 1.1q2.6-2.4 5.2.4" stroke="#6b4226" stroke-width="1.3" fill="none"/></g><g class="ffront"><path d="M-6.4 6q-.8-6 3.8-6.8 5-.5 7.6 3.2 1.2 2.4-.4 3.6z" fill="#bd7f52"/><path d="M-6.7 6.4h12.8" stroke="#5b3a22" stroke-width="1.6" stroke-linecap="round"/></g></g></g>
+      <g class="lean"><g class="bob">
+        <g class="armsBack"></g>
+        <g class="lower">
+          <clipPath id="clipG"><path class="gcp"/></clipPath>
+          <path class="gbody" fill="#fdfaf3"/>
+          <g clip-path="url(#clipG)">
+            <path class="gshade" fill="none" stroke="#ebe0c8" stroke-width="10" opacity=".85"/>
+            <path class="gfolds" fill="none" stroke="#ece3cf" stroke-width="2.2"/>
+            <path class="gfold" fill="url(#gGold)"/>
+            <path class="ghem" fill="none" stroke="#dcaa45" stroke-width="10"/>
+            <path class="ghemH" fill="none" stroke="#f6d98a" stroke-width="2.6"/>
+            <path class="ghemT" fill="none" stroke="#d9a63f" stroke-width="1.1"/>
+          </g>
+        </g>
+        <g class="torso">
+          <path d="M-6.5 -253v17q6.5 4.5 13 0v-17z" fill="#b1744b"/><path d="M-6.5 -248q6.5 6.5 13 0v4.5q-6.5 4.5-13 0z" fill="#93593a" opacity=".55"/>
+          <path d="M-8 -239c-7 1.5-17 2.5-22 7.5-3 3-3.5 8.5-2.5 14.5L-28 -182l-1.5 43Q0 -134 29.5 -139L28 -182l4.5-35c1-6 .5-11.5-2.5-14.5-5-5-15-6-22-7.5Q0 -235-8 -239z" fill="#f4ead5"/>
+          <path d="M20 -236c6 3 11 6 12.5 19L28 -182l1.5 43-6.5 1-.5-44 2.5-33c0-11-2-17-5-21z" fill="#e6d8b9" opacity=".75"/>
+          <path d="M-29.5 -142Q0 -137 29.5 -142" stroke="#d4a43c" stroke-width="1.8" fill="none"/>
+          <path d="M0 -235v43" stroke="#e2d2b0" stroke-width="1.2"/>
+          <g fill="#d4a43c"><circle cx="0" cy="-228" r="1.2"/><circle cx="0" cy="-219" r="1.2"/><circle cx="0" cy="-210" r="1.2"/></g>
+          <path d="M10 -238.5l14 3 7.5 9.5-47 76.5L-31 -161z" fill="#fffbf2"/>
+          <path d="M24 -235.5l7.5 9.5-47 76.5-4-3z" fill="#f1e8d4"/>
+          <path d="M10.5 -237.5l-40 76M30.5 -225.5L-15 -151" stroke="#d9a63f" stroke-width="3.2" fill="none"/>
+          <path d="M13.6 -235.6l-38.4 73M27.6 -226.4l-43 71" stroke="#b8862b" stroke-width=".7" fill="none"/>
+          <g class="fringe"><path d="M-29.5 -163l9.5 7 -1.2 13.5 -9.4-4.6z" fill="#fffbf2"/><path d="M-29.5 -163l-1.1 15.9M-20 -156l-1.2 13.5" stroke="#d9a63f" stroke-width="2.2" fill="none"/><path d="M-30.6 -147.1l9.4 4.6" stroke="#d9a63f" stroke-width="1.4"/><path d="M-30.3 -146.6l-.5 3M-28 -145.4l-.4 3M-25.7 -144.3l-.4 3M-23.4 -143.2l-.3 3" stroke="#e2b955" stroke-width=".9" fill="none"/></g>
+          <path d="M-8 -240.5Q0 -237 8 -240.5l.5 5Q0 -231.5-8.5 -235.5z" fill="#efe1c4" stroke="#d4a43c" stroke-width=".8"/>
+        </g>
+        <g class="head">
+          <ellipse class="earL" cx="-19" cy="-266.5" rx="3.7" ry="6.2" fill="#c08356"/><ellipse class="earR" cx="19" cy="-266.5" rx="3.7" ry="6.2" fill="#c08356"/>
+          <path d="M-19 -272c0-16 9-21 19-21s19 5 19 21c0 14-5 24-19 28-14-4-19-14-19-28z" fill="#c98d60"/>
+          <path d="M8 -249.5c6-3 10.5-11 11-22.5 0 7-3 17-10 23.5z" fill="#b07448" opacity=".55"/>
+          <g class="hair">
+          <path d="M-20.4 -264c-2.6-20 6.4-35.5 21.4-36 14-.5 22.5 10 19.6 36l-1.6-7c-.5-7-3-12-7-14.5-7 2.5-16.5 2-23-2-3.5 5-6.5 11.5-7.8 17.5z" fill="#1f1612"/>
+          <path d="M-11 -287.5c4-6.5 14.5-8.5 22.5-4.8 4 2 6.6 5.2 7.4 8.4-6.2-3.6-15.2-5.2-23.4-1.6z" fill="#2c211b"/>
+          <path d="M-6 -293.6q8-4 18 1.2M-3 -289.6q8-3.2 16.5 1.8M-11 -287.5q-1.5-5.5 1.5-9.5" stroke="#46362e" stroke-width=".9" fill="none" stroke-linecap="round"/>
+          <path d="M-8 -295.5c8-2.5 17-1 23 5.5M-15 -289c2-3 4-5 7-6.5" stroke="#4d3d34" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".75"/>
+</g>
+          <g class="feat">
+            <path d="M-12.5 -277.2q4-2.8 8.5-.8M4 -278q4.5-2 8.5.8" stroke="#24170f" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <g class="eyes">
+              <path d="M-12 -271q4-3.4 8 0-4 2.2-8 0z" fill="#fff"/><path d="M4 -271q4-3.4 8 0-4 2.2-8 0z" fill="#fff"/>
+              <g class="iris" fill="#2b1a10"><circle cx="-8" cy="-271" r="2.1"/><circle cx="8" cy="-271" r="2.1"/></g>
+              <circle cx="-7.3" cy="-271.7" r=".6" fill="#fff"/><circle cx="8.7" cy="-271.7" r=".6" fill="#fff"/>
+              <path d="M-12.3 -271q4.3-3.8 8.6-.2M3.7 -271.2q4.3-3.6 8.6.2" stroke="#24170f" stroke-width="1.15" fill="none" stroke-linecap="round"/>
+            </g>
+            <path d="M.6 -267q2.4 6-1.2 7.4" stroke="#9c6240" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <g fill="#e07a64" opacity=".24"><circle cx="-11.5" cy="-259" r="3.8"/><circle cx="11.5" cy="-259" r="3.8"/></g>
+            <path d="M-7 -255.8q3.5-2.8 7-1 3.5-1.8 7 1-3.5 1.3-7 .4-3.5.9-7-.4z" fill="#1f1612"/>
+            <path class="smile" d="M-4.6 -252.2Q0 -249 4.6 -252.2" stroke="#6b3022" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <g class="grin" opacity="0"><path d="M-6 -252.8Q0 -246.2 6 -252.8Q0 -250.4-6 -252.8z" fill="#fff" stroke="#6b3022" stroke-width="1.1" stroke-linejoin="round"/></g>
+          </g>
+        </g>
+      </g></g>
+    </g>
+
+    <!-- ===== BRIDE (right, faces left) ===== -->
+    <g id="bride">
+      <ellipse class="shadow" cx="0" cy="1.5" rx="31" ry="4.5" fill="#4a3a1e" opacity=".2"/>
+      <g class="feet"><g class="fr"><g class="fside"><path d="M-3 -1.4C-4.8 0-5 3.6-3.8 5H7.4c1.8 0 2-1.8.4-2.5C5 1.6 2.6.6 1.6-1.4z" fill="#cf9469"/><path d="M-4 5.2h11.6" stroke="#b3262f" stroke-width="1.3" stroke-linecap="round"/><path d="M-2.8 -.6q2.4 1.4 4.6 0" stroke="#e2b955" stroke-width="1.2" fill="none" stroke-dasharray="1 .8"/></g><g class="ffront"><path d="M-5 5q-.6-5 3.2-5.6 4-.4 6 2.8 1 2-.4 2.8z" fill="#cf9469"/><path d="M-5.2 5.3h9.8" stroke="#b3262f" stroke-width="1.2" stroke-linecap="round"/></g></g><g class="fl"><g class="fside"><path d="M-3 -1.4C-4.8 0-5 3.6-3.8 5H7.4c1.8 0 2-1.8.4-2.5C5 1.6 2.6.6 1.6-1.4z" fill="#cf9469"/><path d="M-4 5.2h11.6" stroke="#b3262f" stroke-width="1.3" stroke-linecap="round"/><path d="M-2.8 -.6q2.4 1.4 4.6 0" stroke="#e2b955" stroke-width="1.2" fill="none" stroke-dasharray="1 .8"/></g><g class="ffront"><path d="M-5 5q-.6-5 3.2-5.6 4-.4 6 2.8 1 2-.4 2.8z" fill="#cf9469"/><path d="M-5.2 5.3h9.8" stroke="#b3262f" stroke-width="1.2" stroke-linecap="round"/></g></g></g>
+      <g class="lean"><g class="bob">
+        <g class="armsBack"></g>
+        <g class="hang">
+          <path d="M15 -224l12.5 4.5c5.5 29.5 9.5 69.5 12 107.5L27 -108c-2-38-6-80-12-116z" fill="#f5eedc"/>
+          <path d="M27.5 -219.5c5.5 29.5 9.5 69.5 12 107.5" stroke="#d9a63f" stroke-width="4.6" fill="none"/>
+          <path d="M27 -108l12.5-4-.6-9-12.4 3.6z" fill="#d9a63f"/><path d="M26.7 -119.4l12.3-3.8" stroke="#8e1f2b" stroke-width="1.3"/>
+        </g>
+        <g class="hairback">
+          <path d="M-21 -256c-2.5-25 9.5-34.5 21-34.5s23.5 9.5 21 34.5c0 12-2 22-5.5 30h-31c-3.5-8-5.5-18-5.5-30z" fill="#1a1210"/>
+          <path d="M-21.5 -272q-5 19 2.5 38M21.5 -272q5 19-2.5 38" stroke="#fffef8" stroke-width="4.4" fill="none" stroke-dasharray="0 4.5" stroke-linecap="round"/>
+          <path d="M-24.6 -266q-3 14 2 28M24.6 -266q3 14-2 28" stroke="#fffef8" stroke-width="3.6" fill="none" stroke-dasharray="0 4.4" stroke-dashoffset="2" stroke-linecap="round"/>
+        </g>
+        <g class="lower">
+          <clipPath id="clipB"><path class="gcp"/></clipPath>
+          <path class="gbody" fill="#fcf7ec"/>
+          <g clip-path="url(#clipB)">
+            <path class="gshade" fill="none" stroke="#eee3cb" stroke-width="13" opacity=".9"/>
+            <path class="gpleats" fill="none" stroke="#e4d6b8" stroke-width="1.35"/>
+            <path class="ghem" fill="none" stroke="#dcaa45" stroke-width="21"/>
+            <path class="ghemH" fill="none" stroke="#f1cf78" stroke-width="5"/>
+            <path class="gpleatH" fill="none" stroke="#b8862b" stroke-width="1" opacity=".65"/>
+            <path class="gmar" fill="none" stroke="#8e1f2b" stroke-width="1.9"/>
+            <path class="ghemT" fill="none" stroke="#d9a63f" stroke-width="1"/>
+          </g>
+        </g>
+        <g class="torso">
+          <path d="M-5.8 -241v17q5.8 4 11.6 0v-17z" fill="#c4875d"/><path d="M-5.8 -237.5q5.8 5.5 11.6 0v4q-5.8 4-11.6 0z" fill="#a8693f" opacity=".5"/>
+          <path d="M-7 -229c-6 1-15 2-19 7-2.5 3-2.5 8-1.5 13l4.5 14q2.5 5.5 5.5 7.5h35q3-2 5.5-7.5l4.5-14c1-5 1-10-1.5-13-4-5-13-6-19-7q-7 3-14 0z" fill="#8c1d2a"/>
+          <path d="M-21 -205q8 6 16 0" stroke="#6e1520" stroke-width="1.2" fill="none"/>
+          <path d="M-9.5 -228.6q.5 13.6 9.5 16.6 9-3 9.5-16.6-5.5 1.6-9.5 1.6t-9.5-1.6z" fill="#d39a70"/>
+          <path d="M-9.6 -228.6q.6 13.6 9.6 16.6 9-3 9.6-16.6" stroke="#d9a63f" stroke-width="1.3" fill="none"/>
+          <path d="M6.5 -228l19 6.5 2.1 9.5-3.6 13-4 13-40.5 2.5-1.5-5.5z" fill="#fbf6ea"/>
+          <path d="M17 -224L3 -186M22 -220l-11 34M25.5 -213L18 -187" stroke="#ebdfc4" stroke-width="1.2" fill="none"/>
+          <path d="M6.5 -228l5 1.6-28.3 39.8-5.2-2.4z" fill="url(#gGold)"/>
+          <path d="M12.6 -225.6l-28.2 39.4" stroke="#8e1f2b" stroke-width="1.2"/>
+          <path d="M-21 -189q21 4 42 0l.4 6.5q-21.4 4-42.8 0z" fill="url(#gGold)"/>
+          <path d="M-20.6 -185.6q20.6 3.8 41.2 0" stroke="#a87a22" stroke-width=".6" stroke-dasharray="1 2" fill="none"/>
+          <ellipse cx="0" cy="-184" rx="5.2" ry="3.7" fill="#e9c15a" stroke="#a87a22" stroke-width=".7"/><circle cx="0" cy="-184" r="1.7" fill="#b3122e"/>
+          <path d="M-7 -227.5q7 6 14 0" stroke="#d9a63f" stroke-width="2.9" fill="none" stroke-linecap="round"/>
+          <path d="M-6.4 -227q6.4 5.4 12.8 0" stroke="#b3122e" stroke-width="1.5" fill="none" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+          <path d="M-9 -226q-.5 20 9 25.4 9.5-5.4 9-25.4" stroke="#e2b955" stroke-width="2" fill="none" stroke-dasharray="2.6 .9"/>
+          <path d="M-9 -226q-.5 20 9 25.4 9.5-5.4 9-25.4" stroke="#2f7a4f" stroke-width="1.7" fill="none" stroke-dasharray="0 6.2" stroke-linecap="round"/>
+          <path d="M0 -201q-3.4 4 0 8.6 3.4-4.6 0-8.6z" fill="#e2b955" stroke="#a87a22" stroke-width=".5"/><circle cx="0" cy="-196.8" r="1.2" fill="#b3122e"/>
+          <g class="thali" opacity="0">
+            <path d="M-5.4 -226.5q.5 11 5.4 13 4.9-2 5.4-13" stroke="#f2c230" stroke-width="1.15" fill="none"/>
+            <path d="M0 -214c-3.2 2.4-3.4 6.4 0 9.6 3.4-3.2 3.2-7.2 0-9.6z" fill="url(#gGold)" stroke="#a87a22" stroke-width=".5"/>
+            <g class="glint" opacity="0"><circle cx="0" cy="-209" r="7" fill="url(#gHalo)"/><path d="M0 -216l.8 6.2 6.2.8-6.2.8L0 -202l-.8-6.2-6.2-.8 6.2-.8z" fill="#fffbe6"/></g>
+          </g>
+          <g class="braid">
+          <path d="M13.5 -238c6 14 8 33 7 70" stroke="#1a1210" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+          <path d="M13.5 -238c6 14 8 33 7 70" stroke="#3a2c26" stroke-width="7" fill="none" stroke-dasharray="1.2 3.4" opacity=".6"/>
+          <path d="M13.5 -238c6 14 8 33 7 70" stroke="#fffef8" stroke-width="4.6" fill="none" stroke-dasharray="0 5" stroke-linecap="round"/>
+          <path d="M18 -168h5l1.5 10h-8z" fill="url(#gGold)"/><circle cx="20.5" cy="-156" r="1.8" fill="#b3122e"/>
+</g>
+        </g>
+        <g class="head">
+          <g class="earL"><ellipse cx="-17.6" cy="-254" rx="3.1" ry="5.2" fill="#c98e64"/><circle cx="-18.3" cy="-249.6" r="1.6" fill="#e2b955"/><g class="jh"><path d="M-18.3 -248v2" stroke="#c9963a" stroke-width=".8"/><path d="M-22.2 -240.5q3.9-8 7.8 0z" fill="url(#gGold)"/><g fill="#e2b955"><circle cx="-21.4" cy="-239.3" r=".8"/><circle cx="-18.3" cy="-238.8" r=".8"/><circle cx="-15.2" cy="-239.3" r=".8"/></g></g></g>
+          <g class="earR"><ellipse cx="17.6" cy="-254" rx="3.1" ry="5.2" fill="#c98e64"/><circle cx="18.3" cy="-249.6" r="1.6" fill="#e2b955"/><g class="jh"><path d="M18.3 -248v2" stroke="#c9963a" stroke-width=".8"/><path d="M14.4 -240.5q3.9-8 7.8 0z" fill="url(#gGold)"/><g fill="#e2b955"><circle cx="21.4" cy="-239.3" r=".8"/><circle cx="18.3" cy="-238.8" r=".8"/><circle cx="15.2" cy="-239.3" r=".8"/></g></g></g>
+          <path d="M-17.5 -259c0-16 8.5-21 17.5-21s17.5 5 17.5 21c0 13-6.5 23-17.5 25.5-11-2.5-17.5-12.5-17.5-25.5z" fill="#d6a074"/>
+          <path d="M7 -237c6-3 10-10 10.5-21.5 0 8-3 17-9.5 22.5z" fill="#c08458" opacity=".5"/>
+          <g class="hairF">
+          <path d="M0 -286.5c-8.5.5-15.5 5.5-18 16.5-.7 5.5-.4 10.5.4 15.5l1.7-7.5c1.7-8 7.5-14.4 15.9-15.6 8.4 1.2 14.2 7.6 15.9 15.6l1.7 7.5c.8-5 1.1-10 .4-15.5-2.5-11-9.5-16-18-16.5z" fill="#1a1210"/>
+          <path d="M-4 -284q-7 2-10.5 9M4 -284q7 2 10.5 9" stroke="#4a3a34" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".7"/>
+</g>
+          <g class="nethi">
+          <path d="M0 -286.5v8.5M0 -279q-9 1-14.8 10.6M0 -279q9 1 14.8 10.6" stroke="#e2b955" stroke-width=".95" fill="none"/>
+          <circle cx="0" cy="-276" r="2.2" fill="#e2b955"/><circle cx="0" cy="-276" r="1" fill="#b3122e"/><path d="M0 -273.8l-1 1.8 1 1.2 1-1.2z" fill="#e2b955"/>
+</g>
+          <g class="feat">
+            <path d="M-11.6 -262.3q4-2.7 8-.7M3.6 -263q4-2 8 .7" stroke="#2a1812" stroke-width="1.25" fill="none" stroke-linecap="round"/>
+            <circle cx="0" cy="-265.6" r="1.2" fill="#b3122e"/>
+            <g class="eyes">
+              <path d="M-11.2 -257.6q3.7-3.6 7.6 0-3.9 2.4-7.6 0zM3.6 -257.6q3.9-3.6 7.6 0-3.7 2.4-7.6 0z" fill="#fff"/>
+              <g class="iris" fill="#2b1a12"><circle cx="-7.3" cy="-257.7" r="2.15"/><circle cx="7.3" cy="-257.7" r="2.15"/></g>
+              <circle cx="-6.6" cy="-258.4" r=".65" fill="#fff"/><circle cx="8" cy="-258.4" r=".65" fill="#fff"/>
+              <path d="M-11.8 -257.4q4.3-4.2 8.5-.5M3.3 -257.9q4.2-3.7 8.5.5M-11.8 -257.4l-1.9-1.5M11.8 -257.4l1.9-1.5" stroke="#140c08" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            </g>
+            <path d="M.4 -253.5q1.7 4.7-.7 6.1" stroke="#a96d49" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <circle cx="2.5" cy="-248.3" r=".8" fill="#fff4c8"/>
+            <g fill="#e98a8a" opacity=".3"><circle cx="-10.6" cy="-246.5" r="3.7"/><circle cx="10.6" cy="-246.5" r="3.7"/></g>
+            <path class="smile" d="M-4.2 -241.6q4.2 1.8 8.4 0-4.2 4-8.4 0z" fill="#b13a48"/>
+            <g class="grin" opacity="0"><path d="M-5.4 -242q5.4 1.4 10.8 0-5.4 6.2-10.8 0z" fill="#b13a48"/><path d="M-4.4 -241.6q4.4 1.1 8.8 0-4.4 1.9-8.8 0z" fill="#fff"/></g>
+          </g>
+        </g>
+      </g></g>
+    </g>
+
+    <!-- garlands & arms are layered over both bodies so hands can reach across -->
+    <g id="fx">
+      <g id="gar1" opacity="0"><path class="g0" fill="none" stroke="#d9cba6" stroke-width="8.4" stroke-linecap="round"/><path class="g1" fill="none" stroke="#fffef8" stroke-width="6.6" stroke-dasharray="0 4.3" stroke-linecap="round"/><path class="g2" fill="none" stroke="#c8233a" stroke-width="6.8" stroke-dasharray="0 17.2" stroke-linecap="round"/><path class="g3" fill="none" stroke="#f5a21f" stroke-width="6.6" stroke-dasharray="0 17.2" stroke-dashoffset="8.6" stroke-linecap="round"/><g class="tas"><path d="M-3 2v14M0 3v16M3 2v14" stroke="#fffef8" stroke-width="3.2" stroke-dasharray="0 3.8" stroke-linecap="round"/><circle r="5.6" fill="#c8233a"/><path d="M-2.6 -.6a2.8 2.8 0 1 1 3 2.6" stroke="#8e1424" stroke-width="1" fill="none"/></g></g>
+      <g id="gar2" opacity="0"><path class="g0" fill="none" stroke="#d9cba6" stroke-width="8.4" stroke-linecap="round"/><path class="g1" fill="none" stroke="#fffef8" stroke-width="6.6" stroke-dasharray="0 4.3" stroke-linecap="round"/><path class="g2" fill="none" stroke="#c8233a" stroke-width="6.8" stroke-dasharray="0 17.2" stroke-linecap="round"/><path class="g3" fill="none" stroke="#f5a21f" stroke-width="6.6" stroke-dasharray="0 17.2" stroke-dashoffset="8.6" stroke-linecap="round"/><g class="tas"><path d="M-3 2v14M0 3v16M3 2v14" stroke="#fffef8" stroke-width="3.2" stroke-dasharray="0 3.8" stroke-linecap="round"/><circle r="5.6" fill="#c8233a"/><path d="M-2.6 -.6a2.8 2.8 0 1 1 3 2.6" stroke="#8e1424" stroke-width="1" fill="none"/></g></g>
+    </g>
+
+    <g id="groom-arms"><g class="abob">
+      <g class="armL" transform="translate(-26 -226)"><g class="up">
+        <path d="M-7 -3c-.4 19 .4 39 1 55h12c.6-16 1.4-36 1-55-3-3-11-3-14 0z" fill="#f2e7d0"/>
+        <path d="M3 -2c1 18 1.5 38 1.4 54H6c.6-16 1.4-36 1-55z" fill="#e3d4b4" opacity=".8"/>
+        <g class="fo" transform="translate(0 52)">
+          <circle r="6" fill="#f2e7d0"/>
+          <path d="M-6 0l1 42h10l1-42z" fill="#f2e7d0"/><path d="M2.6 0l.6 42h1.8l1-42z" fill="#e3d4b4" opacity=".8"/>
+          <path d="M-5.2 38.6h10.4l-.1 4.4H-5.1z" fill="#d9a63f"/>
+          <g class="hand"><path d="M-4.6 41.5C-5.6 45.5-5.2 50.5-3.2 53.8c1.2 2 3.6 2.6 5.2 1.4 1-.8 1-2 .2-2.8 1.6-.2 2.6-1.6 2.2-3.2 1.2-.8 1.4-2.4.6-3.4.6-1.4.4-3.2-.4-4.4L4.4 41.5z" fill="#c68a5e"/><path d="M-1.4 50.8q2 .9 3.8.1M-1.6 47.6q2 .8 3.8 0" stroke="#a5683f" stroke-width=".7" fill="none" stroke-linecap="round"/><path d="M3.8 43.4q3.4 1.5 3 4.8-.3 1.6-1.7 1.6" stroke="#c68a5e" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+        </g>
+      </g></g>
+      <g class="armR" transform="translate(26 -226)"><g class="up">
+        <path d="M-7 -3c-.4 19 .4 39 1 55h12c.6-16 1.4-36 1-55-3-3-11-3-14 0z" fill="#f2e7d0"/>
+        <path d="M3 -2c1 18 1.5 38 1.4 54H6c.6-16 1.4-36 1-55z" fill="#e3d4b4" opacity=".8"/>
+        <g class="fo" transform="translate(0 52)">
+          <circle r="6" fill="#f2e7d0"/>
+          <path d="M-6 0l1 42h10l1-42z" fill="#f2e7d0"/><path d="M2.6 0l.6 42h1.8l1-42z" fill="#e3d4b4" opacity=".8"/>
+          <path d="M-5.2 38.6h10.4l-.1 4.4H-5.1z" fill="#d9a63f"/>
+          <g class="hand"><g transform="scale(-1 1)"><path d="M-4.6 41.5C-5.6 45.5-5.2 50.5-3.2 53.8c1.2 2 3.6 2.6 5.2 1.4 1-.8 1-2 .2-2.8 1.6-.2 2.6-1.6 2.2-3.2 1.2-.8 1.4-2.4.6-3.4.6-1.4.4-3.2-.4-4.4L4.4 41.5z" fill="#c68a5e"/><path d="M-1.4 50.8q2 .9 3.8.1M-1.6 47.6q2 .8 3.8 0" stroke="#a5683f" stroke-width=".7" fill="none" stroke-linecap="round"/><path d="M3.8 43.4q3.4 1.5 3 4.8-.3 1.6-1.7 1.6" stroke="#c68a5e" stroke-width="2.5" fill="none" stroke-linecap="round"/></g></g>
+        </g>
+      </g></g>
+    </g></g>
+
+    <g id="bride-arms"><g class="abob">
+      <g class="armL" transform="translate(-23 -219)"><g class="up">
+        <path d="M-5 22c0 10 .4 18 .8 25h8.4c.4-7 .8-15 .8-25z" fill="#d39a70"/>
+        <path d="M-6.2 -3c-.4 11-.1 19 .2 26h12c.3-7 .6-15 .2-26-2.7-3-9.7-3-12.4 0z" fill="#8c1d2a"/>
+        <path d="M-6.1 19.5H6.1l-.1 4H-6z" fill="#d9a63f"/>
+        <path d="M-4.9 29.5h9.8l-.1 2.6h-9.6z" fill="#e2b955"/>
+        <g class="fo" transform="translate(0 47)">
+          <circle r="4.3" fill="#d39a70"/>
+          <path d="M-4.3 0l.8 39h7l.8-39z" fill="#d39a70"/>
+          <rect x="-4.4" y="29.6" width="8.8" height="1.9" rx=".9" fill="#e2b955"/><rect x="-4.3" y="31.9" width="8.6" height="1.7" rx=".8" fill="#b3122e"/><rect x="-4.2" y="34" width="8.4" height="1.9" rx=".9" fill="#e2b955"/><rect x="-4.1" y="36.3" width="8.2" height="1.6" rx=".8" fill="#2f7a4f"/>
+          <g class="hand"><path d="M-3.7 38.2C-4.6 41.6-4.3 45.8-2.6 48.6c1 1.7 3 2.2 4.4 1.2.9-.7.9-1.7.2-2.4 1.4-.2 2.2-1.4 1.9-2.7 1-.7 1.2-2 .5-2.9.5-1.2.3-2.7-.3-3.7L3.5 38.2z" fill="#d39a70"/><path d="M-1.1 46.4q1.7.8 3.2.1M-1.3 43.6q1.7.7 3.2 0" stroke="#b07a52" stroke-width=".6" fill="none" stroke-linecap="round"/><path d="M3.1 39.8q2.9 1.3 2.5 4.1-.3 1.4-1.5 1.4" stroke="#d39a70" stroke-width="2.1" fill="none" stroke-linecap="round"/><circle cx=".3" cy="42.6" r="1.3" fill="none" stroke="#a24a2a" stroke-width=".5" opacity=".6"/></g>
+        </g>
+      </g></g>
+      <g class="armR" transform="translate(23 -219)"><g class="up">
+        <path d="M-5 22c0 10 .4 18 .8 25h8.4c.4-7 .8-15 .8-25z" fill="#d39a70"/>
+        <path d="M-6.2 -3c-.4 11-.1 19 .2 26h12c.3-7 .6-15 .2-26-2.7-3-9.7-3-12.4 0z" fill="#8c1d2a"/>
+        <path d="M-6.1 19.5H6.1l-.1 4H-6z" fill="#d9a63f"/>
+        <path d="M-4.9 29.5h9.8l-.1 2.6h-9.6z" fill="#e2b955"/>
+        <g class="fo" transform="translate(0 47)">
+          <circle r="4.3" fill="#d39a70"/>
+          <path d="M-4.3 0l.8 39h7l.8-39z" fill="#d39a70"/>
+          <rect x="-4.4" y="29.6" width="8.8" height="1.9" rx=".9" fill="#e2b955"/><rect x="-4.3" y="31.9" width="8.6" height="1.7" rx=".8" fill="#b3122e"/><rect x="-4.2" y="34" width="8.4" height="1.9" rx=".9" fill="#e2b955"/><rect x="-4.1" y="36.3" width="8.2" height="1.6" rx=".8" fill="#2f7a4f"/>
+          <g class="hand"><g transform="scale(-1 1)"><path d="M-3.7 38.2C-4.6 41.6-4.3 45.8-2.6 48.6c1 1.7 3 2.2 4.4 1.2.9-.7.9-1.7.2-2.4 1.4-.2 2.2-1.4 1.9-2.7 1-.7 1.2-2 .5-2.9.5-1.2.3-2.7-.3-3.7L3.5 38.2z" fill="#d39a70"/><path d="M-1.1 46.4q1.7.8 3.2.1M-1.3 43.6q1.7.7 3.2 0" stroke="#b07a52" stroke-width=".6" fill="none" stroke-linecap="round"/><path d="M3.1 39.8q2.9 1.3 2.5 4.1-.3 1.4-1.5 1.4" stroke="#d39a70" stroke-width="2.1" fill="none" stroke-linecap="round"/><circle cx=".3" cy="42.6" r="1.3" fill="none" stroke="#a24a2a" stroke-width=".5" opacity=".6"/></g></g>
+        </g>
+      </g></g>
+    </g></g>
+  </g>
+</svg>
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<div id="intro">
+  <canvas id="strands" aria-hidden="true"></canvas>
+  <div class="valance" aria-hidden="true">
+    <svg preserveAspectRatio="none">
+      <defs>
+        <pattern id="valP" width="120" height="70" patternUnits="userSpaceOnUse">
+          <path d="M0 10Q60 50 120 10" fill="none" stroke="#e9861a" stroke-width="8" stroke-dasharray="0 7.2" stroke-linecap="round"/>
+          <path d="M0 10Q60 50 120 10" fill="none" stroke="#ffc53d" stroke-width="7" stroke-dasharray="0 14.4" stroke-dashoffset="3.6" stroke-linecap="round"/>
+          <path d="M0 8Q60 30 120 8" fill="none" stroke="#fffef8" stroke-width="5" stroke-dasharray="0 5" stroke-linecap="round"/>
+          <path d="M60 31v22" stroke="#fffef8" stroke-width="4.4" stroke-dasharray="0 4.6" stroke-linecap="round"/>
+          <circle cx="60" cy="57" r="4.4" fill="#c8233a"/>
+          <path d="M0 8c-7 15-4.5 30 0 40 4.5-10 7-25 0-40zM120 8c-7 15-4.5 30 0 40 4.5-10 7-25 0-40z" fill="#6c934a"/>
+          <path d="M0 11v32M120 11v32" stroke="#4f7434" stroke-width=".9"/>
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width="100%" height="8" fill="#8e1f2b"/>
+      <rect x="0" y="5" width="100%" height="2.6" fill="#e2b955"/>
+      <rect x="0" y="0" width="100%" height="70" fill="url(#valP)"/>
+    </svg>
+  </div>
+  <div class="icard">
+    <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+    <p class="kick">Wedding Invitation</p>
+    <h1>Anupama<span class="amp">&amp;</span>Ajay</h1>
+    <p class="when">Sunday · 22 November 2026</p>
+    <div class="kasavu" style="margin:16px auto 14px"></div>
+    <p class="hint">Ring the bell, then scroll to walk them to the mandapam</p>
+    <button class="bell-btn" type="button" aria-label="Ring the bell to open the invitation">
+      <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+      <svg viewBox="-32 0 64 84" aria-hidden="true">
+        <defs>
+          <linearGradient id="bellG" x1="0" x2="1"><stop offset="0" stop-color="#8a5a12"/><stop offset=".32" stop-color="#f6d98c"/><stop offset=".55" stop-color="#d4a443"/><stop offset="1" stop-color="#7a4e10"/></linearGradient>
+          <radialGradient id="bellIn" cx=".5" cy=".2" r=".9"><stop offset="0" stop-color="#3a2408"/><stop offset="1" stop-color="#6b4612"/></radialGradient>
+        </defs>
+        <path d="M0 0V14" stroke="#b8862b" stroke-width="2" stroke-dasharray="3 2"/>
+        <g id="bellBody">
+          <circle cx="0" cy="18" r="4.2" fill="none" stroke="url(#bellG)" stroke-width="2.6"/>
+          <g id="bellClap"><path d="M0 30V66" stroke="#7a4e10" stroke-width="1.6"/><circle cx="0" cy="67" r="4.6" fill="url(#bellG)"/></g>
+          <path d="M-5 22h10l1.5 4h-13z" fill="url(#bellG)"/>
+          <path d="M-7 26C-15 30-17 42-18 52c-1 8-5 11-8 13h52c-3-2-7-5-8-13-1-10-3-22-11-26z" fill="url(#bellG)"/>
+          <path d="M-26 65h52c0 3-2 5-5 5h-42c-3 0-5-2-5-5z" fill="#a8761c"/>
+          <ellipse cx="0" cy="66" rx="22" ry="3" fill="url(#bellIn)" opacity=".85"/>
+          <path d="M-15 46h30M-17 54h34" stroke="#fff2c4" stroke-opacity=".55" stroke-width="1"/>
+          <path d="M-9 33c-3 6-4 14-4.5 22" stroke="#fff6d8" stroke-opacity=".6" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <span class="lbl"><i aria-hidden="true"></i>Ring the bell</span>
+    </button>
+  </div>
+</div>
+
+<a class="back-link" href="../">← Designs</a>
+<div class="heart" id="heart" aria-hidden="true">
+  <svg viewBox="0 0 24 22">
+    <defs><clipPath id="hClip"><rect id="hFill" x="-2" y="22" width="28" height="24"/></clipPath></defs>
+    <path d="M12 21C5 15.5 1 12 1 7.2 1 3.8 3.6 1.2 6.8 1.2c2.2 0 4 1.2 5.2 3 1.2-1.8 3-3 5.2-3C20.4 1.2 23 3.8 23 7.2 23 12 19 15.5 12 21z" fill="#c22f45" clip-path="url(#hClip)"/>
+    <path d="M12 21C5 15.5 1 12 1 7.2 1 3.8 3.6 1.2 6.8 1.2c2.2 0 4 1.2 5.2 3 1.2-1.8 3-3 5.2-3C20.4 1.2 23 3.8 23 7.2 23 12 19 15.5 12 21z" fill="none" stroke="#8e1f2b" stroke-width="1.6"/>
+  </svg>
+</div>
+
+<main>
+  <section class="sec hero">
+    <p class="kick seq" style="transition-delay:.2s">With the blessings of our families</p>
+    <h1 class="seq" style="transition-delay:.45s">Anupama<span class="amp">&amp;</span>Ajay</h1>
+    <p class="lead seq" style="transition-delay:.7s">are walking towards forever</p>
+    <p class="date seq" style="transition-delay:.9s">SUNDAY · 22 NOVEMBER 2026</p>
+    <p class="cue seq" style="transition-delay:1.3s">
+      <svg viewBox="0 0 64 22" aria-hidden="true"><g fill="#b8862b"><ellipse class="ft" cx="12" cy="14" rx="4" ry="6.5" transform="rotate(-12 12 14)"/><ellipse class="ft b" cx="28" cy="8" rx="4" ry="6.5" transform="rotate(-12 28 8)"/><ellipse class="ft" cx="44" cy="14" rx="4" ry="6.5" transform="rotate(-12 44 14)"/></g><path d="M54 11h8m-3-3 3 3-3 3" stroke="#b8862b" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      Scroll to bring them together
+    </p>
+  </section>
+
+  <section class="sec">
+    <article class="card" data-reveal>
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="kick">Wedding Invitation</p>
+      <p class="host">Together with our families</p>
+      <p class="msg">we request the honour of your esteemed presence and blessings with family on the auspicious occasion of our marriage</p>
+      <p class="nm">S. Anupama</p>
+      <p class="par">(D/o Sajeev S &amp; Smitha L.R)</p>
+      <p class="with">with</p>
+      <p class="nm">Ajay Ratheendran</p>
+      <p class="par">(S/o P.R Ratheendra Kurup &amp; Usha Devi)</p>
+      <div class="kasavu"></div>
+      <p class="when-l">Sunday · 22 November 2026</p>
+      <p class="par">Muhurtham between 11:45&nbsp;AM &amp; 12:06&nbsp;PM</p>
+    </article>
+  </section>
+
+  <section class="sec">
+    <p class="kick" data-reveal style="margin-bottom:30px">Two families · one blessing</p>
+    <div class="fam">
+      <article class="card" data-reveal>
+        <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+        <p class="kick role">The Bride</p>
+        <p class="nm">S. Anupama</p>
+        <p class="par">D/o Sajeev S &amp; Smitha L.R</p>
+        <address><b>REVATHY</b>Thachottukavu, Peyad P.O.<br>Thiruvananthapuram – 695573</address>
+      </article>
+      <article class="card" data-reveal>
+        <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+        <p class="kick role">The Groom</p>
+        <p class="nm">Ajay Ratheendran</p>
+        <p class="par">S/o P.R Ratheendra Kurup &amp; Usha Devi</p>
+        <address><b>PUTHAN VEEDU</b>Kodukulanjikarod, Kozhuvalloor P.O.<br>Chengannur, Alappuzha – 689521</address>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec">
+    <article class="card" data-reveal>
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="kick">The auspicious hours</p>
+      <h2>Sunday, 22 November 2026</h2>
+      <div class="evts">
+        <div class="evt">
+          <h3>Sweekaranam</h3>
+          <p class="t">10:45&nbsp;AM</p>
+          <p class="d">Welcoming the bridegroom &amp; family</p>
+        </div>
+        <div class="evt">
+          <h3>Muhurtham</h3>
+          <p class="t">Between 11:45&nbsp;AM &amp; 12:06&nbsp;PM</p>
+          <p class="d">The sacred thali-tying ceremony</p>
+        </div>
+      </div>
+      <p class="venue-l">Sooryaprabha Convention Centre, Mannanthala</p>
+      <a class="btn" data-cal="google" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Add to Calendar</a>
+    </article>
+  </section>
+
+  <section class="sec">
+    <article class="card" data-reveal>
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="kick">Counting the moments</p>
+      <h2>Until the muhurtham</h2>
+      <div class="cd" data-countdown>
+        <div><b data-cd="d">0</b><span>Days</span></div>
+        <div><b data-cd="h">00</b><span>Hours</span></div>
+        <div><b data-cd="m">00</b><span>Mins</span></div>
+        <div><b data-cd="s">00</b><span>Secs</span></div>
+      </div>
+      <p class="lede cd-done">The auspicious moment has arrived. Thank you for your blessings.</p>
+      <p class="lede" style="margin-top:14px">11:45&nbsp;AM · Sunday, 22 November 2026</p>
+    </article>
+  </section>
+
+  <section class="sec">
+    <div class="card" data-reveal style="max-width:620px">
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="kick">Where we gather</p>
+      <h2>Sooryaprabha Convention Centre</h2>
+      <p class="addr">SH 1, Mannanthala, Thiruvananthapuram, Kerala 695015</p>
+      <div class="mapf">
+        <div class="arch" aria-hidden="true">
+          <svg viewBox="0 0 360 92" preserveAspectRatio="xMidYMax meet">
+            <path d="M6 80Q48 74 92 44H268Q312 74 354 80z" fill="#8e2a24"/>
+            <path d="M6 80Q48 74 92 44M354 80Q312 74 268 44" stroke="#e2b955" stroke-width="2" fill="none"/>
+            <path d="M24 72Q180 68 336 72M50 62Q180 58 310 62M74 52Q180 49 286 52" stroke="#5a1311" stroke-width=".9" fill="none" opacity=".5"/>
+            <path d="M120 46L180 10l60 36z" fill="#8e2a24"/><path d="M136 46l44-26 44 26z" fill="#d6a443"/>
+            <path d="M150 46l30-18 30 18M164 46l16-10 16 10M180 20v26" stroke="#9e6b1c" stroke-width="1" fill="none"/>
+            <path d="M120 46L180 10l60 36" stroke="#e2b955" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
+            <circle cx="180" cy="5.5" r="4" fill="#e2b955"/>
+            <rect x="14" y="78" width="332" height="10" fill="#7a1d1c"/><rect x="14" y="79.6" width="332" height="1.8" fill="#e2b955"/><rect x="14" y="84.6" width="332" height="1.8" fill="#e2b955"/>
+            <path d="M30 89Q105 112 180 89Q255 112 330 89" fill="none" stroke="#e9861a" stroke-width="5.4" stroke-dasharray="0 5" stroke-linecap="round"/>
+            <path d="M30 89Q105 112 180 89Q255 112 330 89" fill="none" stroke="#ffc53d" stroke-width="4.6" stroke-dasharray="0 10" stroke-dashoffset="2.5" stroke-linecap="round"/>
+            <g fill="#6c934a"><path d="M180 88c-4 7-3 14 0 19 3-5 4-12 0-19zM30 88c-4 7-3 14 0 19 3-5 4-12 0-19zM330 88c-4 7-3 14 0 19 3-5 4-12 0-19z"/></g>
+            <circle cx="180" cy="109" r="3.4" fill="#c8233a"/>
+          </svg>
+        </div>
+        <div class="frame">
+          <iframe title="Map to Sooryaprabha Convention Centre" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=Sooryaprabha%20Convention%20Centre%2C%20Mannanthala%2C%20Thiruvananthapuram&z=15&output=embed"></iframe>
+        </div>
+      </div>
+      <a class="btn" data-map target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Open directions</a>
+    </div>
+  </section>
+
+  <section id="finale" aria-label="The wedding">
+    <p class="sr">Anupama and Ajay meet under the mandapam, exchange garlands, and the thali is tied. Married with the blessings of our families, Sunday 22 November 2026, Sooryaprabha Convention Centre, Thiruvananthapuram.</p>
+  </section>
+</main>
+
+<div id="fin" aria-hidden="true">
+  <div class="cap"><span class="kick">Under the mandapam</span><b>Together at last</b><span>Beneath jasmine, marigold &amp; the glow of the nilavilakku</span></div>
+  <div class="cap"><span class="kick">Varanmaala</span><b>The exchange of garlands</b><span>Two garlands, one promise</span></div>
+  <div class="cap"><span class="kick">Thalikettu</span><b>The sacred thali</b><span>Tied at the auspicious muhurtham</span></div>
+  <div class="cap"><span class="kick">Blessings</span><b>A shower of flowers</b><span>Jasmine, rose &amp; marigold from everyone who loves them</span></div>
+  <div class="end">
+    <p class="kick">Just married</p>
+    <h2>Anupama <span class="amp">&amp;</span> Ajay</h2>
+    <p class="bl">Married with the blessings of our families</p>
+    <p class="dt">Sunday · 22 November 2026</p>
+    <p class="vn">Sooryaprabha Convention Centre, Thiruvananthapuram</p>
+    <p class="ty">Thank you for blessing us</p>
+  </div>
+</div>
+
+<script src="../assets/common.js"></script>
+<script>
+(function () {
+  'use strict';
+  var doc = document, body = doc.body, root = doc.documentElement, NS = 'http://www.w3.org/2000/svg';
+  var RM = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function $(s, r) { return (r || doc).querySelector(s); }
+  function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function sm(a, b, t) { t = clamp((t - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); }
+  function eio(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function f2(n) { return Math.round(n * 100) / 100; }
+  function mix(a, b, t) { return [lerp(a[0], b[0], t), lerp(a[1], b[1], t)]; }
+  function el(tag, at, parent) { var e = doc.createElementNS(NS, tag); for (var k in at) e.setAttribute(k, at[k]); if (parent) parent.appendChild(e); return e; }
+  function setT(e, t) { if (e._t !== t) { e._t = t; e.setAttribute('transform', t); } }
+  function setO(e, o) { o = f2(o); if (e._o !== o) { e._o = o; e.setAttribute('opacity', o); } }
+  function rot(deg) { return 'rotate(' + f2(deg) + ')'; }
+
+  /* ---------- landscape: hills, coconut palms, paddy, backwater, path ---------- */
+  function curve(pts) {
+    var d = 'M' + f2(pts[0][0]) + ' ' + f2(pts[0][1]);
+    for (var i = 0; i < pts.length - 1; i++) {
+      var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+      d += 'C' + f2(p1[0] + (p2[0] - p0[0]) / 6) + ' ' + f2(p1[1] + (p2[1] - p0[1]) / 6) + ' ' + f2(p2[0] - (p3[0] - p1[0]) / 6) + ' ' + f2(p2[1] - (p3[1] - p1[1]) / 6) + ' ' + f2(p2[0]) + ' ' + f2(p2[1]);
+    }
+    return d;
+  }
+  var land = $('#land');
+  function hill(fn, step, fill, bottom) {
+    var pts = []; for (var x = -5200; x <= 5200; x += step) pts.push([x, fn(x)]);
+    return el('path', { d: curve(pts) + 'L5200 ' + (bottom || 3000) + 'L-5200 ' + (bottom || 3000) + 'Z', fill: fill }, land);
+  }
+  (function buildPalm() {
+    var g = $('#palm'), C = [15, -214];
+    el('path', { d: 'M-5.5 2C-3.5 -70 5 -150 12 -213l6.5 1C12.5 -150 5 -70 5.5 2z', fill: '#9a8664' }, g);
+    var rings = '';
+    for (var t = .05; t < .97; t += .055) { var x = 15 * Math.pow(t, 1.5), y = -213 * t; rings += 'M' + f2(x - 4.6) + ' ' + f2(y) + 'q4.6 2 9.2 0'; }
+    el('path', { d: rings, stroke: '#7c6a4a', 'stroke-width': 1.2, fill: 'none' }, g);
+    var fr = [[96, -176, 60, -240], [72, -150, 48, -214], [84, -236, 48, -252], [44, -268, 28, -260], [-14, -264, 6, -258], [-54, -238, -18, -252], [-66, -178, -30, -238], [-42, -152, -18, -210]];
+    var ribs = '', lf = '';
+    fr.forEach(function (f) {
+      ribs += 'M' + C[0] + ' ' + C[1] + 'Q' + f[2] + ' ' + f[3] + ' ' + f[0] + ' ' + f[1];
+      for (var t = .1; t < .99; t += .062) {
+        var it = 1 - t, px = it * it * C[0] + 2 * it * t * f[2] + t * t * f[0], py = it * it * C[1] + 2 * it * t * f[3] + t * t * f[1];
+        var tx = 2 * it * (f[2] - C[0]) + 2 * t * (f[0] - f[2]), ty = 2 * it * (f[3] - C[1]) + 2 * t * (f[1] - f[3]), tl = Math.sqrt(tx * tx + ty * ty) || 1;
+        tx /= tl; ty /= tl;
+        var nx = -ty, ny = tx, len = 17 * (1 - .6 * t);
+        [1, -1].forEach(function (s) {
+          var dx = nx * s * .8 + tx * .55, dy = ny * s * .8 + ty * .55 + .55, dl = Math.sqrt(dx * dx + dy * dy);
+          lf += 'M' + f2(px) + ' ' + f2(py) + 'l' + f2(dx / dl * len) + ' ' + f2(dy / dl * len);
+        });
+      }
+    });
+    el('path', { d: lf, stroke: '#7aa262', 'stroke-width': 2.6, 'stroke-linecap': 'round', fill: 'none' }, g);
+    el('path', { d: ribs, stroke: '#5c8446', 'stroke-width': 2, fill: 'none' }, g);
+    [[11, -209], [17, -207], [14, -203.5]].forEach(function (c) { el('circle', { cx: c[0], cy: c[1], r: 3.7, fill: '#8a6a2a' }, g); });
+  })();
+  hill(function (x) { return -366 - 13 * Math.sin(x / 230 + 1) - 8 * Math.sin(x / 97 + 2); }, 46, '#cddbb6');
+  hill(function (x) { return -298 - 12 * Math.sin(x / 160 + .4) - 6 * Math.sin(x / 63); }, 40, '#c0d2a0');
+  [[-2500, .9], [-2080, .8], [-1700, .92], [-1380, .82], [-1100, .9], [-860, .8], [-640, .93], [-450, .82], [-262, .9], [248, .88], [430, .8], [640, .94], [870, .82], [1120, .9], [1400, .8], [1690, .92], [2040, .84], [2480, .9]].forEach(function (p, i) {
+    el('use', { href: '#palm', transform: 'translate(' + p[0] + ' -196) scale(' + (i % 2 ? -p[1] : p[1]) + ' ' + p[1] + ')' }, land);
+  });
+  hill(function (x) { return -196 - 5 * Math.sin(x / 130) - 3 * Math.sin(x / 47 + 1); }, 40, '#b6cb8c');
+  var rows = ''; [-182, -166, -150, -136].forEach(function (y, i) { rows += 'M-5200 ' + y + 'H5200'; });
+  el('path', { d: rows, stroke: '#c8daa3', 'stroke-width': 2.2, 'stroke-dasharray': (14) + ' 7', opacity: .8 }, land);
+  el('rect', { x: -5200, y: -128, width: 10400, height: 34, fill: '#c3ddd5' }, land);
+  var sh = ''; for (var sx = -5200; sx < 5200; sx += 70 + (sx * 7 % 40 + 40) % 40) sh += 'M' + sx + ' ' + (-119 + (sx % 3) * 6) + 'h' + (18 + (sx % 5 + 5) % 5 * 6);
+  el('path', { d: sh, stroke: '#eaf5f0', 'stroke-width': 1.8, 'stroke-linecap': 'round' }, land);
+  hill(function (x) { return -100 - 4 * Math.sin(x / 90) - 2 * Math.sin(x / 31); }, 36, '#abc47e');
+  hill(function (x) { return -26 - 2 * Math.sin(x / 70); }, 40, '#ecdab2');
+  hill(function (x) { return 16 + 2 * Math.sin(x / 80); }, 40, '#a5bf76');
+  var fl1 = '', fl2 = '', fl3 = '';
+  for (var fx = -5200; fx < 5200; fx += 23) {
+    var k = Math.abs(Math.sin(fx * 12.9898) * 43758.5453) % 1, yy = (k < .5 ? -29 - k * 8 : 18 + k * 6);
+    var pt = 'M' + fx + ' ' + f2(yy) + 'h0';
+    if (k < .33) fl1 += pt; else if (k < .66) fl2 += pt; else fl3 += pt;
+  }
+  el('path', { d: fl1, stroke: '#f2a531', 'stroke-width': 4.4, 'stroke-linecap': 'round' }, land);
+  el('path', { d: fl2, stroke: '#fffef6', 'stroke-width': 4, 'stroke-linecap': 'round' }, land);
+  el('path', { d: fl3, stroke: '#e87a8c', 'stroke-width': 4, 'stroke-linecap': 'round' }, land);
+
+  /* jasmine strands under the mandapam eave */
+  (function () {
+    var g = $('#mStr'), a = '', b = '';
+    for (var x = -138; x <= 138.1; x += 9.2) {
+      var len = 20 + 14 * (.5 + .5 * Math.cos(x / 138 * Math.PI * 3));
+      a += 'M' + f2(x) + ' -385V' + f2(-385 + len); b += 'M' + f2(x) + ' ' + f2(-381 + len) + 'h0';
+    }
+    el('path', { d: a, stroke: '#fffef8', 'stroke-width': 3.6, 'stroke-dasharray': '0 4.4', 'stroke-linecap': 'round', fill: 'none' }, g);
+    el('path', { d: b, stroke: '#d0273f', 'stroke-width': 4.6, 'stroke-linecap': 'round', fill: 'none' }, g);
+  })();
+  var flames = [].slice.call(doc.querySelectorAll('#mandap .fls use')).map(function (e, i) {
+    var o = { e: e, x: +e.getAttribute('x'), y: +e.getAttribute('y'), i: i }; e.removeAttribute('x'); e.removeAttribute('y'); return o;
+  });
+
+  /* ---------- character rigs ---------- */
+  var D2R = Math.PI / 180, T0 = .12;
+  function spr(x) { return { x: x || 0, v: 0 }; }
+  function spring(s, tgt, w, z, dt) { var a = w * w * (tgt - s.x) - 2 * z * w * s.v; s.v += a * dt; s.x += s.v * dt; return s.x; }
+  function keys(t, ks) {
+    for (var i = 1; i < ks.length; i++) if (t <= ks[i][0]) { var a = ks[i - 1], b = ks[i], u = (t - a[0]) / (b[0] - a[0]); u = u * u * (3 - 2 * u); return a[1] + (b[1] - a[1]) * u; }
+    return ks[ks.length - 1][1];
+  }
+  // pelvis height through one step: contact, down (lowest), passing (highest), up, next contact
+  var BOB = [[0, 0], [.16, -1], [.52, 1], [.8, .35], [1, 0]];
+  function cr(pts) {
+    var d = '';
+    for (var i = 0; i < pts.length - 1; i++) {
+      var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+      d += 'C' + f2(p1[0] + (p2[0] - p0[0]) / 6) + ' ' + f2(p1[1] + (p2[1] - p0[1]) / 6) + ' ' + f2(p2[0] - (p3[0] - p1[0]) / 6) + ' ' + f2(p2[1] - (p3[1] - p1[1]) / 6) + ' ' + f2(p2[0]) + ' ' + f2(p2[1]);
+    }
+    return d;
+  }
+  function foot(e, home) { return { e: e, side: $('.fside', e), front: $('.ffront', e), home: home, x: home, dir: 1, planted: true, landAng: 0, landT: -9, sx: 0, sy: 0, sAng: 0, tx: 0, lift: 0, eAng: 0, ax: home, ay: -6, ang: 0 }; }
+  function arm(e, side, o) { return { e: e, side: side, up: $('.up', e), fo: $('.fo', e), hand: $('.hand', e), S: [side * o.sx, o.sy], hs: spr(), prev: null, back: false }; }
+  function rig(id, o) {
+    var g = $('#' + id), a = $('#' + id + '-arms');
+    function q(s) { return g.querySelector(s); }
+    return { id: id, g: g, a: a, o: o, lean: q('.lean'), bob: q('.bob'), abob: $('.abob', a), back: q('.armsBack'), torso: q('.torso'), head: q('.head'), feat: q('.feat'), eyes: q('.eyes'),
+      hair: q('.hair'), hairF: q('.hairF'), nethi: q('.nethi'), hairback: q('.hairback'), earL: q('.earL'), earR: q('.earR'), jhL: q('.earL .jh'), jhR: q('.earR .jh'),
+      braid: q('.braid'), fringe: q('.fringe'), hang: q('.hang'), thali: q('.thali'), glint: q('.glint'), shadow: q('.shadow'), smile: q('.smile'), grin: q('.grin'), feetG: q('.feet'),
+      Gm: { cp: q('.gcp'), body: q('.gbody'), shade: q('.gshade'), folds: q('.gfolds'), fold: q('.gfold'), hem: q('.ghem'), hemH: q('.ghemH'), hemT: q('.ghemT'), pleats: q('.gpleats'), pleatH: q('.gpleatH'), mar: q('.gmar') },
+      F: [foot(q('.fl'), -9), foot(q('.fr'), 9)], L: arm($('.armL', a), -1, o), R: arm($('.armR', a), 1, o),
+      x: 0, px: null, vx: 0, ax: 0, dir: o.face, tau: spr(o.face * .14), w: 0, t: 0, sw: -1, mode: '', still: 9,
+      bobY: 0, swayX: 0, leanA: 0, prevBob: 0, near: -1,
+      sp: { head: spr(), braid: spr(), jh: spr(), fringe: spr(), hang: spr(), kl: spr(-o.hwK[0]), kr: spr(o.hwK[0]), hl: spr(-o.hwH[0]), hr: spr(o.hwH[0]), yl: spr(o.ankleY + o.hemOff), yr: spr(o.ankleY + o.hemOff), pc: spr(1.5), ws: spr(0) },
+      nextBlink: 1.5 + Math.random() * 2.5, blinkT: -9, off: Math.random() * 6, nextGest: 6 + Math.random() * 4, gest: null, nextShift: 3 + Math.random() * 3, wsSide: 1 };
+  }
+  var G = rig('groom', { face: 1, sx: 26, sy: -226, L1: 52, L2: 49, wrist: 42, neckY: -240, eyeY: -271, ankleY: -6, heel: -4.6, toe: 8.6, hipY: -148, legL: 147, hipX: 9,
+    step: 50, liftH: 9, swingA: 18, bobA: 3, waist: -154, hwW: [28.5, 20], hwK: [29.5, 21], hwH: [32.5, 24], mK: [19, 12], mH: [22, 13.5], hemOff: -3, gw: 17, gz: .8, saree: false });
+  var B = rig('bride', { face: -1, sx: 23, sy: -219, L1: 47, L2: 44, wrist: 38.5, neckY: -230, eyeY: -257.6, ankleY: -5, heel: -3.9, toe: 6.8, hipY: -146, legL: 145, hipX: 8,
+    step: 38, liftH: 6.5, swingA: 10, bobA: 2.5, waist: -187, hwW: [19.5, 15], hwK: [27, 21], hwH: [33.5, 26], mK: [18, 12], mH: [14, 11], hemOff: -3, gw: 10, gz: .62, saree: true });
+
+  function toWorld(c, lx, ly) { lx += c.swayX; ly += c.bobY; var r = c.leanA * D2R, cs = Math.cos(r), sn = Math.sin(r); return [c.x + lx * cs - ly * sn, lx * sn + ly * cs]; }
+  function toLocal(c, p) { var r = -c.leanA * D2R, cs = Math.cos(r), sn = Math.sin(r), x = p[0] - c.x, y = p[1]; return [x * cs - y * sn - c.swayX, x * sn + y * cs - c.bobY]; }
+  // two-bone IK: [shoulder, elbow] degrees, 0 = hanging straight down
+  function ik(c, arm, p, pref) {
+    var t = toLocal(c, p), L1 = c.o.L1, L2 = c.o.L2, dx = t[0] - arm.S[0], dy = t[1] - arm.S[1];
+    var d = clamp(Math.sqrt(dx * dx + dy * dy), Math.abs(L1 - L2) + 3, L1 + L2 - .5);
+    var base = Math.atan2(-dx, dy);
+    var A = Math.acos(clamp((L1 * L1 + d * d - L2 * L2) / (2 * L1 * d), -1, 1));
+    var bend = Math.PI - Math.acos(clamp((L1 * L1 + L2 * L2 - d * d) / (2 * L1 * L2), -1, 1));
+    var s1 = base + A, s2 = base - A;
+    var ko = dy > 35 ? .9 : 0, sc1 = Math.cos(s1) - Math.sin(s1) * arm.side * ko, sc2 = Math.cos(s2) - Math.sin(s2) * arm.side * ko;
+    if (pref) { sc1 = -Math.sin(s1) * pref; sc2 = -Math.sin(s2) * pref; }
+    return sc2 > sc1 ? [s2 / D2R, bend / D2R] : [s1 / D2R, -bend / D2R];
+  }
+  // shoulder leads, elbow follows: shoulder solved for where the hand is going, elbow for where it is
+  function ikSeq(c, arm, lead, now, pref) { var a = ik(c, arm, lead, pref), b = ik(c, arm, now, pref); return [a[0], b[1]]; }
+  function handAt(c, arm, ang) {
+    var a1 = ang[0] * D2R, a2 = (ang[0] + ang[1]) * D2R, L1 = c.o.L1, L2 = c.o.L2;
+    return toWorld(c, arm.S[0] - L1 * Math.sin(a1) - L2 * Math.sin(a2), arm.S[1] + L1 * Math.cos(a1) + L2 * Math.cos(a2));
+  }
+  function blendArm(cur, tgt, w) {
+    if (w <= 0) return cur;
+    var d = tgt[0] - cur[0]; while (d > 180) d -= 360; while (d < -180) d += 360;
+    return [cur[0] + d * w, lerp(cur[1], tgt[1], w)];
+  }
+
+  /* ---------- feet: planted in the world, heel-to-toe roll ---------- */
+  function footAnkle(c, F, x, ang) {
+    var o = c.o, d = F.dir;
+    if (Math.abs(ang) < .01) return [x, o.ankleY];
+    var px = x + d * (ang > 0 ? o.toe : o.heel), vx = x - px, vy = o.ankleY, r = ang * d * D2R, cs = Math.cos(r), sn = Math.sin(r);
+    return [px + vx * cs - vy * sn, vx * sn + vy * cs];
+  }
+  function rearFoot(c) { return (c.F[0].x - c.x) * c.dir < (c.F[1].x - c.x) * c.dir ? 0 : 1; }
+  function balRel(c, other) {
+    var ro = other.x - c.x, t = clamp(-ro, -11, 11), s = t - ro;
+    if (Math.abs(s) < 15) t = ro + (s >= 0 ? 15 : -15);
+    if (Math.abs(t - ro) > 24) t = ro + (t > ro ? 24 : -24);
+    return t;
+  }
+  function liftOff(c, F, tx, walkStep, T) {
+    F.planted = false; F.sx = F.ax; F.sy = F.ay; F.sAng = F.ang; F.tx = tx; F.dir = c.dir;
+    F.lift = walkStep ? c.o.liftH * (.5 + .5 * c.w) : c.o.liftH * .42;
+    F.eAng = walkStep ? -14 * Math.max(.35, c.w) : -3;
+  }
+  function plant(c, F, T) { F.planted = true; F.x = F.tx; F.landAng = F.eAng; F.landT = T; }
+  function stepAdvance(c, dtS, stepLen, T, more) {
+    c.t += dtS;
+    var F = c.F[c.sw];
+    if (F.planted && c.t >= T0) liftOff(c, F, c.x + c.dir * ((1 - c.t) * stepLen + stepLen * .5), c.mode === 'walk', T);
+    if (c.t >= 1) {
+      plant(c, F, T);
+      if (c.mode === 'walk' && more) { c.t -= 1; c.sw = rearFoot(c); } else { c.sw = -1; c.mode = ''; c.t = 0; }
+    }
+  }
+  function gait(c, dt, T, moveD) {
+    var o = c.o, spd = Math.abs(c.vx), moving = !RM && spd > 2.5;
+    c.still = moving ? 0 : c.still + dt;
+    if (moving && spd > 6) c.dir = c.vx > 0 ? 1 : -1;
+    var wT = RM ? 0 : sm(2.5, 16, spd) * (c.mode === 'walk' ? 1 : .3);
+    c.w += (wT - c.w) * (1 - Math.exp(-dt * (wT > c.w ? 7 : 5)));
+    var stepLen = o.step * clamp(spd / (1.7 * o.step), 1, 1.3);
+    if (Math.abs(c.F[0].x - c.x) > o.step * 3 || Math.abs(c.F[1].x - c.x) > o.step * 3) {
+      c.F.forEach(function (F) { F.x = c.x + F.home; F.planted = true; F.landAng = 0; F.dir = c.dir; }); c.sw = -1; c.mode = '';
+    }
+    if (moving && (c.mode === 'walk' || spd > 6)) {
+      if (c.mode !== 'walk') { if (c.sw < 0) { c.sw = rearFoot(c); c.t = T0 - .02; } c.mode = 'walk'; }
+      var dist = Math.abs(moveD), dg = Math.min(dist, 2.2 * stepLen * dt), gl = (dist - dg) * (moveD > 0 ? 1 : -1);
+      if (gl) c.F.forEach(function (F) { F.x += gl; F.sx += gl; F.tx += gl; });
+      var dtS = dg / stepLen, slow = 1 - sm(8, 24, spd);
+      if (c.sw >= 0 && slow > 0) {
+        var Fw = c.F[c.sw];
+        dtS = Math.max(dtS, dt * (1 - T0) / .3 * slow);
+        if (!Fw.planted) Fw.tx += (c.x + balRel(c, c.F[1 - c.sw]) - Fw.tx) * (1 - Math.exp(-dt * 9)) * slow;
+      }
+      stepAdvance(c, dtS, stepLen, T, spd > 9);
+    } else if (c.sw >= 0) {
+      if (c.still > .05) {
+        var Fs = c.F[c.sw];
+        if (Fs.planted) { c.sw = -1; c.mode = ''; c.t = 0; }
+        else { Fs.tx += (c.x + balRel(c, c.F[1 - c.sw]) - Fs.tx) * (1 - Math.exp(-dt * 10)); stepAdvance(c, dt * (1 - T0) / (c.mode === 'walk' ? .26 : .34), stepLen, T, false); }
+      }
+    } else if (c.still > .25 && !RM) {
+      var r0 = c.F[0].x - c.x, r1 = c.F[1].x - c.x, cen = (r0 + r1) / 2, sep = Math.abs(r0 - r1);
+      if (Math.abs(cen) > 6.5 || sep > 30 || sep < 9) {
+        var i = Math.abs(r0) > Math.abs(r1) ? 0 : 1;
+        c.sw = i; c.mode = 'adjust'; c.t = T0; liftOff(c, c.F[i], c.x + balRel(c, c.F[1 - i]), false, T);
+      }
+    }
+    // pose every foot
+    c.F.forEach(function (F, k) {
+      if (F.planted) {
+        var rel = (F.x - c.x) * F.dir;
+        var aS = F.landAng * (1 - sm(0, .17, T - F.landT));
+        var aH = 30 * c.w * sm(-.2 * stepLen, -(.5 + T0) * stepLen, rel);
+        F.ang = aS + aH; var p = footAnkle(c, F, F.x, F.ang); F.ax = p[0]; F.ay = p[1];
+      } else {
+        var u = clamp((c.t - T0) / (1 - T0), 0, 1), e = u * u * (3 - 2 * u);
+        var pe = footAnkle(c, F, F.tx, F.eAng);
+        F.ax = lerp(F.sx, pe[0], e);
+        F.ay = lerp(F.sy, pe[1], u) - F.lift * Math.sin(Math.PI * u) * (1 - .25 * u);
+        F.ang = u < .5 ? lerp(F.sAng, 0, sm(0, .5, u)) : lerp(0, F.eAng, sm(.5, 1, u));
+      }
+    });
+    return stepLen;
+  }
+
+  /* ---------- the mundu / saree follows the legs ---------- */
+  function garment(c, tA, dt) {
+    var o = c.o, m = c.Gm, d = c.dir, sp = c.sp;
+    var an = c.F.map(function (F) { return toLocal(c, [F.ax, F.ay]); });
+    var kn = an.map(function (a, k) {
+      var hx = (k ? 1 : -1) * o.hipX * (1 - tA), hy = o.hipY, dx = a[0] - hx, dy = a[1] - hy, dl = Math.sqrt(dx * dx + dy * dy) || 1;
+      var h = dl < o.legL ? Math.sqrt(o.legL * o.legL / 4 - dl * dl / 4) : 0, nx = -dy / dl, ny = dx / dl;
+      if (nx * d < 0) { nx = -nx; ny = -ny; }
+      return [(hx + a[0]) / 2 + nx * h * tA, (hy + a[1]) / 2 + ny * h * tA];
+    });
+    var hwW = lerp(o.hwW[0], o.hwW[1], tA), hwK = lerp(o.hwK[0], o.hwK[1], tA), hwH = lerp(o.hwH[0], o.hwH[1], tA), mK = lerp(o.mK[0], o.mK[1], tA), mH = lerp(o.mH[0], o.mH[1], tA);
+    var lo = an[0][0] < an[1][0] ? 0 : 1, hi = 1 - lo;
+    var gw = o.gw, gz = o.gz;
+    var kl = spring(sp.kl, Math.min(-hwK, Math.min(kn[0][0], kn[1][0]) - mK), gw, gz, dt), kr = spring(sp.kr, Math.max(hwK, Math.max(kn[0][0], kn[1][0]) + mK), gw, gz, dt);
+    var hl = spring(sp.hl, Math.min(-hwH, an[lo][0] - mH), gw * .85, gz, dt), hr = spring(sp.hr, Math.max(hwH, an[hi][0] + mH), gw * .85, gz, dt);
+    var yl = spring(sp.yl, an[lo][1] + o.hemOff, gw, gz, dt), yr = spring(sp.yr, an[hi][1] + o.hemOff, gw, gz, dt);
+    var ky = (kn[0][1] + kn[1][1]) / 2, wy = o.waist, mx = (hl + hr) / 2, my = Math.max(yl, yr) + 3.2;
+    var body = 'M' + f2(-hwW) + ' ' + wy + cr([[-hwW, wy], [kl, ky], [hl, yl]]) + 'Q' + f2(mx) + ' ' + f2(my) + ' ' + f2(hr) + ' ' + f2(yr) + cr([[hr, yr], [kr, ky], [hwW, wy]]) + 'Z';
+    m.body.setAttribute('d', body); m.cp.setAttribute('d', body);
+    function hemK(k) { return 'M' + f2(hl - 8) + ' ' + f2(yl - k) + 'Q' + f2(mx) + ' ' + f2(my - k) + ' ' + f2(hr + 8) + ' ' + f2(yr - k); }
+    m.shade.setAttribute('d', 'M' + f2(hwW - 4) + ' ' + wy + cr([[hwW - 4, wy], [kr - 4, ky], [hr - 4, yr]]));
+    m.hemT.setAttribute('d', hemK(o.saree ? 26.6 : 13.6));
+    if (!o.saree) {
+      m.hem.setAttribute('d', hemK(5)); m.hemH.setAttribute('d', hemK(5.4));
+      m.folds.setAttribute('d', 'M' + f2(lerp(-hwW, hwW, .3)) + ' ' + wy + 'L' + f2(lerp(hl, hr, .3)) + ' ' + f2(yl) + 'M' + f2(lerp(-hwW, hwW, .76)) + ' ' + wy + 'L' + f2(lerp(hl, hr, .76)) + ' ' + f2(yr));
+      var fa = d > 0 ? an[hi][0] : an[lo][0], fxW = lerp(8.2, d * (hwW - 6.5), tA), fxH = clamp(lerp(12, fa + d * 3, tA), hl + 3, hr - 3), yb = my + 6;
+      m.fold.setAttribute('d', 'M' + f2(fxW - 2.75) + ' ' + wy + 'L' + f2(fxW + 2.75) + ' ' + wy + 'L' + f2(fxH + 2.9) + ' ' + f2(yb) + 'L' + f2(fxH - 2.9) + ' ' + f2(yb) + 'Z');
+    } else {
+      m.hem.setAttribute('d', hemK(10.5)); m.hemH.setAttribute('d', hemK(13)); m.mar.setAttribute('d', hemK(23.6));
+      var front = d > 0 ? hr : hl, pc = spring(sp.pc, lerp(1.5, front - d * 14, tA), 6.5, .42, dt);
+      var cW = lerp(3, d * hwW * .5, tA), sW = lerp(4, 2.4, tA), sH = lerp(7.75, 5.6, tA) + Math.abs(an[0][0] - an[1][0]) * .06, yP = (yl + yr) / 2 + 3, pl = '', ph = '';
+      for (var i = -2; i <= 2; i++) {
+        var hx = pc + i * sH;
+        pl += 'M' + f2(cW + i * sW) + ' ' + (wy + 9) + 'L' + f2(hx) + ' ' + f2(yP);
+        ph += 'M' + f2(hx) + ' ' + f2(yP - 28) + 'L' + f2(hx + (hx - cW) * .03) + ' ' + f2(yP + 2);
+      }
+      m.pleats.setAttribute('d', pl); m.pleatH.setAttribute('d', ph);
+    }
+  }
+
+  /* ---------- one character, one frame ---------- */
+  var GEST = { groom: [{ k: 'shawl', arms: [[-1, 15, -219]], tilt: 3, look: 2 }, { k: 'clasp', arms: [[-1, 3, -166], [1, -1, -162]], tilt: 0, look: 0 }],
+               bride: [{ k: 'jasmine', arms: [[1, 24, -257, 1]], tilt: -4, look: -1 }, { k: 'pallu', arms: [[-1, 12, -214, -1]], tilt: 2, look: 1 }] };
+  function updateChar(c, dt, T, x, op) {
+    var o = c.o;
+    if (c.px === null) c.px = x;
+    var dx = x - c.px; c.px = x; c.x = x;
+    var pv = c.vx; c.vx += (dx / Math.max(dt, .001) - c.vx) * (1 - Math.exp(-dt * 18));
+    c.ax += ((c.vx - pv) / Math.max(dt, .001) - c.ax) * (1 - Math.exp(-dt * 10));
+    var stepLen = gait(c, dt, T, dx), d = c.dir;
+    // turn toward the direction of travel; ease back to the idle 3/4 pose when still (~250ms, critically damped)
+    var tau = spring(c.tau, lerp(op.tauIdle, d * .8, Math.min(1, c.w * 1.6)), 15, 1, dt), tA = Math.min(1, Math.abs(tau));
+    // pelvis: two dips per stride, side sway, forward lean, idle weight shifts, breathing
+    var st = c.sw >= 0 ? c.t : 0, bobV = c.sw >= 0 ? keys(st, BOB) * (c.mode === 'walk' ? 1 : .35) : 0;
+    if (!RM && T > c.nextShift) { c.wsSide = -c.wsSide; c.nextShift = T + 3 + Math.random() * 3; }
+    var ws = spring(c.sp.ws, (RM ? 0 : c.wsSide) * (1 - c.w), 2.4, 1, dt);
+    var breath = RM ? 0 : Math.sin(T * 1.7 + c.off) * .6 * (1 - c.w * .6);
+    c.bobY = -o.bobA * bobV * (c.mode === 'walk' ? Math.max(c.w, .4) : 1) + breath + Math.abs(ws) * .5;
+    var stance = c.sw >= 0 ? (c.sw === 0 ? 1 : -1) : 0;
+    c.swayX = stance * Math.sin(Math.PI * st) * 1.3 * c.w * (1 - .6 * tA) + ws * 1.5;
+    c.leanA = d * 3 * c.w + ws * .45 + op.lean;
+    var bobVel = (c.bobY - c.prevBob) / Math.max(dt, .001); c.prevBob = c.bobY;
+    var vx = RM ? 0 : c.vx;
+
+    var lt = 'rotate(' + f2(c.leanA) + ')';
+    setT(c.g, 'translate(' + f2(c.x) + ' 0)'); setT(c.lean, lt); setT(c.a, 'translate(' + f2(c.x) + ' 0) ' + lt);
+    var bt = 'translate(' + f2(c.swayX) + ' ' + f2(c.bobY) + ')'; setT(c.bob, bt); setT(c.abob, bt);
+    setT(c.torso, 'scale(' + (Math.round((1 - .3 * tA) * 1000) / 1000) + ' 1)');
+    setT(c.shadow, 'translate(' + f2(c.swayX) + ' 0) scale(' + f2(1 - Math.abs(c.bobY) * .02) + ' 1)');
+
+    // gestures while idle
+    var gx = null;
+    if (c.gest) {
+      var tt = T - c.gest.t0, du = c.gest.dur;
+      if (tt > du || !op.gestOK || c.w > .3) { c.gest = null; c.nextGest = T + 6 + Math.random() * 4; }
+      else gx = { g: c.gest, e: eio(sm(0, .7, tt)) * (1 - eio(sm(du - .75, du, tt))), lead: eio(sm(0, .55, tt)) * (1 - eio(sm(du - .9, du - .15, tt))), w: sm(0, .3, tt) * (1 - sm(du - .3, du, tt)) * (1 - sm(.01, .25, c.w)) };
+    } else if (op.gestOK && !RM && c.w < .03 && c.still > 1.2 && T > c.nextGest) {
+      var list = GEST[c.id]; c.gi = ((c.gi || 0) + 1) % list.length; c.gest = { def: list[c.gi], t0: T, dur: 2.6 };
+    }
+    var ge = gx ? gx.e : 0, gdef = gx ? gx.g.def : null;
+
+    // head: stabilised (less bob, slight lag), turns with the body
+    var hs = spring(c.sp.head, -c.bobY * .5, 11, .75, dt);
+    var tilt = (RM ? 0 : Math.sin(T * .7 + c.off) * .7) * (1 - c.w) + op.tilt - c.leanA * .45 + (gdef ? gdef.tilt * ge : 0);
+    setT(c.head, 'rotate(' + f2(tilt) + ' 0 ' + o.neckY + ') translate(0 ' + f2(op.drop + hs) + ')');
+    setT(c.feat, 'translate(' + f2(tau * 6.5 + (gdef ? gdef.look * ge * o.face : 0)) + ' ' + f2(op.drop * .2) + ') scale(' + f2(1 - .2 * tA) + ' 1)');
+    setT(c.earL, 'translate(' + f2(tau * 1.5) + ' 0)'); setO(c.earL, 1 - sm(.12, .4, -tau));
+    setT(c.earR, 'translate(' + f2(tau * 1.5) + ' 0)'); setO(c.earR, 1 - sm(.12, .4, tau));
+    if (c.hair) setT(c.hair, 'translate(' + f2(-tau * 1.6) + ' 0)');
+    if (c.hairF) { setT(c.hairF, 'translate(' + f2(tau * 2.4) + ' 0)'); setT(c.nethi, 'translate(' + f2(tau * 4.6) + ' 0) scale(' + f2(1 - .15 * tA) + ' 1)'); setT(c.hairback, 'translate(' + f2(-tau * 2.2) + ' 0)'); }
+    if (!RM && T > c.nextBlink) { c.blinkT = T; c.nextBlink = T + 2.4 + Math.random() * 3.6; }
+    var bl = T - c.blinkT < .16 ? Math.sin(Math.PI * (T - c.blinkT) / .16) : 0;
+    var ey = o.eyeY; setT(c.eyes, 'translate(0 ' + ey + ') scale(1 ' + f2(Math.max(.08, op.eye * (1 - .92 * bl))) + ') translate(0 ' + (-ey) + ')');
+    setO(c.smile, 1 - op.grin); setO(c.grin, op.grin);
+
+    // secondary motion: spring-damper follow-through
+    if (c.jhL) { var jh = spring(c.sp.jh, clamp(vx * .09 + bobVel * .12, -16, 16), 11, .22, dt); setT(c.jhL, 'rotate(' + f2(jh) + ' -18.3 -249.6)'); setT(c.jhR, 'rotate(' + f2(jh) + ' 18.3 -249.6)'); }
+    if (c.braid) setT(c.braid, 'rotate(' + f2(spring(c.sp.braid, clamp(vx * .05 + bobVel * .08, -10, 10), 6.5, .32, dt)) + ' 13.5 -238)');
+    if (c.fringe) setT(c.fringe, 'rotate(' + f2(spring(c.sp.fringe, clamp(vx * .06 + bobVel * .1, -14, 14), 8, .35, dt)) + ' -25 -160)');
+    if (c.hang) setT(c.hang, 'rotate(' + f2(spring(c.sp.hang, clamp(vx * .07 + bobVel * .05, -9, 12), 5, .4, dt)) + ' 15 -224)');
+
+    garment(c, tA, dt);
+    var sideOp = sm(.3, .46, tA);
+    c.F.forEach(function (F) {
+      setT(F.e, 'translate(' + f2(F.ax - c.x) + ' ' + f2(F.ay) + ') rotate(' + f2(F.ang * F.dir) + ')');
+      setT(F.side, 'scale(' + F.dir + ' 1)'); setO(F.side, sideOp); setO(F.front, 1 - sideOp);
+    });
+    var nearF = d > 0 ? 0 : 1; if (c.near !== nearF) { c.near = nearF; c.feetG.appendChild(c.F[nearF].e); }
+
+    // arms: shoulders follow the turn; the far arm tucks behind the body in a strong 3/4 view
+    var far = d > 0 ? c.R : c.L;
+    [c.L, c.R].forEach(function (A) {
+      A.S = [A.side * o.sx * (1 - (A === far ? .62 : .42) * tA), o.sy]; setT(A.e, 'translate(' + f2(A.S[0]) + ' ' + o.sy + ')');
+      var b = tA > .45 && A === far; if (A.back !== b) { A.back = b; (b ? c.back : c.abob).appendChild(A.e); }
+    });
+    // walking swing: the arm opposite the forward leg goes forward, elbow bends more on the forward swing
+    var ang = {};
+    [c.L, c.R].forEach(function (A) {
+      var s = A.side, leg = c.F[s < 0 ? 1 : 0];
+      var swing = clamp(((leg.ax - c.x) * d) / (stepLen * .5), -1.25, 1.25), th = o.swingA * swing * c.w * (A === far ? 1 - .3 * tA : 1);
+      var bend = (5 + (o.saree ? 12 : 24) * Math.max(0, swing)) * c.w;
+      ang[s] = [-s * 7 * (1 - tA) - d * th, s * 5 * (1 - tA) * (1 - c.w) - d * bend];
+    });
+    // idle gesture: a curved hand path, shoulder leading the elbow
+    if (gx) gdef.arms.forEach(function (g) {
+      var A = g[0] < 0 ? c.L : c.R, P0 = handAt(c, A, ang[g[0]]), P1 = toWorld(c, g[1], g[2]);
+      var C = [(P0[0] + P1[0]) / 2 - g[0] * 12, (P0[1] + P1[1]) / 2 + 8];
+      function at(e) { var i = 1 - e; return [i * i * P0[0] + 2 * i * e * C[0] + e * e * P1[0], i * i * P0[1] + 2 * i * e * C[1] + e * e * P1[1]]; }
+      ang[g[0]] = blendArm(ang[g[0]], ikSeq(c, A, at(gx.lead), at(gx.e), g[3]), gx.w);
+    });
+    return { ang: ang, tA: tA };
+  }
+  function applyArms(c, ang, dt) {
+    [c.L, c.R].forEach(function (A) {
+      var a = ang[A.side], abs = a[0] + a[1];
+      if (A.prev === null) A.prev = abs;
+      var av = (abs - A.prev) / Math.max(dt, .001); A.prev = abs;
+      var hr = RM ? 0 : spring(A.hs, clamp(-av * .045, -22, 22), 15, .5, dt);
+      setT(A.up, rot(a[0])); setT(A.fo, 'translate(0 ' + c.o.L1 + ') ' + rot(a[1])); setT(A.hand, 'rotate(' + f2(hr) + ' 0 ' + c.o.wrist + ')');
+    });
+  }
+
+  /* garlands */
+  function gar(id) { var g = $('#' + id); return { g: g, paths: [].slice.call(g.querySelectorAll('path[class^="g"]')), tas: $('.tas', g) }; }
+  var GA1 = gar('gar1'), GA2 = gar('gar2');
+  function drawGar(o, p1, p2, dep, flare, op) {
+    setO(o.g, op); if (op <= 0) return;
+    var y1 = p1[1] + dep * 1.33, y2 = p2[1] + dep * 1.33;
+    var d = 'M' + f2(p1[0]) + ' ' + f2(p1[1]) + 'C' + f2(p1[0] - flare) + ' ' + f2(y1) + ' ' + f2(p2[0] + flare) + ' ' + f2(y2) + ' ' + f2(p2[0]) + ' ' + f2(p2[1]);
+    if (o._d !== d) { o._d = d; o.paths.forEach(function (p) { p.setAttribute('d', d); }); }
+    setT(o.tas, 'translate(' + f2((p1[0] + p2[0]) / 2) + ' ' + f2((p1[1] + p2[1]) / 2 + dep) + ')');
+  }
+  function eob(t) { var s = 1.3; t -= 1; return 1 + t * t * ((s + 1) * t + s); }
+  // anticipation dip, lift on an arc, then lower onto the neck with a small settle
+  function garPose(m, held, peak, worn, dH, dW, fW) {
+    var t, p1, p2, dep, fl;
+    if (m < .16) { var a = Math.sin(Math.PI * m / .16) * 5; p1 = [held[0][0], held[0][1] + a]; p2 = [held[1][0], held[1][1] + a]; dep = dH; fl = 4; }
+    else if (m < .56) { t = eio((m - .16) / .4); p1 = mix(held[0], peak[0], t); p2 = mix(held[1], peak[1], t); var arc = Math.sin(Math.PI * t) * 9; p1[1] -= arc; p2[1] -= arc; dep = lerp(dH, 50, t); fl = lerp(4, 6, t); }
+    else { t = eob(clamp((m - .56) / .44, 0, 1)); p1 = mix(peak[0], worn[0], t); p2 = mix(peak[1], worn[1], t); var tc = Math.min(1, t); dep = lerp(50, dW, tc); fl = lerp(6, fW, tc); }
+    return [p1, p2, dep, fl];
+  }
+
+  /* ---------- layout ---------- */
+  var svg = $('#scene'), world = $('#world'), finEl = $('#finale');
+  var probe = doc.createElement('div'); probe.style.cssText = 'position:fixed;left:0;bottom:0;width:0;height:0;visibility:hidden;padding-bottom:env(safe-area-inset-bottom)'; body.appendChild(probe);
+  var wide = false, camX = 0, W, H, u0, uF, gnd, finTop, finLen, gStart, walkEnd, bandW = 0, bandH = 0;
+  function layout() {
+    W = innerWidth; H = innerHeight;
+    var ch = W < 600 ? clamp(H * .155, 112, 140) : W < 1000 ? clamp(H * .2, 150, 196) : clamp(H * .24, 160, 230);
+    u0 = ch / 300;
+    gnd = 12 + (parseFloat(getComputedStyle(probe).paddingBottom) || 0);
+    if (W !== bandW || Math.abs(H - bandH) > 140) { root.style.setProperty('--band', Math.ceil(392 * u0 + gnd) + 'px'); bandW = W; bandH = H; }
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    finTop = finEl.getBoundingClientRect().top + scrollY;
+    finLen = Math.max(1, finEl.offsetHeight - H);
+    wide = W >= 1000 && W / H >= 1.3; body.classList.toggle('wide', wide);
+    uF = Math.max(u0 * 1.2, wide ? Math.min(.22 * W / 210, (H - gnd - 70) / 530, 2.4) : Math.min(W / 350, (H - gnd - (W < 600 ? 300 : 292)) / 530, 2.4));
+    gStart = -(W / 2) / u0 + 48;
+    walkEnd = finTop + .15 * finLen;
+    sizeCanvas();
+  }
+
+  /* ---------- petal shower (canvas) ---------- */
+  var cv = $('#petals'), cx = cv.getContext('2d'), parts = [], dpr = 1, petalsOn = false, fired = false, spawnUntil = 0, spawnAcc = 0, uNow = 1;
+  function sizeCanvas() { dpr = Math.min(2, window.devicePixelRatio || 1); cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
+  function spawn(n, burst) {
+    for (var i = 0; i < n; i++) {
+      var r = Math.random(), t = r < .36 ? 0 : r < .64 ? 1 : r < .84 ? 2 : 3, sc = clamp(uNow, .85, 1.5);
+      var p = { t: t, x: camX + (Math.random() - .5) * Math.min(W * 1.1, 560 * uNow), y: burst ? -10 - Math.random() * H * .4 : -16 - Math.random() * 30,
+        vx: (Math.random() - .5) * 22, vy: 46 + Math.random() * 52, rot: Math.random() * 6.3, vr: (Math.random() - .5) * 4, s: (4.2 + Math.random() * 3.4) * sc, ph: Math.random() * 6.3, life: 0,
+        hue: Math.random() };
+      if (t === 3) { p.x = camX + (Math.random() - .5) * 300 * uNow; p.y = H - gnd - (110 + Math.random() * 300) * uNow; p.vx = (Math.random() - .5) * 12; p.vy = -8 - Math.random() * 12; p.max = .9 + Math.random() * 1.3; p.s = (3 + Math.random() * 3.5) * sc; }
+      parts.push(p);
+    }
+  }
+  function star(x, y, s, a) {
+    cx.globalAlpha = a * .35; cx.fillStyle = '#ffe9a8'; cx.beginPath(); cx.arc(x, y, s * 1.6, 0, 6.283); cx.fill();
+    cx.globalAlpha = a; cx.fillStyle = '#fff7d6'; cx.beginPath();
+    cx.moveTo(x, y - s * 2); cx.quadraticCurveTo(x, y, x + s * 2, y); cx.quadraticCurveTo(x, y, x, y + s * 2); cx.quadraticCurveTo(x, y, x - s * 2, y); cx.quadraticCurveTo(x, y, x, y - s * 2); cx.fill();
+    cx.globalAlpha = 1;
+  }
+  function drawPetals(dt, T) {
+    cx.setTransform(dpr, 0, 0, dpr, 0, 0); cx.clearRect(0, 0, W, H);
+    if (T < spawnUntil) { spawnAcc += dt * 30; while (spawnAcc >= 1) { spawn(1); spawnAcc -= 1; } }
+    var floor = H - gnd + 2;
+    for (var i = parts.length - 1; i >= 0; i--) {
+      var p = parts[i]; p.life += dt;
+      if (p.t === 3) {
+        if (p.life > p.max) { parts.splice(i, 1); continue; }
+        p.x += p.vx * dt; p.y += p.vy * dt; var a = Math.sin(Math.PI * p.life / p.max); star(p.x, p.y, p.s * (.55 + .45 * a), a); continue;
+      }
+      p.ph += dt * 2.3; p.x += (p.vx + Math.sin(p.ph) * 20) * dt; p.y += p.vy * dt; p.rot += p.vr * dt;
+      if (p.y > floor) { parts.splice(i, 1); continue; }
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.rot); var s = p.s;
+      if (p.t === 0) {
+        cx.fillStyle = '#fffef6'; cx.strokeStyle = 'rgba(190,175,130,.55)'; cx.lineWidth = .6;
+        for (var k = 0; k < 5; k++) { cx.rotate(1.2566); cx.beginPath(); cx.ellipse(0, -s * .42, s * .22, s * .42, 0, 0, 6.283); cx.fill(); cx.stroke(); }
+        cx.fillStyle = '#f3dc86'; cx.beginPath(); cx.arc(0, 0, s * .16, 0, 6.283); cx.fill();
+      } else if (p.t === 1) {
+        cx.scale(1, .55 + .45 * Math.abs(Math.sin(p.ph * .8)));
+        cx.fillStyle = p.hue < .5 ? '#c8233a' : p.hue < .8 ? '#de3f5a' : '#e8708a';
+        cx.beginPath(); cx.moveTo(0, -s * .7); cx.bezierCurveTo(s * .8, -s * .6, s * .6, s * .6, 0, s * .6); cx.bezierCurveTo(-s * .6, s * .6, -s * .8, -s * .6, 0, -s * .7); cx.fill();
+        cx.fillStyle = 'rgba(255,255,255,.18)'; cx.beginPath(); cx.ellipse(-s * .15, -s * .2, s * .16, s * .3, 0, 0, 6.283); cx.fill();
+      } else {
+        cx.fillStyle = p.hue < .5 ? '#f39a1e' : '#ffc23a'; cx.beginPath(); cx.arc(0, 0, s * .5, 0, 6.283); cx.fill();
+        cx.strokeStyle = 'rgba(200,100,10,.55)'; cx.lineWidth = .8; cx.beginPath(); cx.arc(0, 0, s * .3, 0, 6.283); cx.stroke();
+      }
+      cx.restore();
+    }
+    if (!parts.length && T >= spawnUntil) { petalsOn = false; cx.clearRect(0, 0, W, H); }
+  }
+
+  /* ---------- the scroll engine ---------- */
+  var skyB = $('#skyB'), sun = $('#sun'), warm = $('#warm'), heart = $('#heart'), hFill = $('#hFill');
+  var M = { g: $('#mandap'), glow: $('#mGlow'), plat: $('#mPlat'), back: $('#mBack'), pl: $('#mPilL'), pr: $('#mPilR'), roof: $('#mRoof'), str: $('#mStr'), swag: $('#mSwag'), ll: $('#lampL'), lr: $('#lampR'), on: false };
+  var caps = [].slice.call(doc.querySelectorAll('#fin .cap')), ends = [].slice.call(doc.querySelectorAll('#fin .end > *')), endBox = $('#fin .end');
+  var capR = [[.03, .27], [.29, .67], [.69, .83], [.835, .885]];
+  // ?film: frame-by-frame stepping for automated film-strip checks
+  var FILM = /[?&]film\b/.test(location.search);
+  if (FILM) window.__kal = { step: function (ms) { frame(last + ms); }, chars: function () { return [G, B].map(function (c) { return { g: c.gest ? c.gest.def.k + ':' + (window.__kalT - c.gest.t0).toFixed(2) : '', x: c.x, w: c.w, sw: c.sw, t: c.t, mode: c.mode, tau: c.tau.x, F: c.F.map(function (F) { return { x: F.x, ax: F.ax, ay: F.ay, pl: F.planted, ang: F.ang }; }) }; }); } };
+  var walkS = spr(RM ? 1 : 0), df = 0, last = 0, T = 0, openT = -99;
+
+  function frame(now) {
+    var dt = last ? Math.min(.05, (now - last) / 1000) : .016; last = now; T += dt; if (FILM) window.__kalT = T;
+    var y = window.scrollY || 0;
+    var p = RM ? 1 : clamp(y / walkEnd, 0, 1), f = clamp((y - finTop) / finLen, 0, 1);
+    // critically damped spring on walk progress: smooth velocity, no snapping
+    var dp = RM ? 1 : spring(walkS, p, 7.5, 1, dt);
+    if (Math.abs(p - walkS.x) < 1e-5 && Math.abs(walkS.v) < 1e-4) { walkS.x = p; walkS.v = 0; dp = p; }
+    df += (f - df) * (1 - Math.exp(-dt * 9)); if (Math.abs(f - df) < 1e-5) df = f;
+    var gx = lerp(gStart, -36, dp);
+
+    var gt = T - openT, greet = RM ? 0 : sm(.15, .5, gt) * (1 - sm(1.9, 2.4, gt));
+
+    /* finale choreography (all scrubbed by scroll) */
+    var gStep = 0, bStep = 0, gLean = 0, bLean = 0, gDrop = 0, gTilt = 0, bTilt = 0, bEye = 1;
+    var a1 = sm(.29, .32, df), m1 = clamp((df - .31) / .14, 0, 1), r1 = sm(.45, .49, df);
+    gStep += 4 * sm(.29, .35, df) * (1 - sm(.46, .5, df));
+    gLean += 4 * sm(.35, .41, df) * (1 - sm(.43, .48, df));
+    bTilt -= 4 * sm(.39, .43, df) * (1 - sm(.46, .5, df));
+    var a2 = sm(.48, .51, df), m2 = clamp((df - .50) / .14, 0, 1), r2 = sm(.64, .68, df);
+    bStep -= 3 * sm(.48, .54, df) * (1 - sm(.65, .69, df));
+    bLean -= 5 * sm(.54, .6, df) * (1 - sm(.62, .67, df));
+    var bow = sm(.56, .6, df) * (1 - sm(.63, .67, df));
+    gLean += 3 * bow; gDrop += 3 * bow; gTilt += 5 * bow;
+    var th = sm(.69, .74, df) * (1 - sm(.80, .84, df));
+    gStep += 9 * sm(.68, .73, df) * (1 - sm(.81, .85, df)); gLean += 3 * th;
+    var bBow = sm(.70, .74, df) * (1 - sm(.81, .85, df));
+    bTilt -= 5 * bBow; bEye = 1 - .45 * bBow;
+    var thOp = sm(.755, .77, df), glint = sm(.77, .79, df) * (1 - sm(.81, .84, df));
+    var tn = sm(.84, .91, df), hj = sm(.87, .94, df);
+    gStep += 3 * hj; bStep -= 3 * hj;
+
+    /* characters */
+    var tIdle = (df > .08 ? .3 * (1 - tn) : .14) * (1 - greet);
+    var gestOK = body.classList.contains('opened') && df < .05 && gt > 3;
+    var gs = updateChar(G, dt, T, gx + gStep, { tauIdle: tIdle, lean: gLean, tilt: gTilt, drop: gDrop, eye: 1, grin: tn, gestOK: gestOK });
+    var bs = updateChar(B, dt, T, -gx + bStep, { tauIdle: -tIdle, lean: bLean, tilt: bTilt, drop: 0, eye: bEye, grin: tn, gestOK: gestOK });
+    var gL = gs.ang[-1], gR = gs.ang[1], bL = bs.ang[-1], bR = bs.ang[1];
+    if (greet > 0) {
+      var wave = Math.sin(gt * 9) * 22;
+      gL = blendArm(gL, [150, -40 + wave], greet);
+      bR = blendArm(bR, [-150, 40 - wave], greet);
+    }
+
+    /* garland 1: the groom places his garland on the bride */
+    if (a1 > 0) {
+      var P1 = function (m) { return garPose(m, [[G.x - 6, -198], [G.x + 18, -198]], [[B.x - 23, -246], [B.x + 23, -246]], [toWorld(B, -16, -232), toWorld(B, 16, -232)], 66, 74, 9); };
+      var q1 = P1(m1), q1l = P1(Math.min(1, m1 + .07));
+      drawGar(GA1, q1[0], q1[1], q1[2], q1[3], a1);
+      var w1 = a1 * (1 - r1);
+      gL = blendArm(gL, ikSeq(G, G.L, q1l[0], q1[0]), w1); gR = blendArm(gR, ikSeq(G, G.R, q1l[1], q1[1]), w1);
+    } else setO(GA1.g, 0);
+    /* garland 2: the bride places hers on the groom */
+    if (a2 > 0) {
+      var P2 = function (m) { return garPose(m, [[B.x - 18, -190], [B.x + 6, -190]], [[G.x - 25, -246], [G.x + 25, -246]], [toWorld(G, -17, -239), toWorld(G, 17, -239)], 60, 80, 10); };
+      var q2 = P2(m2), q2l = P2(Math.min(1, m2 + .07));
+      drawGar(GA2, q2[0], q2[1], q2[2], q2[3], a2);
+      var w2 = a2 * (1 - r2);
+      bL = blendArm(bL, ikSeq(B, B.L, q2l[0], q2[0]), w2); bR = blendArm(bR, ikSeq(B, B.R, q2l[1], q2[1]), w2);
+    } else setO(GA2.g, 0);
+    /* thali: hands rise to her neck, a moment, the knot, then back */
+    if (th > 0) {
+      var tj = Math.sin(Math.PI * sm(.745, .765, df)) * 1.6;
+      gR = blendArm(gR, ik(G, G.R, toWorld(B, -7, -226 + tj)), th);
+      gL = blendArm(gL, ik(G, G.L, toWorld(B, 6, -229 - tj)), th);
+    }
+    setO(B.thali, thOp); setO(B.glint, glint);
+    if (glint > 0) setT(B.glint, 'translate(0 -209) scale(' + f2(.6 + glint * .7) + ') rotate(' + f2(glint * 45) + ') translate(0 209)');
+    /* hand in hand */
+    if (hj > 0) {
+      var mid = (G.x + B.x) / 2;
+      gR = blendArm(gR, ik(G, G.R, [mid - 3, -137]), hj);
+      bL = blendArm(bL, ik(B, B.L, [mid + 3, -137]), hj);
+    }
+    gs.ang[-1] = gL; gs.ang[1] = gR; bs.ang[-1] = bL; bs.ang[1] = bR;
+    applyArms(G, gs.ang, dt); applyArms(B, bs.ang, dt);
+
+    /* mandapam assembles */
+    var mt = sm(.05, .28, df);
+    if (mt > 0) {
+      if (!M.on) { M.g.style.display = ''; M.on = true; }
+      var pt = sm(0, .3, mt); setO(M.plat, pt); setT(M.plat, 'translate(0 ' + f2((1 - pt) * 14) + ')');
+      var ps = Math.max(.001, eio(sm(.08, .5, mt))); setT(M.pl, 'scale(1 ' + f2(ps * 1000) / 1000 + ')'); setT(M.pr, 'scale(1 ' + f2(ps * 1000) / 1000 + ')'); setT(M.back, 'scale(1 ' + f2(ps * 1000) / 1000 + ')');
+      var rt = sm(.4, .72, mt); setO(M.roof, rt); setT(M.roof, 'translate(0 ' + f2(-(1 - eio(rt)) * 90) + ')');
+      var st2 = sm(.6, .9, mt); setO(M.str, st2 > 0 ? 1 : 0); setT(M.str, 'translate(0 -385) scale(1 ' + f2(Math.max(.01, st2)) + ') translate(0 385)');
+      var sw = sm(.66, .95, mt); setO(M.swag, sw); setT(M.swag, 'translate(0 ' + f2(-(1 - sw) * 16) + ')');
+      var lt2 = sm(.45, .75, mt); setO(M.ll, lt2); setO(M.lr, lt2);
+      var fo = sm(.82, 1, mt);
+      flames.forEach(function (o) {
+        var fk = RM ? 1 : 1 + Math.sin(T * 13 + o.i * 1.7) * .07 + Math.sin(T * 7.3 + o.i) * .05;
+        setT(o.e, 'translate(' + o.x + ' ' + o.y + ') scale(' + f2(fo * (2 - fk) * .9 + .001) + ' ' + f2(fo * fk + .001) + ')');
+      });
+      setO(M.glow, sm(.5, 1, mt) * .9);
+    } else if (M.on) { M.g.style.display = 'none'; M.on = false; }
+
+    /* camera */
+    var zt = eio(sm(.04, .22, df));
+    uNow = lerp(u0, uF, zt); camX = W / 2 + (wide ? W * .13 * zt : 0);
+    setT(world, 'translate(' + f2(camX) + ' ' + f2(H - gnd) + ') scale(' + (Math.round(uNow * 10000) / 10000) + ')');
+
+    /* sky warms as they get closer */
+    var warmth = clamp(dp * .85 + df * .15, 0, 1);
+    skyB.style.opacity = f2(warmth);
+    sun.style.transform = 'translate3d(0,' + f2(warmth * H * .2) + 'px,0) scale(' + f2(1 + warmth * .25) + ')';
+    setO(warm, warmth * .12);
+    hFill.setAttribute('y', f2(22 - 23 * clamp(dp * .8 + df * .2, 0, 1)));
+    heart.classList.toggle('full', df > .9);
+
+    /* captions + closing words */
+    caps.forEach(function (c, i) {
+      var r = capR[i], o = sm(r[0], r[0] + .02, df) * (1 - sm(r[1] - .02, r[1], df));
+      if (c._o !== o) { c._o = o; c.style.opacity = f2(o); c.style.transform = 'translateY(' + f2((1 - o) * 10) + 'px)'; }
+    });
+    var hal = f2(sm(.88, .92, df)); if (finEl._h !== hal) { finEl._h = hal; endBox.style.setProperty('--halo', hal); }
+    ends.forEach(function (e, i) {
+      var o = sm(.89 + i * .016, .915 + i * .016, df);
+      if (e._o !== o) { e._o = o; e.style.opacity = f2(o); e.style.transform = 'translateY(' + f2((1 - o) * 14) + 'px)'; }
+    });
+
+    /* petals */
+    if (!RM) {
+      if (df >= .82 && !fired) { fired = true; spawn(80, true); spawnUntil = T + 3.4; petalsOn = true; }
+      if (df < .78) fired = false;
+      if (petalsOn) drawPetals(dt, T);
+    }
+    if (!FILM) requestAnimationFrame(frame);
+  }
+
+  /* ---------- intro: ring the bell, the jasmine strands part with real momentum ---------- */
+  var intro = $('#intro'), opened = false;
+  function finishOpen() { body.classList.remove('locked'); body.classList.add('opened'); }
+
+  var SC = $('#strands'), sx = SC.getContext('2d'), strands = [], sW = 0, sH = 0, sDpr = 1, sT = 0, sLast = 0, sRun = !RM, parting = -1;
+  var ptr = { on: false, x: 0, y: 0, vx: 0, lx: 0, dragX: 0 };
+  var SEG = 13, SPACE = 17;
+  function sprite(draw, w, h) { var c = document.createElement('canvas'); c.width = w * 2; c.height = h * 2; var g = c.getContext('2d'); g.scale(2, 2); draw(g); return c; }
+  var BUD = sprite(function (g) { var gr = g.createRadialGradient(4, 4, .5, 4.5, 5.5, 5); gr.addColorStop(0, '#fffefa'); gr.addColorStop(.7, '#f4ecd6'); gr.addColorStop(1, '#cdbf98');
+    g.fillStyle = gr; g.beginPath(); g.ellipse(4.5, 5.5, 3.3, 4.8, 0, 0, 6.283); g.fill(); }, 9, 11);
+  function bead(c1, c2) { return sprite(function (g) { var gr = g.createRadialGradient(4, 4, .5, 5, 5, 5); gr.addColorStop(0, c1); gr.addColorStop(1, c2); g.fillStyle = gr; g.beginPath(); g.arc(5, 5, 4.6, 0, 6.283); g.fill(); }, 10, 10); }
+  var MARI = bead('#ffd04a', '#e07a14'), MARI2 = bead('#ffb02e', '#d9771a'), ROSE = bead('#ff6b7d', '#a51a2e');
+
+  function buildStrands() {
+    var r = SC.getBoundingClientRect(); sW = r.width; sH = r.height; sDpr = Math.min(2, devicePixelRatio || 1);
+    SC.width = Math.round(sW * sDpr); SC.height = Math.round(sH * sDpr);
+    strands = [];
+    var n = Math.ceil(sW / SPACE) + 1, segs = Math.ceil((sH * 1.02) / SEG) + 1;
+    for (var k = 0; k < n; k++) {
+      var ax = k * SPACE + (k % 2 ? 3 : 0), x = new Float32Array(segs), y = new Float32Array(segs), px = new Float32Array(segs), py = new Float32Array(segs);
+      for (var i = 0; i < segs; i++) { x[i] = px[i] = ax; y[i] = py[i] = i * SEG - 4; }
+      strands.push({ ax0: ax, ax: ax, x: x, y: y, px: px, py: py, n: segs, ph: Math.random() * 6.28, off: (k * 37) % 63, kind: k % 3, alpha: .82 + (k % 4) * .05 });
+    }
+  }
+  function ease(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function simStep(dt) {
+    var g = 1100 * dt * dt, damp = .988, cx = sW / 2;
+    strands.forEach(function (S) {
+      // the top of each strand rides the rod; when parting it is gathered to its side
+      if (parting >= 0) {
+        var side = S.ax0 < cx ? -1 : 1, far = Math.abs(S.ax0 - cx) / cx, dl = .16 * (1 - far);
+        var t = Math.min(1, Math.max(0, (sT - parting - dl) / 1.15)), e = ease(t);
+        var tx = side < 0 ? -50 - far * 30 : sW + 50 + far * 30;
+        S.ax = S.ax0 + (tx - S.ax0) * e;
+      }
+      var X = S.x, Y = S.y, PX = S.px, PY = S.py, n = S.n;
+      var breeze = Math.sin(sT * .9 + S.ph) * 14 + Math.sin(sT * 2.1 + S.ph * 1.7) * 5;
+      for (var i = 1; i < n; i++) {
+        var vx = (X[i] - PX[i]) * damp, vy = (Y[i] - PY[i]) * damp;
+        PX[i] = X[i]; PY[i] = Y[i];
+        X[i] += vx + breeze * (i / n) * dt * dt * 30; Y[i] += vy + g;
+        if (ptr.on) {   // your finger pushes the strands aside
+          var dx = X[i] - ptr.x, dy = Y[i] - ptr.y, R = 46;
+          if (dx > -R && dx < R && dy > -R * 1.8 && dy < R * 1.8) { var f = (R - Math.abs(dx)) / R; X[i] += (dx >= 0 ? 1 : -1) * f * 5 + ptr.vx * dt * .55 * f; }
+        }
+      }
+      X[0] = PX[0] = S.ax; Y[0] = PY[0] = -4;
+      for (var it = 0; it < 3; it++) for (var j = 1; j < n; j++) {
+        var ddx = X[j] - X[j - 1], ddy = Y[j] - Y[j - 1], d = Math.sqrt(ddx * ddx + ddy * ddy) || .001, diff = (d - SEG) / d;
+        if (j === 1) { X[j] -= ddx * diff; Y[j] -= ddy * diff; }
+        else { X[j] -= ddx * diff * .5; Y[j] -= ddy * diff * .5; X[j - 1] += ddx * diff * .5; Y[j - 1] += ddy * diff * .5; }
+      }
+    });
+  }
+  function drawStrands() {
+    sx.setTransform(sDpr, 0, 0, sDpr, 0, 0); sx.globalCompositeOperation = 'source-over'; sx.clearRect(0, 0, sW, sH);
+    var veil = parting < 0 ? 1 : Math.max(0, 1 - (sT - parting) / 1.1);
+    if (veil > 0) { sx.fillStyle = 'rgba(246,230,200,' + (.42 * veil).toFixed(3) + ')'; sx.fillRect(0, 0, sW, sH); }
+    strands.forEach(function (S) {
+      if (S.ax < -120 || S.ax > sW + 120) return;
+      var X = S.x, Y = S.y, n = S.n;
+      sx.globalAlpha = S.alpha; sx.strokeStyle = 'rgba(96,120,48,.55)'; sx.lineWidth = 1; sx.beginPath(); sx.moveTo(X[0], Y[0]);
+      for (var i = 1; i < n; i++) sx.lineTo(X[i], Y[i]);
+      sx.stroke();
+      for (var j = 1; j < n; j++) {
+        var by = j * SEG;
+        var beadHere = ((by + S.off) % 63) < SEG;
+        if (beadHere) { var B = S.kind === 0 ? MARI : S.kind === 1 ? ROSE : MARI2; sx.drawImage(B, X[j] - 5, Y[j] - 5, 10, 10); }
+        else sx.drawImage(BUD, X[j] - 4.5, Y[j] - 5.5, 9, 11);
+        sx.drawImage(BUD, (X[j] + X[j - 1]) / 2 - 4.5, (Y[j] + Y[j - 1]) / 2 - 5.5, 9, 11);   // a second bud between joints keeps the string dense
+      }
+    });
+    sx.globalAlpha = 1;
+    // strands soften toward the floor so the couple shows through
+    sx.globalCompositeOperation = 'destination-in';
+    var gr = sx.createLinearGradient(0, 0, 0, sH); gr.addColorStop(0, '#000'); gr.addColorStop(.52, '#000'); gr.addColorStop(1, 'rgba(0,0,0,.6)');
+    sx.fillStyle = gr; sx.fillRect(0, 0, sW, sH); sx.globalCompositeOperation = 'source-over';
+  }
+  function strandLoop(now) {
+    if (!sRun) return;
+    var dt = sLast ? Math.min(.033, (now - sLast) / 1000) : .016; sLast = now; sT += dt;
+    var steps = dt > .02 ? 2 : 1; for (var k = 0; k < steps; k++) simStep(dt / steps);
+    drawStrands();
+    if (parting >= 0 && sT - parting > 2.4) { sRun = false; return; }
+    requestAnimationFrame(strandLoop);
+  }
+  function ptrAt(e) { var r = SC.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
+  SC.addEventListener('pointerdown', function (e) { var p = ptrAt(e); ptr.on = true; ptr.x = ptr.lx = p[0]; ptr.y = p[1]; ptr.vx = 0; ptr.dragX = 0; });
+  SC.addEventListener('pointermove', function (e) {
+    var p = ptrAt(e); if (!ptr.on && e.pointerType !== 'mouse') return;
+    var dx = p[0] - ptr.x; ptr.vx = ptr.vx * .5 + (dx / .016) * .5; ptr.x = p[0]; ptr.y = p[1];
+    if (e.pointerType === 'mouse' && !ptr.on) { ptr.on = true; ptr.hover = true; }
+    if (!ptr.hover) { ptr.dragX += Math.abs(dx); if (ptr.dragX > sW * .55) ring(); }   // a wide swipe also parts the curtain
+  });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (ev) { SC.addEventListener(ev, function () { ptr.on = false; ptr.hover = false; ptr.vx = 0; }); });
+
+  // the bell: a damped pendulum with a lagging clapper
+  var bellBtn = $('.bell-btn'), bellBody = $('#bellBody'), bellClap = $('#bellClap');
+  var bell = { a: 0, v: 0, c: 0, cv: 0, t: 0, last: 0, run: !RM };
+  function bellLoop(now) {
+    if (!bell.run) return;
+    var dt = bell.last ? Math.min(.033, (now - bell.last) / 1000) : .016; bell.last = now; bell.t += dt;
+    var idle = opened ? 0 : Math.sin(bell.t * 1.6) * 4;
+    bell.v += (-38 * (bell.a - idle) - 1.6 * bell.v) * dt; bell.a += bell.v * dt;
+    bell.cv += (-55 * (bell.c - bell.a * .55) - 3 * bell.cv) * dt; bell.c += bell.cv * dt;
+    bellBody.setAttribute('transform', 'rotate(' + bell.a.toFixed(2) + ' 0 14)');
+    bellClap.setAttribute('transform', 'rotate(' + (bell.c - bell.a).toFixed(2) + ' 0 30)');
+    if (opened && bell.t > 4) { bell.run = false; return; }
+    requestAnimationFrame(bellLoop);
+  }
+
+  function ring() {
+    if (opened) return; opened = true;
+    bell.v += 260; bellBtn.classList.add('rung');
+    setTimeout(function () {
+      intro.classList.add('open'); openT = T + .9;
+      if (RM) { intro.classList.add('fade'); }
+      else {
+        parting = sT;
+        var cx = sW / 2;   // the push: strands near the middle get the strongest outward kick, lower beads swing most
+        strands.forEach(function (S) { var side = S.ax0 < cx ? -1 : 1, near = 1 - Math.abs(S.ax0 - cx) / cx;
+          for (var i = 1; i < S.n; i++) S.px[i] = S.x[i] - side * (2 + 9 * near) * (i / S.n); });
+        setTimeout(function () { intro.classList.add('fade'); }, 1500);
+      }
+      setTimeout(finishOpen, 1100);
+      setTimeout(function () { intro.classList.add('gone'); }, RM ? 900 : 2300);
+    }, RM ? 0 : 420);
+  }
+  bellBtn.addEventListener('click', ring);
+
+  if (/[?&]open\b/.test(location.search)) { opened = true; intro.style.display = 'none'; finishOpen(); openT = .3; sRun = false; bell.run = false; }
+  else {
+    buildStrands(); addEventListener('resize', function () { if (parting < 0) buildStrands(); });
+    if (RM) drawStrands(); else { requestAnimationFrame(strandLoop); requestAnimationFrame(bellLoop); }
+  }
+
+  layout();
+  addEventListener('resize', layout, { passive: true });
+  addEventListener('load', layout);
+  if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(layout);
+  if (FILM) frame(16); else requestAnimationFrame(frame);
+  WED.init();
+})();
+</script>
+</body>
+</html>

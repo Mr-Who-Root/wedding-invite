@@ -1,0 +1,14 @@
+Photos used by the "Wedding Cinema" design (cinema/index.html).
+All from Unsplash, free to use under the Unsplash License (https://unsplash.com/license).
+
+lamp.jpg      - "A person lighting a traditional oil lamp" by Roshan Kumara
+                https://unsplash.com/photos/ixWchmlx5Mw
+jasmine.jpg   - "Jasmine garland with pearls on a table" by Vidit Goswami
+                https://unsplash.com/photos/3lUv0ZynLLE
+lights.jpg    - "Fairy lights" by Bruno Figueiredo
+                https://unsplash.com/photos/FXfUYwQi9lc
+garlands.jpg  - "Hanging garlands of orange marigolds and white jasmine flowers" by Sangram Rakate
+                https://unsplash.com/photos/EEeGY0XgNSw
+
+All illustrations (velvet curtains, sky lanterns, elephant, marigold border, florals, arch frame)
+are original CSS/SVG/canvas drawings made for this page.
