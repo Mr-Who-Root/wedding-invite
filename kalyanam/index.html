@@ -192,11 +192,6 @@
   body.wide .end h2 { font-size: min(58px, 4.3vw); white-space: nowrap; }
 
   /* progress heart */
-  .heart { position: fixed; right: 12px; top: calc(12px + var(--sat)); z-index: 90; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
-    background: var(--ui-bg); border: 1px solid var(--ui-line); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); opacity: 0; transition: opacity .6s; }
-  body.opened .heart { opacity: 1; }
-  .heart svg { width: 22px; height: 22px; overflow: visible; }
-  .heart.full svg { animation: beat 1.4s ease-in-out infinite; }
   @keyframes beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(1); } 45% { transform: scale(1.12); } }
 
   @media (prefers-reduced-motion: reduce) { .cloud { animation: none; } }
@@ -580,13 +575,6 @@
 </div>
 
 <a class="back-link" href="../">← Designs</a>
-<div class="heart" id="heart" aria-hidden="true">
-  <svg viewBox="0 0 24 22">
-    <defs><clipPath id="hClip"><rect id="hFill" x="-2" y="22" width="28" height="24"/></clipPath></defs>
-    <path d="M12 21C5 15.5 1 12 1 7.2 1 3.8 3.6 1.2 6.8 1.2c2.2 0 4 1.2 5.2 3 1.2-1.8 3-3 5.2-3C20.4 1.2 23 3.8 23 7.2 23 12 19 15.5 12 21z" fill="#c22f45" clip-path="url(#hClip)"/>
-    <path d="M12 21C5 15.5 1 12 1 7.2 1 3.8 3.6 1.2 6.8 1.2c2.2 0 4 1.2 5.2 3 1.2-1.8 3-3 5.2-3C20.4 1.2 23 3.8 23 7.2 23 12 19 15.5 12 21z" fill="none" stroke="#8e1f2b" stroke-width="1.6"/>
-  </svg>
-</div>
 
 <main>
   <section class="sec hero">
@@ -1313,8 +1301,8 @@
     skyB.style.opacity = f2(warmth);
     sun.style.transform = 'translate3d(0,' + f2(warmth * H * .2) + 'px,0) scale(' + f2(1 + warmth * .25) + ')';
     setO(warm, warmth * .12);
-    hFill.setAttribute('y', f2(22 - 23 * clamp(dp * .8 + df * .2, 0, 1)));
-    heart.classList.toggle('full', df > .9);
+    if (hFill) hFill.setAttribute('y', f2(22 - 23 * clamp(dp * .8 + df * .2, 0, 1)));
+    if (heart) heart.classList.toggle('full', df > .9);
 
     /* captions + closing words */
     caps.forEach(function (c, i) {
