@@ -70,12 +70,42 @@
       '&ctz=Asia/Kolkata';
   };
 
-
-
   WED.bindLinks = function () {
     document.querySelectorAll('[data-cal="google"]').forEach(function (a) { a.href = WED.googleCal(); });
     document.querySelectorAll('[data-map]').forEach(function (a) { a.href = WED.mapLink; });
   };
 
   WED.init = function () { WED.reveal(); WED.bindLinks(); WED.countdown(document.querySelector('[data-countdown]')); };
+
+  /* ---------- Samsung Internet dark mode ----------
+     Some Samsung Internet versions repaint pages dark even though they ask to stay light (common.css).
+     The repaint darkens gradients but lightens dark text, so gradient-filled text (gold numerals, foil names)
+     would vanish. On those phones such text is drawn in one solid colour, the gradient's average, which stays
+     readable whether or not the page is repainted. */
+  function solidText() {
+    var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.classList.toggle('wed-forced-dark', dark);
+    if (!dark || !document.body) return;
+    document.body.querySelectorAll('*').forEach(function (el) {
+      if (el instanceof SVGElement || el.classList.contains('wed-solid')) return;
+      var cs = getComputedStyle(el);
+      if ((cs.webkitBackgroundClip || cs.backgroundClip) !== 'text') return;
+      var r = 0, g = 0, b = 0, n = 0;
+      (cs.backgroundImage.match(/rgba?\([^)]*\)/g) || []).forEach(function (c) {
+        var v = c.match(/[\d.]+/g).map(Number);
+        if (v.length > 3 && v[3] < 0.3) return;
+        r += v[0]; g += v[1]; b += v[2]; n++;
+      });
+      if (!n) return;
+      el.style.setProperty('--wed-solid', 'rgb(' + Math.round(r / n) + ',' + Math.round(g / n) + ',' + Math.round(b / n) + ')');
+      el.classList.add('wed-solid');
+    });
+  }
+  if (/SamsungBrowser/.test(navigator.userAgent) && window.matchMedia) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', solidText); else solidText();
+    window.addEventListener('load', solidText);
+    setTimeout(solidText, 2500);
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', solidText);
+  }
 })();

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
 <title>Anupama &amp; Ajay · Wedding Invitation</title>
 <meta name="description" content="Wedding of S. Anupama & Ajay Ratheendran · Sunday, 22 November 2026 · Sooryaprabha Convention Centre, Thiruvananthapuram">
 <meta property="og:title" content="Anupama weds Ajay · 22 November 2026">
@@ -13,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,500;1,400&family=Cormorant+Garamond:ital,wght@1,500&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-  :root { --ivory: #fff6e3; --ivory-2: rgba(255,246,227,.78); --gold: #f6d98c; --gold-2: #e3b553; --line: rgba(246,217,140,.3); }
+  :root { color-scheme: only light; --ivory: #fff6e3; --ivory-2: rgba(255,246,227,.78); --gold: #f6d98c; --gold-2: #e3b553; --line: rgba(246,217,140,.3); }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { overflow-x: hidden; }
   body { min-height: 100vh; min-height: 100svh; color: var(--ivory); font: 400 16px/1.6 'Lato', sans-serif;
@@ -29,6 +30,8 @@
   h1 { font: 500 clamp(52px, 14vw, 92px)/1.02 'Gelasio', serif; margin: 14px 0 10px; opacity: 0;
     background: linear-gradient(100deg, #fff6e3 20%, #f6d98c 45%, #fff6e3 70%); background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
     animation: up 1.1s .3s forwards, shine 7s 2s linear infinite; }
+  /* Samsung Internet may repaint the page dark anyway: it darkens gradients, so the title would vanish. Use solid ivory there. */
+  @media (prefers-color-scheme: dark) { :root { color-scheme: only light; } .wed-forced-dark h1 { background: none; color: var(--ivory); } }
   h1 .amp { display: block; font: italic 500 .42em/1.1 'Cormorant Garamond', serif; color: var(--gold-2); -webkit-text-fill-color: var(--gold-2); }
   .date { font: 700 13px 'Lato', sans-serif; letter-spacing: .34em; color: var(--ivory-2); opacity: 0; animation: up 1s .6s forwards; }
   .lead { font: italic 500 20px/1.4 'Cormorant Garamond', serif; color: var(--ivory-2); margin-top: 20px; opacity: 0; animation: up 1s .8s forwards; }
@@ -60,6 +63,7 @@
   footer { text-align: center; margin-top: 34px; font: italic 500 17px 'Cormorant Garamond', serif; color: var(--ivory-2); }
   @media (prefers-reduced-motion: reduce) { *, *::before { animation-duration: .01ms !important; animation-delay: 0s !important; } }
 </style>
+<script>if (/SamsungBrowser/.test(navigator.userAgent)) document.documentElement.classList.add('wed-forced-dark');</script>
 </head>
 <body>
 <header>
