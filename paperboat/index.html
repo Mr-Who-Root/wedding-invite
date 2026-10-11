@@ -315,24 +315,7 @@
       <path d="M-6 9h12v6.4c0 1.5-1.3 2.4-2.8 2.4H-3.2C-4.7 17.8-6 16.9-6 15.4zM6 9h12v6.4c0 1.5-1.3 2.4-2.8 2.4H8.8C7.3 17.8 6 16.9 6 15.4z" fill="#a84f33"/>
       <path d="M2 1v6M8 10v6" stroke="#e09a6c" stroke-width=".9" opacity=".45"/>
     </pattern>
-    <clipPath id="cGable"><path d="M132 72 L180 16 L228 72 Z"/></clipPath>
     <clipPath id="cGable2"><path d="M196 96 L270 18 L344 96 Z"/></clipPath>
-    <symbol id="padroof" viewBox="0 0 360 104">
-      <path d="M8 92 L78 36 H282 L352 92 Z" fill="url(#pTile)"/>
-      <path d="M8 92 L78 36 H282 L352 92 Z" fill="url(#gRoofShade)"/>
-      <path d="M78 36 L8 92 M282 36 L352 92" stroke="#5a2212" stroke-width="3.2" stroke-linecap="round"/>
-      <path d="M70 39 Q73 30 80 33 H280 Q287 30 290 39" fill="none" stroke="#5e2414" stroke-width="5.5" stroke-linecap="round"/>
-      <path d="M132 72 L180 16 L228 72 Z" fill="url(#gWoodV)"/>
-      <g clip-path="url(#cGable)" stroke="#3b1f0f" stroke-width="2.2" opacity=".75"><path d="M140 20v56M148 20v56M156 20v56M164 20v56M172 20v56M188 20v56M196 20v56M204 20v56M212 20v56M220 20v56"/></g>
-      <circle cx="180" cy="50" r="7.5" fill="#3b1f0f" stroke="#d6a957" stroke-width="1.6"/><circle cx="180" cy="50" r="3" fill="#d6a957"/>
-      <path d="M122 77 L180 9 L238 77" fill="none" stroke="#7d4a29" stroke-width="7.5" stroke-linejoin="round" stroke-linecap="round"/>
-      <path d="M124 75 L180 10 L236 75" fill="none" stroke="#b47e4c" stroke-width="1.6" stroke-linejoin="round" opacity=".8"/>
-      <path d="M122 77 q-7 3 -4 9 q3 3 6 0M238 77 q7 3 4 9 q-3 3 -6 0" fill="none" stroke="#7d4a29" stroke-width="3" stroke-linecap="round"/>
-      <path d="M180 9 v-4" stroke="#b4863a" stroke-width="2"/><ellipse cx="180" cy="3.6" rx="3.4" ry="3.6" fill="url(#gBrass)"/>
-      <rect x="0" y="90" width="360" height="11" rx="2" fill="url(#gWoodV)"/>
-      <path d="M5 100.5h350" stroke="#2f1708" stroke-width="3" stroke-dasharray="4 4"/>
-      <path d="M0 90.6h360" stroke="#c48a58" stroke-width="1" opacity=".6"/>
-    </symbol>
     <symbol id="tharoof" viewBox="0 0 540 132">
       <path d="M6 116 L108 44 H432 L534 116 Z" fill="url(#pTile)"/>
       <path d="M6 116 L108 44 H432 L534 116 Z" fill="url(#gRoofShade)"/>
@@ -390,36 +373,6 @@
           </div>
         </div>
         <svg class="base" data-art="invbase" viewBox="0 0 400 70" preserveAspectRatio="none" style="height:56px" aria-hidden="true"></svg>
-      </section>
-
-      <section class="stop fam" data-stop="famB" data-dip="9" aria-label="The bride's family">
-        <svg class="roof" aria-hidden="true"><use href="#padroof"/></svg>
-        <div class="gate">
-          <div class="paper">
-            <p class="kick sc" data-reveal="fade">The Bride</p>
-            <p class="nm" data-reveal>S. Anupama</p>
-            <p class="par" data-reveal>D/o Sajeev S &amp; Smitha L.R</p>
-            <i class="rule" aria-hidden="true"></i>
-            <p class="house sc" data-reveal="fade">REVATHY</p>
-            <address class="addr" data-reveal="fade">Thachottukavu, Peyad P.O.<br>Thiruvananthapuram – 695573</address>
-          </div>
-        </div>
-        <svg class="base" data-art="fambase" viewBox="0 0 360 40" preserveAspectRatio="none" style="height:34px" aria-hidden="true"></svg>
-      </section>
-
-      <section class="stop fam" data-stop="famG" data-dip="9" aria-label="The groom's family">
-        <svg class="roof" aria-hidden="true"><use href="#padroof"/></svg>
-        <div class="gate">
-          <div class="paper">
-            <p class="kick sc" data-reveal="fade">The Groom</p>
-            <p class="nm" data-reveal>Ajay Ratheendran</p>
-            <p class="par" data-reveal>S/o P.R Ratheendra Kurup &amp; Usha Devi</p>
-            <i class="rule" aria-hidden="true"></i>
-            <p class="house sc" data-reveal="fade">PUTHAN VEEDU</p>
-            <address class="addr" data-reveal="fade">Kodukulanjikarod, Kozhuvalloor P.O.<br>Chengannur, Alappuzha – 689521</address>
-          </div>
-        </div>
-        <svg class="base" data-art="fambase" viewBox="0 0 360 40" preserveAspectRatio="none" style="height:34px" aria-hidden="true"></svg>
       </section>
 
       <section class="stop cer" data-stop="cer" data-dip="22" aria-label="Ceremonies">
@@ -777,11 +730,6 @@
       '<rect x="0" y="52" width="400" height="18" fill="url(#gWaterOver)"/>' +
       '<g opacity=".22"><rect x="12" y="56" width="376" height="6" fill="#7c3f26"/><rect x="26" y="62" width="348" height="5" fill="#7c3f26" opacity=".6"/></g>';
   }
-  function fambaseArt() {
-    return '<rect x="6" y="0" width="348" height="12" fill="url(#gStone)"/><rect x="6" y="0" width="348" height="2.5" fill="#e6dccb"/>' +
-      '<rect x="0" y="12" width="360" height="13" fill="url(#gLat)"/><rect x="0" y="12" width="360" height="2.5" fill="#cf8b62"/>' +
-      '<rect x="0" y="27" width="360" height="13" fill="url(#gWaterOver)"/><rect x="0" y="30" width="360" height="5" fill="#7c3f26" opacity=".18"/>';
-  }
   function cerbaseArt() {
     var s = '', steps = [[34, 0], [20, 13], [8, 26], [0, 39]];
     for (var i = 0; i < steps.length; i++) s += '<rect x="' + steps[i][0] + '" y="' + steps[i][1] + '" width="' + (600 - 2 * steps[i][0]) + '" height="13" fill="url(#gStone)"/><rect x="' + steps[i][0] + '" y="' + steps[i][1] + '" width="' + (600 - 2 * steps[i][0]) + '" height="2.5" fill="#efe6d6"/>';
@@ -868,7 +816,7 @@
     return '<defs><linearGradient id="gMR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="mMR" maskUnits="userSpaceOnUse" x="-20" y="0" width="440" height="120"><rect x="-20" y="0" width="440" height="120" fill="url(#gMR)"/></mask></defs>' +
       '<g mask="url(#mMR)" opacity=".38"><use href="#mandapMain" transform="matrix(1 0 0 -1 0 440)"/></g>';
   }
-  var ART = { nila: nilaArt, pad: padArt, invbase: invbaseArt, fambase: fambaseArt, cerbase: cerbaseArt, cdposts: cdpostsArt, venbase: venbaseArt, mandap: mandapArt, mrefl: mreflArt };
+  var ART = { nila: nilaArt, pad: padArt, invbase: invbaseArt, cerbase: cerbaseArt, cdposts: cdpostsArt, venbase: venbaseArt, mandap: mandapArt, mrefl: mreflArt };
   function injectArt() {
     var cache = {};
     $$('[data-art]').forEach(function (el) { var k = el.getAttribute('data-art'); if (!cache[k]) cache[k] = ART[k](); el.innerHTML = cache[k]; });
@@ -1027,13 +975,10 @@
     });
     $$('[data-garland]').forEach(garland);
     /* the route: stops along the river and how scroll maps onto it */
-    var side = vw >= 740;
     SEQ = [
       { els: [['hero', 0]] }, { els: [['inv', 0]], extra: .35 },
-      side ? { els: [['famB', -(STOPS.famB.w / 2 + 16)], ['famG', STOPS.famG.w / 2 + 16]] } : { els: [['famB', 0]] }
+      { els: [['cer', 0]] }, { els: [['cd', 0]] }, { els: [['ven', 0]] }, { els: [['fin', 0]], fin: true }
     ];
-    if (!side) SEQ.push({ els: [['famG', 0]], short: true });
-    SEQ.push({ els: [['cer', 0]] }, { els: [['cd', 0]] }, { els: [['ven', 0]] }, { els: [['fin', 0]], fin: true });
     SEQ.forEach(function (q) { var a = 1e9, b = -1e9; q.els.forEach(function (e) { var s = STOPS[e[0]]; a = Math.min(a, e[1] - s.w / 2); b = Math.max(b, e[1] + s.w / 2); }); q.w = b - a; });
     var X = 0, i;
     SEQ[0].X = 0;
