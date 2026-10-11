@@ -2,7 +2,7 @@
 /* Every design is drawn in its own colours: stop phone browsers (Samsung Internet, Chrome "dark theme for sites") from auto-darkening it. */
 :root { color-scheme: only light; }
 @media (prefers-color-scheme: dark) { :root { color-scheme: only light; } } /* Samsung Internet looks for a dark-preference rule before repainting */
-/* where a browser repaints anyway, gradient-filled text falls back to a solid colour (see common.js) */
+/* Samsung Internet repaints anyway when its "Force dark mode for web content" is on: gradient-filled text there is drawn solid (see common.js) */
 .wed-forced-dark .wed-solid { background: none !important; color: var(--wed-solid) !important; -webkit-text-fill-color: var(--wed-solid) !important; }
 
 .back-link {

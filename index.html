@@ -30,8 +30,9 @@
   h1 { font: 500 clamp(52px, 14vw, 92px)/1.02 'Gelasio', serif; margin: 14px 0 10px; opacity: 0;
     background: linear-gradient(100deg, #fff6e3 20%, #f6d98c 45%, #fff6e3 70%); background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
     animation: up 1.1s .3s forwards, shine 7s 2s linear infinite; }
+  @media (prefers-color-scheme: dark) { :root { color-scheme: only light; } }
   /* Samsung Internet may repaint the page dark anyway: it darkens gradients, so the title would vanish. Use solid ivory there. */
-  @media (prefers-color-scheme: dark) { :root { color-scheme: only light; } .wed-forced-dark h1 { background: none; color: var(--ivory); } }
+  .wed-forced-dark h1 { background: none; color: var(--ivory); }
   h1 .amp { display: block; font: italic 500 .42em/1.1 'Cormorant Garamond', serif; color: var(--gold-2); -webkit-text-fill-color: var(--gold-2); }
   .date { font: 700 13px 'Lato', sans-serif; letter-spacing: .34em; color: var(--ivory-2); opacity: 0; animation: up 1s .6s forwards; }
   .lead { font: italic 500 20px/1.4 'Cormorant Garamond', serif; color: var(--ivory-2); margin-top: 20px; opacity: 0; animation: up 1s .8s forwards; }

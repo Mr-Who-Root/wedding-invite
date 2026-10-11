@@ -78,14 +78,14 @@
   WED.init = function () { WED.reveal(); WED.bindLinks(); WED.countdown(document.querySelector('[data-countdown]')); };
 
   /* ---------- Samsung Internet dark mode ----------
-     Some Samsung Internet versions repaint pages dark even though they ask to stay light (common.css).
+     Samsung Internet's "Force dark mode for web content" repaints pages dark even though they ask to stay light
+     (common.css), and the page cannot tell: it still reports the phone's own light/dark preference.
      The repaint darkens gradients but lightens dark text, so gradient-filled text (gold numerals, foil names)
-     would vanish. On those phones such text is drawn in one solid colour, the gradient's average, which stays
-     readable whether or not the page is repainted. */
+     would vanish. On Samsung Internet such text is always drawn in one solid colour, the gradient's average,
+     which stays readable whether or not the page is repainted. */
   function solidText() {
-    var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.classList.toggle('wed-forced-dark', dark);
-    if (!dark || !document.body) return;
+    document.documentElement.classList.add('wed-forced-dark');
+    if (!document.body) return;
     document.body.querySelectorAll('*').forEach(function (el) {
       if (el instanceof SVGElement || el.classList.contains('wed-solid')) return;
       var cs = getComputedStyle(el);
@@ -101,11 +101,9 @@
       el.classList.add('wed-solid');
     });
   }
-  if (/SamsungBrowser/.test(navigator.userAgent) && window.matchMedia) {
+  if (/SamsungBrowser/.test(navigator.userAgent)) {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', solidText); else solidText();
     window.addEventListener('load', solidText);
     setTimeout(solidText, 2500);
-    var mq = window.matchMedia('(prefers-color-scheme: dark)');
-    if (mq.addEventListener) mq.addEventListener('change', solidText);
   }
 })();
